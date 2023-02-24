@@ -1,3 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .vertical-rl {
+    writing-mode: vertical-rl;
+    letter-spacing: 3px;
+  }
+
+  .vertical-lr {
+    writing-mode: vertical-lr;
+    letter-spacing: 3px;
+  }
+}
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
