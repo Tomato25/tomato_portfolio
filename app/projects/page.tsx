@@ -1,54 +1,66 @@
 import React from "react";
 import Image from "next/image";
-import Screen1 from "public/Images/SnagaPrirode/screen1.png"
+import Screen1 from "public/Images/SnagaPrirode/screen01.png";
+import { FaGithub } from "react-icons/fa";
+import { HiExternalLink } from "react-icons/hi";
+import {GrReactjs} from "react-icons/gr"
+import {SiAdobexd, SiCss3} from "react-icons/si"
+
+
+
+
+
 
 export default function Projects() {
   return (
-    <div className="flex flex-row 2xl:flex-nowrap md:flex-wrap gap-20 px-14  w-screen">
-      <div className="flex flex-col gap-16 mt-10 max-w-lg">
-        <h1 className="text-6xl">Snaga prirode</h1>
-        <p className="text-xl">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, omnis.
-          Dolor, sint nam. Iusto corporis totam, rem mollitia quaerat, culpa
-          sapiente omnis voluptatem earum fugit autem tenetur esse veniam quis
-          repellat nostrum animi laboriosam quibusdam error delectus magnam ab
-          dolor? Nam ab quae architecto laudantium dolorum odio, error velit
-          adipisci animi! Dolore, quasi in! Dignissimos quo, sunt labore dolore
-          pariatur fuga, ipsa laboriosam dolor non culpa nihil itaque sapiente
-          rem. Delectus architecto incidunt eum recusandae dolores accusantium
-          distinctio maiores quis.
-        </p>
-        <div className="flex flex-col gap-8">
-        <div className="flex flex-row justify-between gap-6 items-center w-1/2">
-          <h2 className="text-xl self-start">Check it out here</h2>
-          <h2>icon</h2>
-        </div>
-        <div className="flex flex-row justify-between gap-6 items-center w-1/2">
-          <h2 className="text-xl self-start">Check the code here</h2>
-          <h2>icon</h2>
-        </div>
-        </div>
+    
+      <div className="flex flex-col justify-center items-center gap-8 h-fit mt-32 mb-16">
+      <div className="flex flex-row gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen">
+      <h1 className="text-xl lg:text-5xl self-center vertical-rl">2022</h1>
+        <Image
+          className="w-1/2 shadow-lg shadow-gray-800"
+          src={Screen1}
+          width={1000}
+          height={600}
+          alt="screenshotMobile"
+        />
+        <div className="flex flex-col justify-center items-center gap-4 ">
+        <h1 className="text-xl lg:text-4xl">
+          <FaGithub />
+        </h1>
+        <h1 className="text-xl lg:text-5xl">
+          <HiExternalLink />
+        </h1>
       </div>
-      <div className="flex flex-col justify-center items-center gap-16 mt-20 w-full">
-        <Image className="w-9/12 rounded-lg" src={Screen1} width={1000} height={600} alt="screenshotMobile"/>
-        <div className="flec flex-col gap-16 items-center w-1/3">
-          <h1 className="text-2xl text-center">Technologies</h1>
-          <div className="flex flex-rox justify-between mt-6 items-center">
-            <div className="flex flex-col justify-center items-center">
-              <h1 className="text-lg">React</h1>
-              <h1>Icon</h1>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-              <h1 className="text-lg">AdobeXD</h1>
-              <h1>Icon</h1>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-              <h1 className="text-lg">CSS</h1>
-              <h1>Icon</h1>
-            </div>
+      </div>
+        <div className="flex flex-row justify-center gap-4 items-center">
+          <h1 className="text-4xl">1</h1>
+          <svg
+            width="6"
+            height="60"
+            viewBox="0 0 6 101"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M3 0.5V100.5" stroke="white" stroke-width="5" />
+          </svg>
+          <h1 className="text-4xl">Snaga prirode </h1>
+        </div>
+        <div className="flex flex-row justify-between items-center gap-8 opacity-40 text-xl">
+          <div className="flex flex-col justify-center items-center gap-3">
+            <h1 >React</h1>
+            <h1 ><GrReactjs /></h1>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-3">
+            <h1 >AdobeXd</h1>
+            <h1 ><SiAdobexd /></h1>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-3">
+            <h1>CSS</h1>
+            <h1><SiCss3 /></h1>
           </div>
         </div>
       </div>
-    </div>
+      
   );
 }

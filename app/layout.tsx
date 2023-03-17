@@ -1,5 +1,14 @@
 import NavBar from "./components/NavBar";
 import "./globals.css";
+import {Noto_Sans_Mono } from "@next/font/google"
+
+
+
+const NotoSans = Noto_Sans_Mono({
+  weight:["400", "600"],
+  subsets:["latin"],
+  variable: "--font-notosans"
+})
 
 export default function RootLayout({
   children,
@@ -14,10 +23,12 @@ export default function RootLayout({
       */}
       <head />
 
-      <body > 
-        <div className=" bg-green flex flex-col min-h-screen">
+      <body className={`${NotoSans.variable} font-notosans`}> 
+        <div className="bg-bg1 flex flex-col ">
         <NavBar />  
+        <div className="mt-24">
         {children}
+        </div>
         </div>
       </body>
     </html>

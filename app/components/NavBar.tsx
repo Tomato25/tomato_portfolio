@@ -18,7 +18,17 @@ export default function NavBar() {
         <path d="M9 7c-3 0 -4 3 -4 5.5c0 3 2 7.5 4 7.5c1.088 -.046 1.679 -.5 3 -.5c1.312 0 1.5 .5 3 .5s4 -3 4 -5c-.028 -.01 -2.472 -.403 -2.5 -3c-.019 -2.17 2.416 -2.954 2.5 -3c-1.023 -1.492 -2.951 -1.963 -3.5 -2c-1.433 -.111 -2.83 1 -3.5 1c-.68 0 -1.9 -1 -3 -1z" />
         <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2" />
       </svg>
-      <Link href="/"><h1 className="text-white text-xl">tomatoCode</h1></Link>
+      <div className="flex flex-row justify-between items-center gap-8">
+        <Link href="/about">
+          <h1 className="text-white text-xl">About</h1>
+        </Link>
+        <Link href="/projects">
+          <h1 className="text-white text-xl">Projects</h1>
+        </Link>
+        <Link href="/contact">
+          <h1 className="text-white text-xl">Contact</h1>
+        </Link>
+      </div>
     </div>
   );
 }

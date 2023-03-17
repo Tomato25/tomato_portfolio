@@ -12,7 +12,13 @@ module.exports = {
         "green":"#004211",
         "red" : "#A8001E"
       },
+      backgroundImage: {
+        bg1: "url('../public/images/backgroundGreen.png')",
     },
+    fontFamily: {
+      notosans:["var(--font-notosans)"]
+    }
   },
+},
   plugins: [],
 }
