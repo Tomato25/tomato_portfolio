@@ -17,6 +17,10 @@ module.exports = {
     },
     fontFamily: {
       notosans:["var(--font-notosans)"]
+    },
+    height:{
+      90:"90vh",
+      10:"10vh",
     }
   },
 },

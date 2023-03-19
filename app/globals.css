@@ -103,6 +103,15 @@ body {
   overflow-x: hidden;
 }
 
+
+.tagcloud {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

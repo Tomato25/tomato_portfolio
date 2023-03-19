@@ -25,8 +25,7 @@ export default function RootLayout({
 
       <body className={`${NotoSans.variable} font-notosans`}> 
         <div className="bg-bg1 flex flex-col ">
-        <NavBar />  
-        <div className="mt-24">
+        <div>
         {children}
         </div>
         </div>

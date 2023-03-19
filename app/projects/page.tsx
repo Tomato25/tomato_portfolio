@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import {GrReactjs} from "react-icons/gr"
 import {SiAdobexd, SiCss3} from "react-icons/si"
+import Link from "next/link";
 
 
 
@@ -18,7 +19,7 @@ export default function Projects() {
       <div className="flex flex-row gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen">
       <h1 className="text-xl lg:text-5xl self-center vertical-rl">2022</h1>
         <Image
-          className="w-1/2 shadow-lg shadow-gray-800"
+          className="w-1/2 shadow-lg shadow-gray-800 opacity-90"
           src={Screen1}
           width={1000}
           height={600}
@@ -60,6 +61,7 @@ export default function Projects() {
             <h1><SiCss3 /></h1>
           </div>
         </div>
+        <Link href="/projects/SnagaPrirode">Check more</Link>
       </div>
       
   );
