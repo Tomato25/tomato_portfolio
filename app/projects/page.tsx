@@ -1,39 +1,34 @@
 import React from "react";
 import Image from "next/image";
-import Screen1 from "public/Images/SnagaPrirode/screen01.png";
+import Screen1 from "public/Images/SnagaPrirode/screen1.png";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
-import {GrReactjs} from "react-icons/gr"
-import {SiAdobexd, SiCss3} from "react-icons/si"
+import { GrReactjs } from "react-icons/gr";
+import { SiAdobexd, SiCss3 } from "react-icons/si";
 import Link from "next/link";
-
-
-
-
-
 
 export default function Projects() {
   return (
-    
-      <div className="flex flex-col justify-center items-center gap-8 h-fit mt-32 mb-16">
-      <div className="flex flex-row gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen">
-      <h1 className="text-xl lg:text-5xl self-center vertical-rl">2022</h1>
-        <Image
-          className="w-1/2 shadow-lg shadow-gray-800 opacity-90"
-          src={Screen1}
-          width={1000}
-          height={600}
-          alt="screenshotMobile"
-        />
-        <div className="flex flex-col justify-center items-center gap-4 ">
-        <h1 className="text-xl lg:text-4xl">
-          <FaGithub />
-        </h1>
-        <h1 className="text-xl lg:text-5xl">
-          <HiExternalLink />
-        </h1>
-      </div>
-      </div>
+    <div className="flex flex-col justify-center items-center gap-8 h-fit mb-16">
+      <div className="flex flex-col justify-center items-center gap-8 mt-32 mb-16">
+        <div className="flex flex-row gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen">
+          <h1 className="text-xl lg:text-5xl self-center vertical-rl">2022</h1>
+          <Image
+            className="w-1/2 shadow-lg shadow-gray-800 opacity-90"
+            src={Screen1}
+            width={1000}
+            height={600}
+            alt="screenshotMobile"
+          />
+          <div className="flex flex-col justify-center items-center gap-4 ">
+            <h1 className="text-xl lg:text-4xl">
+              <FaGithub />
+            </h1>
+            <h1 className="text-xl lg:text-5xl">
+              <HiExternalLink />
+            </h1>
+          </div>
+        </div>
         <div className="flex flex-row justify-center gap-4 items-center">
           <h1 className="text-4xl">1</h1>
           <svg
@@ -49,20 +44,41 @@ export default function Projects() {
         </div>
         <div className="flex flex-row justify-between items-center gap-8 opacity-40 text-xl">
           <div className="flex flex-col justify-center items-center gap-3">
-            <h1 >React</h1>
-            <h1 ><GrReactjs /></h1>
+            <h1>React</h1>
+            <h1>
+              <GrReactjs />
+            </h1>
           </div>
           <div className="flex flex-col justify-center items-center gap-3">
-            <h1 >AdobeXd</h1>
-            <h1 ><SiAdobexd /></h1>
+            <h1>AdobeXd</h1>
+            <h1>
+              <SiAdobexd />
+            </h1>
           </div>
           <div className="flex flex-col justify-center items-center gap-3">
             <h1>CSS</h1>
-            <h1><SiCss3 /></h1>
+            <h1>
+              <SiCss3 />
+            </h1>
           </div>
         </div>
-        <Link href="/projects/SnagaPrirode">Check more</Link>
+        <div className="w-screen h-fit bg-slate-200 text-green text-xl p-40 shadow-lg shadow-gray-800">
+          <h2>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus
+            repellat dolores, quis, provident suscipit officiis magni laboriosam
+            explicabo aut repellendus est sunt vel, nemo maxime commodi
+            architecto. Deleniti hic illo quisquam sed rerum illum quaerat
+            mollitia tempore iure molestiae aliquam reiciendis, adipisci, sequi
+            vitae. In aperiam facilis modi aliquid consequatur omnis magni
+            suscipit harum illo consequuntur nam iste odio, nihil possimus a ea.
+            Dolorum praesentium excepturi earum pariatur quae aut dolorem libero
+            voluptatum nesciunt, laborum non magni optio inventore obcaecati eos
+            nisi laudantium ab architecto quam, quas sapiente voluptas! Quas
+            tempora hic dicta doloremque possimus dolore sunt quasi voluptas
+            esse?
+          </h2>
+        </div>
       </div>
-      
+    </div>
   );
 }
