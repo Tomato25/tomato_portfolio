@@ -72,7 +72,7 @@ export default function Home() {
             "SCRUM",
           ]}
         </TagCloud>
-        <TagCloud
+        <TagCloud id="links"
           style={{
             width: "fit-content",
             position: "absolute",

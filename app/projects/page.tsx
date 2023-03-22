@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import Screen1 from "public/Images/SnagaPrirode/screen1.png";
@@ -10,29 +10,35 @@ import Link from "next/link";
 import Carousel from "../components/Carousel";
 
 export default function Projects() {
+  const imageUrl = [
+    "/Images/SnagaPrirode/screen1.png",
+    "/Images/SnagaPrirode/screen2.png",
+    "/Images/SnagaPrirode/screen3.png",
+  ];
 
-const imageUrl = [
-  "/Images/SnagaPrirode/screen1.png",
-  "/Images/SnagaPrirode/screen2.png",
-  "/Images/SnagaPrirode/screen3.png"
+  //snagaprirode.com.hr
 
-]
-
-
-
-  return (
+  https: return (
     <div className="flex flex-col justify-center items-center gap-8  mb-16">
       <div className="flex flex-col justify-center items-center gap-8 mt-32 mb-16">
         <div className="flex flex-row gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen ">
           <h1 className="text-xl lg:text-5xl self-center vertical-rl">2022</h1>
-          <Carousel images={imageUrl}/>
+          <Carousel images={imageUrl} />
           <div className="flex flex-col justify-center items-center gap-4 ">
-            <h1 className="text-xl lg:text-4xl">
+            <a
+              href="https://github.com/Tomato25/SnagaPrirode"
+              target="_blank"
+              className="text-xl lg:text-4xl"
+            >
               <FaGithub />
-            </h1>
-            <h1 className="text-xl lg:text-5xl">
+            </a>
+            <a
+              href="https://snagaprirode.com.hr"
+              target="_blank"
+              className="text-xl lg:text-5xl"
+            >
               <HiExternalLink />
-            </h1>
+            </a>
           </div>
         </div>
         <div className="flex flex-row justify-center gap-4 items-center">
@@ -68,7 +74,7 @@ const imageUrl = [
             </h1>
           </div>
         </div>
-        <div className="w-screen h-fit bg-slate-200 text-green text-xl p-40 shadow-lg shadow-gray-800">
+        <div className="w-screen h-fit bg-slate-200 text-green text-xl p-40 shadow-large">
           <h2>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus
             repellat dolores, quis, provident suscipit officiis magni laboriosam

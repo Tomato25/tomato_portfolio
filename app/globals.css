@@ -109,9 +109,14 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+  #links .tagcloud--item {
+      cursor: pointer;
+  }
   
 
-}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

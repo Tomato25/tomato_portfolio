@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar";
 import "./globals.css";
 import {Noto_Sans_Mono } from "@next/font/google"
+import { text } from "stream/consumers";
 
 
 
@@ -23,7 +24,7 @@ export default function RootLayout({
       */}
       <head />
 
-      <body className={`${NotoSans.variable} font-notosans`}> 
+      <body className={`${NotoSans.variable} font-notosans text-lightGreen`}> 
         <div className="bg-bg1 flex flex-col ">
         <div>
         {children}
