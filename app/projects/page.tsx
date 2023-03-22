@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import Screen1 from "public/Images/SnagaPrirode/screen1.png";
@@ -6,20 +7,25 @@ import { HiExternalLink } from "react-icons/hi";
 import { GrReactjs } from "react-icons/gr";
 import { SiAdobexd, SiCss3 } from "react-icons/si";
 import Link from "next/link";
+import Carousel from "../components/Carousel";
 
 export default function Projects() {
+
+const imageUrl = [
+  "/Images/SnagaPrirode/screen1.png",
+  "/Images/SnagaPrirode/screen2.png",
+  "/Images/SnagaPrirode/screen3.png"
+
+]
+
+
+
   return (
-    <div className="flex flex-col justify-center items-center gap-8 h-fit mb-16">
+    <div className="flex flex-col justify-center items-center gap-8  mb-16">
       <div className="flex flex-col justify-center items-center gap-8 mt-32 mb-16">
-        <div className="flex flex-row gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen">
+        <div className="flex flex-row gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen ">
           <h1 className="text-xl lg:text-5xl self-center vertical-rl">2022</h1>
-          <Image
-            className="w-1/2 shadow-lg shadow-gray-800 opacity-90"
-            src={Screen1}
-            width={1000}
-            height={600}
-            alt="screenshotMobile"
-          />
+          <Carousel images={imageUrl}/>
           <div className="flex flex-col justify-center items-center gap-4 ">
             <h1 className="text-xl lg:text-4xl">
               <FaGithub />

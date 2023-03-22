@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import Menu from "./components/Menu";
 import Roles from "./components/Roles";
 import { TagCloud, TagCloudOptions } from "@frank-mayer/react-tag-cloud";
-import {FaGithubSquare, FaLinkedin, FaTelegram} from "react-icons/fa"
-import {SiGmail}  from "react-icons/si"
+import { FaGithubSquare, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+import Link from "next/link";
 
 export default function Home() {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -24,6 +25,16 @@ export default function Home() {
 
   return (
     <main className="h-screen w-screen flex flex-col justify-start">
+      <div className="flex flex-row h-10 justify-between items-center  mx-16 text-4xl mt-4">
+        <div className="flex flex-row h-10 justify-between items-start gap-16 mx-16">
+          <h1>
+            <FaGithubSquare />
+          </h1>
+        </div>
+        <div className="flex flex-row h-10 justify-between items-start gap-16 mx-16 text-2xl">
+          <h1>TomiCode</h1>
+        </div>
+      </div>
       <div className="h-90 w-1/2 text-xl relative mx-auto">
         <TagCloud
           style={{
@@ -39,11 +50,6 @@ export default function Home() {
             radius: Math.min(600, w.innerWidth, w.innerHeight) / 1.4,
             maxSpeed: "fast",
           })}
-          onClick={(tag: string, ev: MouseEvent) => {
-            if (tag == "Projects") {
-              location.href = "http://localhost:3000/projects";
-            }
-          }}
           onClickOptions={{ passive: true }}
         >
           {[
@@ -52,9 +58,6 @@ export default function Home() {
             "TypeScript",
             "Full-stack developer",
             "React",
-            "Projects",
-            "About",
-            "Contact",
             "Figma",
             "AdobeXd",
             "CSS",
@@ -86,6 +89,10 @@ export default function Home() {
           onClick={(tag: string, ev: MouseEvent) => {
             if (tag == "Projects") {
               location.href = "http://localhost:3000/projects";
+            } else if (tag == "About") {
+              location.href = "http://localhost:3000/about";
+            } else if (tag == "Contact") {
+              location.href = "http://localhost:3000/contact";
             }
           }}
           onClickOptions={{ passive: true }}
@@ -95,14 +102,24 @@ export default function Home() {
       </div>
       <div className="flex flex-row h-10 justify-between items-center  mx-16 text-4xl">
         <div className="flex flex-row h-10 justify-between items-center gap-16 mx-16">
-          <h1><FaGithubSquare /></h1>
-          <h1><FaLinkedin /></h1>
+          <a href="https://github.com/Tomato25/" target="_blank">
+            <FaGithubSquare />
+          </a>
+          <a href="https://www.linkedin.com/in/hrvoje-tomic/" target="_blank">
+            <FaLinkedin />
+          </a>
         </div>
         <div className="flex flex-row h-10 justify-between items-center gap-16 mx-16">
-          <h1><SiGmail /></h1>
-          <h1><FaTelegram /></h1>
+        <a href="mailto:htomic4@gmail.com" target="_blank">
+            <SiGmail />
+          </a>
+          <a href="https://t.me/H_Tomic" target="_blank">
+            <FaTelegram />
+          </a>
         </div>
       </div>
     </main>
   );
 }
+
+
