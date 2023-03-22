@@ -36,9 +36,9 @@ export default function Carousel({ images }: CarouselProps) {
       </button>
       <div className="flex flex-row justify-center items-center">
       
-        <div className="w-2/3 shadow-large ">
+        <div className="w-2/3 ">
           <Image
-            className="mx-auto "
+            className="mx-auto  shadow-large"
             src={images[currentIndex]}
             alt={`Image ${currentIndex}`}
             width={800}

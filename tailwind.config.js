@@ -14,7 +14,7 @@ module.exports = {
         "lightGreen" : "#ADE6B9"
       },
       backgroundImage: {
-        bg1: "url('../public/images/backgroundGreen.png')",
+        bg1: "url('../public/Images/backgroundGreen.png')",
     },
     fontFamily: {
       notosans:["var(--font-notosans)"]
