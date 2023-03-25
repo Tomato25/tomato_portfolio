@@ -2,15 +2,15 @@ import ProfileCircle from "../components/ProfileCircle";
 
 export default function About() {
   return (
-    <main className="flex flex-col  flex-grow">
+    <main className="flex flex-col  flex-grow  ">
       <div className="grid grid-cols-2 w-screen my-20">
         <div className="flex flex-col mx-auto h-max gap-20 self-center justify-center  items-center w-full">
           <div className="flex flex-row gap-24 min-w-full pl-14 mb-10">
           <h1 className="text-6xl self-center vertical-rl">About</h1>
-            <div className="flex flex-col justify-center items-center gap-10">
-              <p className="text-3xl">BSc Computing graduate with experience in web and mobile application development. Web development technologies I work with are HTML, CSS, JS and React, while I'm confident in using Adobe XD for design.</p>
-              <p className="text-3xl">As part of my role as a Web developer intern, I have autonomously delivered a project of designing and developing a website for the NTUs Employability department. </p>
-              <p className="text-3xl">I'm working towards improving my current technological abilities to become full-stack developer, but I am also determined to expand my knowledge in technologies such as C# or SQL.</p>
+            <div className="flex flex-col justify-center items-center gap-10 drop-shadow-">
+              <p className="text-2xl">BSc Computing graduate with experience in web and mobile application development. Web development technologies I work with are HTML, CSS, JS and React, while I'm confident in using Adobe XD for design.</p>
+              <p className="text-2xl">As part of my role as a Web developer intern, I have autonomously delivered a project of designing and developing a website for the NTUs Employability department. </p>
+              <p className="text-2xl">I'm working towards improving my current technological abilities to become full-stack developer, but I am also determined to expand my knowledge in technologies such as C# or SQL.</p>
             </div>
           </div>
         </div>
@@ -34,8 +34,8 @@ export default function About() {
                       <h2 className="text-xl">at Nutri2Go</h2>
                     </span>
 
-                    <ul className="list-disc pl-10 text-lg">
-                      <li className="mb-3">
+                    <ul className="list-disc pl-10 text-lg ">
+                      <li className="mb-3 ">
                         Communicating with the manager and CEO; regularly
                         providing feedback and contributing to strategic
                         discussions

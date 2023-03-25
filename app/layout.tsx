@@ -1,7 +1,7 @@
 import NavBar from "./components/NavBar";
 import "./globals.css";
 import {Noto_Sans_Mono } from "@next/font/google"
-import { text } from "stream/consumers";
+import Cursor from "./components/Cursor";
 
 
 
@@ -15,7 +15,10 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+})
+
+{
+
   return (
     <html lang="en">
       {/*
@@ -23,8 +26,8 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-
       <body className={`${NotoSans.variable} font-notosans text-lightGreen`}> 
+
         <div className="bg-bg1 flex flex-col ">
         <div>
         {children}
