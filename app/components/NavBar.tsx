@@ -20,13 +20,13 @@ export default function NavBar() {
         <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2" />
       </svg></Link>
       <div className="flex flex-row justify-between items-center gap-8 text-lightGreen text-xl">
-        <Link href="/about">
+        <Link href="/about" className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">
           <h1 >About</h1>
         </Link>
-        <Link href="/projects">
+        <Link href="/projects" className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg" >
           <h1>Projects</h1>
         </Link>
-        <Link href="/contact">
+        <Link href="/contact"  className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">
           <h1>Contact</h1>
         </Link>
       </div>

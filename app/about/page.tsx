@@ -6,8 +6,8 @@ export default function About() {
       <div className="grid grid-cols-2 w-screen my-20">
         <div className="flex flex-col mx-auto h-max gap-20 self-center justify-center  items-center w-full">
           <div className="flex flex-row gap-24 min-w-full pl-14 mb-10">
-          <h1 className="text-6xl self-center vertical-rl">About</h1>
-            <div className="flex flex-col justify-center items-center gap-10 drop-shadow-">
+          <h1 className="text-6xl self-center vertical-rl text-shadow-vertical">About</h1>
+            <div className="flex flex-col justify-center items-center gap-10">
               <p className="text-2xl">BSc Computing graduate with experience in web and mobile application development. Web development technologies I work with are HTML, CSS, JS and React, while I'm confident in using Adobe XD for design.</p>
               <p className="text-2xl">As part of my role as a Web developer intern, I have autonomously delivered a project of designing and developing a website for the NTUs Employability department. </p>
               <p className="text-2xl">I'm working towards improving my current technological abilities to become full-stack developer, but I am also determined to expand my knowledge in technologies such as C# or SQL.</p>
@@ -23,15 +23,15 @@ export default function About() {
 
       <div className="bg-white text-green">
         <div className="flex flex-row  gap-24 min-w-full pl-14  my-28">
-          <h1 className="text-6xl self-center vertical-rl">Experience</h1>
+          <h1 className="text-6xl self-center vertical-rl text-shadow-vertical-light">Experience</h1>
           <div className="flex flex-col items-start gap-16 self-center  w-full mx-auto">
             <div className="flex flex-col justify-center items-start gap-40 min-w-full">
             <div className="flex flex-row justify-between w-full pr-14">
                 <div className="flex flex-col justify-start items-start">
                   <div className="flex flex-col justify-start items-start gap-4">
                     <span>
-                      <h2 className="text-4xl">Assistant manager</h2>
-                      <h2 className="text-xl">at Nutri2Go</h2>
+                      <h2 className="text-4xl  text-shadow-light">Assistant manager</h2>
+                      <h2 className="text-xl  text-shadow-light">at Nutri2Go</h2>
                     </span>
 
                     <ul className="list-disc pl-10 text-lg ">
@@ -55,7 +55,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <h1 className="text-2xl self-center vertical-rl">
+                <h1 className="text-2xl self-center vertical-rl text-shadow-vertical-light">
                   2021-present
                 </h1>
               </div>
@@ -64,8 +64,8 @@ export default function About() {
                 <div className="flex flex-col justify-start items-start">
                   <div className="flex flex-col justify-start items-start gap-4">
                     <span>
-                      <h2 className="text-4xl">Web Developer Intern </h2>
-                      <h2 className="text-xl">
+                      <h2 className="text-4xl text-shadow-light">Web Developer Intern </h2>
+                      <h2 className="text-xl text-shadow-light">
                         at Nottingham Trent University
                       </h2>
                     </span>
@@ -91,7 +91,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <h1 className="text-2xl self-center vertical-rl">
+                <h1 className="text-2xl self-center vertical-rl text-shadow-vertical-light">
                   August-September 2022
                 </h1>
               </div>
@@ -102,12 +102,12 @@ export default function About() {
 
 
       <div className="flex flex-row  gap-24 min-w-full pl-14  my-28">
-          <h1 className="text-6xl self-center vertical-rl">Education</h1>
+          <h1 className="text-6xl self-center vertical-rl text-shadow-vertical">Education</h1>
           <div className="flex flex-row justify-between w-full pr-14">
                 <div className="flex flex-col justify-start items-start">
                   <div className="flex flex-col justify-start items-start gap-4">
                     <span>
-                      <h2 className="text-4xl">Nottingham Trent University</h2>
+                      <h2 className="text-4xl text-shadow">Nottingham Trent University</h2>
                     </span>
 
                     <ul className="list-disc pl-10 text-lg">
@@ -131,7 +131,7 @@ export default function About() {
                     </ul>
                   </div>
                 </div>
-                <h1 className="text-2xl self-center vertical-rl">
+                <h1 className="text-2xl self-center vertical-rl text-shadow-vertical">
                   2018 – 2021
                 </h1>
               </div>
@@ -144,9 +144,9 @@ export default function About() {
 
       <div className="bg-white text-green">
         <div className="flex flex-row  gap-24 min-w-full pl-14  my-28">
-          <h1 className="text-6xl self-center vertical-rl">Soft skills</h1>
+          <h1 className="text-6xl self-center vertical-rl text-shadow-vertical-light">Soft skills</h1>
           <div className="flex flex-col items-start gap-16 self-center  w-full mx-auto pr-12">
-            <h2 className="text-4xl self-center">Communication</h2>
+            <h2 className="text-4xl self-center text-shadow-light">Communication</h2>
             <div className="flex flex-row justify-center items-start gap-8 min-w-full">
               <div className="flex flex-col justify-center items-start gap-4 w-1/2">
                 <h2 className=" text-lg">In a web development setting:</h2>
@@ -184,7 +184,7 @@ export default function About() {
               </div>
             </div>
 
-            <h2 className="text-4xl self-center">
+            <h2 className="text-4xl self-center text-shadow-light">
               Time and project management
             </h2>
             <div className="flex flex-row justify-start items-start gap-8 min-w-full">

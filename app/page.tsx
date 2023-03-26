@@ -32,7 +32,7 @@ export default function Home() {
       <div className="flex flex-row h-100 justify-between items-center  mx-16 text-4xl mt-4 z-10">
         <div className="flex flex-row h-100 justify-between items-start gap-16 mx-16">
           <h1>
-            <FaGithubSquare />
+            <FaGithubSquare className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "/>
           </h1>
         </div>
         <div className="flex flex-row h-100 justify-between items-start gap-16 mx-16 text-2xl">
@@ -40,25 +40,25 @@ export default function Home() {
         </div>
       </div>
       <div className="h-900 w-screen flex flex-row justify-center gap-20 items-center  text-2xl relative mx-auto z-10">
-      <Link href="./projects">Projects</Link>
-      <Link href="./about">About</Link>
-      <Link href="./contact">Contact</Link>
+      <Link href="./projects" className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">Projects</Link>
+      <Link href="./about" className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">About</Link>
+      <Link href="./contact" className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">Contact</Link>
       </div>
       <div className="flex flex-row h-100 justify-between items-center  mx-16 text-4xl z-10">
         <div className="flex flex-row h-100 justify-between items-center gap-16 mx-16">
           <a href="https://github.com/Tomato25/" target="_blank">
-            <FaGithubSquare />
+            <FaGithubSquare className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "/>
           </a>
           <a href="https://www.linkedin.com/in/hrvoje-tomic/" target="_blank">
-            <FaLinkedin />
+            <FaLinkedin className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "/>
           </a>
         </div>
         <div className="flex flex-row h-100 justify-between  items-center gap-16 mx-16">
         <a href="mailto:htomic4@gmail.com" target="_blank">
-            <SiGmail />
+            <SiGmail className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "/>
           </a>
           <a href="https://t.me/H_Tomic" target="_blank">
-            <FaTelegram />
+            <FaTelegram className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "/>
           </a>
         </div>
       </div>
