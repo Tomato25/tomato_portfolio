@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
  content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -15,13 +16,36 @@ module.exports = {
       },
       backgroundImage: {
         bg1: "url('../public/Images/backgroundGreen.png')",
+        bg2: "url('../public/Images/contactBg.png')",
+
     },
     fontFamily: {
       notosans:["var(--font-notosans)"]
     },
+
+    textShadow: {
+      sm: '0 1px 2px var(--tw-shadow-color)',
+      DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+      lg: '0 8px 16px var(--tw-shadow-color)',
+    },
+
+
     height:{
-      90:"90vh",
-      10:"10vh",
+      900:"90vh",
+      600:"60vh",
+      500:"50vh",
+      450:"45vh",
+      400:"40vh",
+      100:"10vh",
+
+    },
+    width:{
+      900:"90vw",
+      600:"60vw",
+      500:"50vw",
+      400:"40vw",
+      100:"10vw",
+
     },
     boxShadowColor:{
       "green":"163deg 100% 3%"
@@ -46,5 +70,6 @@ module.exports = {
 
   },
 },
-  plugins: [],
+  plugins:[require("daisyui"),
+]
 }
