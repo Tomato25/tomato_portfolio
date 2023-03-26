@@ -28,7 +28,7 @@ export default function RootLayout({
       <head />
       <body className={`${NotoSans.variable} font-notosans text-lightGreen`}> 
 
-        <div className="flex flex-col text-shadow">
+        <div className="flex flex-col">
         <div>
         {children}
         </div>

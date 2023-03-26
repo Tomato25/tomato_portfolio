@@ -5,7 +5,7 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>
+  return <section className="bg-bg1 h-screen w-screen">
     <NavBar />
     {children}
     </section>;

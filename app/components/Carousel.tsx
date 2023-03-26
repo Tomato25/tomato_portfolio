@@ -22,7 +22,7 @@ export default function Carousel({ images }: CarouselProps) {
 
   return (
 
-    <div className="carousel w-600 h-500">
+    <div className="carousel w-600 h-600">
     <div className="carousel-item relative w-full flex flex-row justify-center py-10">
       <img src={images[currentIndex]} className="h-full rounded-lg shadow-xl shadow-slate-900" />
       <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

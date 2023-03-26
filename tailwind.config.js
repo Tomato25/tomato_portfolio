@@ -16,6 +16,8 @@ module.exports = {
       },
       backgroundImage: {
         bg1: "url('../public/Images/backgroundGreen.png')",
+        bg2: "url('../public/Images/contactBg.png')",
+
     },
     fontFamily: {
       notosans:["var(--font-notosans)"]
