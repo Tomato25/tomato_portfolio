@@ -15,7 +15,33 @@
   }
 
   .text-shadow {
-    text-shadow:0 3px 5px black;
+    text-shadow:0 2px 4px #002a1e;
+  }
+
+  .text-shadow-light {
+    text-shadow:0 2px 3px #46706385;
+  }
+
+  .text-shadow-vertical {
+    text-shadow:3px 0 5px #002a1e;
+  }
+
+  .text-shadow-vertical-light {
+    text-shadow:2px 0 3px #46706385;
+  }
+
+  .svg-shadow-sm{
+    filter: drop-shadow(2px 4px 2px #002a1e);
+
+  }
+
+  .svg-shadow{
+    filter: drop-shadow(3px 5px 2px #002a1e);
+  }
+
+  .svg-shadow-lg{
+    filter: drop-shadow(4px 6px 3px #002a1e);
+
   }
 }
 

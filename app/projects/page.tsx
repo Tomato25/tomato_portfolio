@@ -1,13 +1,16 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Screen1 from "public/Images/SnagaPrirode/screen1.png";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { GrReactjs } from "react-icons/gr";
 import { SiAdobexd, SiCss3 } from "react-icons/si";
 import Link from "next/link";
 import Carousel from "../components/Carousel";
+import { motion } from "framer-motion";
+import { socialVariants, techVariants } from "../animations/svgAnimations";
+import { titleVariants } from "./animations";
+import { lettersVariants, wordVariants } from "../animations/textAnimations";
+import { snagaPrirode } from "public/projectsContent";
 
 export default function Projects() {
   const imageUrl = [
@@ -16,61 +19,134 @@ export default function Projects() {
     "/Images/SnagaPrirode/screen3.png",
   ];
 
- return (
+  return (
     <div className="flex flex-col justify-center items-center gap-8  mb-16">
       <div className="flex flex-col justify-center items-center gap-8 mt-16 mb-16">
         <div className="flex flex-row gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen ">
-          <h1 className="text-xl lg:text-5xl self-center vertical-rl">2022</h1>
-          <Carousel images={imageUrl} />
+          <motion.h1
+            variants={wordVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-xl lg:text-5xl self-center vertical-rl text-shadow-vertical"
+          >
+            {snagaPrirode.year.split("").map((char, index) => {
+              return (
+                <motion.span
+                  key={char + "-" + index}
+                  variants={lettersVariants}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+          </motion.h1>
+          <motion.div
+            variants={socialVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <Carousel images={imageUrl} />
+          </motion.div>
           <div className="flex flex-col justify-center items-center gap-4 ">
-            <a
+            <motion.a
+              variants={socialVariants}
+              initial="hidden"
+              animate="visible"
               href="https://github.com/Tomato25/SnagaPrirode"
               target="_blank"
               className="text-xl lg:text-4xl"
             >
-              <FaGithub />
-            </a>
-            <a
+              <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
+            </motion.a>
+            <motion.a
+              variants={socialVariants}
+              initial="hidden"
+              animate="visible"
               href="https://snagaprirode.com.hr"
               target="_blank"
               className="text-xl lg:text-5xl"
             >
-              <HiExternalLink />
-            </a>
+              <HiExternalLink className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
+            </motion.a>
           </div>
         </div>
-        <div className="flex flex-row justify-center gap-4 items-center">
-          <h1 className="text-4xl">1</h1>
-          <svg
+        <motion.div
+          variants={titleVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-row justify-center gap-4 items-center"
+        >
+          <motion.h1
+            variants={lettersVariants}
+            className="text-4xl text-shadow"
+          >
+            1
+          </motion.h1>
+          <motion.svg
+            variants={lettersVariants}
+            className="svg-shadow"
             width="6"
             height="60"
             viewBox="0 0 6 101"
+            stroke="#ADE6B9"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M3 0.5V100.5" stroke="white" stroke-width="5" />
-          </svg>
-          <h1 className="text-4xl">Snaga prirode </h1>
-        </div>
-        <div className="flex flex-row justify-between items-center gap-8 opacity-40 text-xl">
-          <div className="flex flex-col justify-center items-center gap-3">
+            <path d="M3 0.5V100.5" stroke="#ADE6B9" stroke-width="5" />
+          </motion.svg>
+
+          <motion.h1
+            variants={wordVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-4xl text-shadow"
+          >
+            {snagaPrirode.name.split("").map((char, index) => {
+              return (
+                <motion.span
+                  key={char + "-" + index}
+                  variants={lettersVariants}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+          </motion.h1>
+        </motion.div>
+        <div className="flex flex-row justify-between items-center gap-8  text-xl">
+          <motion.div
+            variants={techVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
+          >
             <h1>React</h1>
             <h1>
               <GrReactjs />
             </h1>
-          </div>
-          <div className="flex flex-col justify-center items-center gap-3">
+          </motion.div>
+          <motion.div
+            variants={techVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
+          >
             <h1>AdobeXd</h1>
             <h1>
               <SiAdobexd />
             </h1>
-          </div>
-          <div className="flex flex-col justify-center items-center gap-3">
+          </motion.div>
+          <motion.div
+            variants={techVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
+          >
             <h1>CSS</h1>
             <h1>
               <SiCss3 />
             </h1>
-          </div>
+          </motion.div>
         </div>
         <div className="w-screen h-fit bg-slate-200 text-green text-xl p-40 shadow-large">
           <h2>
