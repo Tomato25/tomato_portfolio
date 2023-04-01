@@ -8,10 +8,12 @@ import { motion } from "framer-motion";
 import { socialVariants } from "../animations/svgAnimations";
 import logo from "public/Images/Logo.svg"
 import Image from "next/image";
+import { PageWrapper } from "../projects/page-wrapper";
 
 
 function Contact() {
   return (
+    <PageWrapper>
     <div className="flex flex-row items-center justify-center h-900 ">
       <h1 className="text-6xl self-center vertical-rl pl-14 ">Get in touch</h1>
       <div className="text-4xl w-1/3 flex flex-col justify-center gap-28 items-center h-full">
@@ -104,6 +106,7 @@ function Contact() {
         </TagCloud>
       </div>
     </div>
+    </PageWrapper>
   );
 }
 

@@ -1,27 +1,32 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { GrReactjs } from "react-icons/gr";
 import { SiAdobexd, SiCss3 } from "react-icons/si";
-import Link from "next/link";
+import Image from "next/image";
 import Carousel from "../components/Carousel";
-import { motion } from "framer-motion";
+import { motion,LayoutGroup } from "framer-motion";
 import { socialVariants, techVariants } from "../animations/svgAnimations";
 import { titleVariants } from "./animations";
 import { lettersVariants, wordVariants } from "../animations/textAnimations";
 import { snagaPrirode } from "public/projectsContent";
+import SSRMasonry from "../components/ImageGrid";
+import SPBanner from "public/Images/SnagaPrirode/screen1.png";
+import { ContextProvider } from "./carouselContext";
+import { useContext } from "./carouselContext";
+import { PageWrapper } from "./page-wrapper";
 
 export default function Projects() {
-  const imageUrl = [
-    "/Images/SnagaPrirode/screen1.png",
-    "/Images/SnagaPrirode/screen2.png",
-    "/Images/SnagaPrirode/screen3.png",
-  ];
+  const {carouselToggle, setCarouselToggle} = useContext()
+  console.log(carouselToggle)
 
   return (
+    <PageWrapper>
     <div className="flex flex-col justify-center items-center gap-8  mb-16">
       <div className="flex flex-col justify-center items-center gap-8 mt-16 mb-16">
+      
+
         <div className="flex flex-row gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen ">
           <motion.h1
             variants={wordVariants}
@@ -44,8 +49,14 @@ export default function Projects() {
             variants={socialVariants}
             initial="hidden"
             animate="visible"
+            className="flex justify-center items-center"
           >
-            <Carousel images={imageUrl} />
+          <LayoutGroup>
+          {carouselToggle ? <Image src={SPBanner} className="w-2/3 "alt="Snaga prirode" onClick={() => setCarouselToggle(!carouselToggle)} /> : <SSRMasonry />}
+          </LayoutGroup>
+
+              
+
           </motion.div>
           <div className="flex flex-col justify-center items-center gap-4 ">
             <motion.a
@@ -147,7 +158,8 @@ export default function Projects() {
               <SiCss3 />
             </h1>
           </motion.div>
-        </div>
+          </div>
+
         <div className="w-screen h-fit bg-slate-200 text-green text-xl p-40 shadow-large">
           <h2>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus
@@ -164,7 +176,9 @@ export default function Projects() {
             esse?
           </h2>
         </div>
+
       </div>
     </div>
+    </PageWrapper>
   );
 }

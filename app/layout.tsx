@@ -1,8 +1,9 @@
+"use client"
+
 import NavBar from "./components/NavBar";
 import "./globals.css";
 import {Noto_Sans_Mono } from "@next/font/google"
 import Cursor from "./components/Cursor";
-
 
 
 const NotoSans = Noto_Sans_Mono({
@@ -11,11 +12,14 @@ const NotoSans = Noto_Sans_Mono({
   variable: "--font-notosans"
 })
 
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 })
+
+
 
 {
 
@@ -27,12 +31,10 @@ export default function RootLayout({
       */}
       <head />
       <body className={`${NotoSans.variable} font-notosans text-lightGreen`}> 
-
-        <div className="flex flex-col">
-        <div>
+        <div  className="flex flex-col" >     
         {children}
         </div>
-        </div>
+
       </body>
     </html>
   );

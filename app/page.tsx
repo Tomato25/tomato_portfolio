@@ -13,11 +13,13 @@ import {
 import { socialVariants } from "./animations/svgAnimations";
 import { Links } from "@/public/aboutContent";
 import Logo from "public/Images/Logo.svg";
+import { PageWrapper } from "./projects/page-wrapper";
 
 export default function Home() {
   const name = "Hrvoje Tomic";
 
   return (
+    <PageWrapper>
     <main className="h-screen w-screen flex flex-col justify-start">
       <Particlesbackground />
       <div className="flex flex-row h-100 justify-between items-center  mx-16 text-4xl mt-4 z-10">
@@ -134,5 +136,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </PageWrapper>
   );
 }
