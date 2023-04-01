@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { socialVariants } from "../animations/svgAnimations";
 import logo from "public/Images/Logo.svg"
 import Image from "next/image";
-import { PageWrapper } from "../projects/page-wrapper";
+import PageWrapper from "../projects/page-wrapper";
 
 
 function Contact() {

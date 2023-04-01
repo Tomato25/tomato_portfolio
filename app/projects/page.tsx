@@ -12,7 +12,8 @@ import { snagaPrirode } from "public/projectsContent";
 import SSRMasonry from "../components/ImageGrid";
 import SPBanner from "public/Images/SnagaPrirode/screen1.png";
 import { useContext } from "./carouselContext";
-import { PageWrapper } from "./page-wrapper";
+import PageWrapper from "./page-wrapper";
+
 
 export default function Projects() {
   const { carouselToggle, setCarouselToggle } = useContext();
@@ -109,6 +110,7 @@ export default function Projects() {
               variants={titleVariants}
               initial="hidden"
               animate="visible"
+              layout
               className="flex flex-row justify-center gap-4 items-center"
             >
               <motion.h1
@@ -148,7 +150,7 @@ export default function Projects() {
                 })}
               </motion.h1>
             </motion.div>
-            <div className="flex flex-row justify-between items-center gap-8  text-xl">
+            <motion.div layout className="flex flex-row justify-between items-center gap-8  text-xl">
               <motion.div
                 variants={techVariants}
                 initial="hidden"
@@ -197,7 +199,7 @@ export default function Projects() {
                   <SiCss3 />
                 </h1>
               </motion.div>
-            </div>
+            </motion.div>
 
             <motion.div className="w-screen h-fit bg-slate-200 text-green text-xl p-40 shadow-large">
               <h2>

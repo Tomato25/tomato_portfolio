@@ -1,9 +1,5 @@
-"use client"
-
-import NavBar from "./components/NavBar";
 import "./globals.css";
 import {Noto_Sans_Mono } from "@next/font/google"
-import Cursor from "./components/Cursor";
 
 
 const NotoSans = Noto_Sans_Mono({

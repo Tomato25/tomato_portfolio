@@ -72,7 +72,7 @@ export default function SSRMasonry() {
     <Box sx={{ minwidth: 500 , minHeight: 393 }} className="w-3/4">
         <button onClick={() => setCarouselToggle(!carouselToggle)}>exit</button>
       <Masonry
-        columns={2}
+        columns={3}
         spacing={2}
         defaultHeight={500}
         defaultColumns={3}

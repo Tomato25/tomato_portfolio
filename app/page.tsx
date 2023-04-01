@@ -13,7 +13,7 @@ import {
 import { socialVariants } from "./animations/svgAnimations";
 import { Links } from "@/public/aboutContent";
 import Logo from "public/Images/Logo.svg";
-import { PageWrapper } from "./projects/page-wrapper";
+import PageWrapper from "./projects/page-wrapper";
 
 export default function Home() {
   const name = "Hrvoje Tomic";

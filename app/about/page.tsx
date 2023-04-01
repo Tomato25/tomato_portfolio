@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { PageWrapper } from "../projects/page-wrapper";
+import PageWrapper from "../projects/page-wrapper";
 import LandingComponent from "./components/landingComponent";
 import ExperienceComponent from "./components/Experience";
 import EducationComponent from "./components/Education";
