@@ -1,6 +1,6 @@
 "use client";
 import ProfileCircle from "../components/ProfileCircle";
-import { motion, useAnimation } from "framer-motion";
+import { animate, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React, { useEffect } from "react";
 import { lettersVariants } from "../animations/textAnimations";
@@ -220,7 +220,8 @@ export default function About() {
           <motion.h1
             variants={sectionTitleVariants}
             initial="hidden"
-            animate="visible"
+            animate={controls}
+            ref={ref}
             className="text-6xl self-center vertical-rl text-shadow-vertical"
           >
             {educationSubtitle.split("").map((char, index) => {
@@ -247,35 +248,33 @@ export default function About() {
                     </span>
 
                     <motion.ul
-                      variants={paraVariants}
+                      variants={ulVariants}
                       initial="hidden"
-                      animate="visible"
+                      animate={controls}
+                      ref={ref}
                       className="list-disc pl-10 text-lg "
                     >
                       {education.description.map((para, index) => {
                         return (
                           <motion.li
-                            variants={paraWordVariants}
+                            variants={liVariants}
                             key={index}
                             className="mb-3"
                           >
-                            {para.split("").map((char, index) => {
-                              return (
-                                <motion.span
-                                  key={char + "-" + index}
-                                  variants={lettersVariants}
-                                >
-                                  {char}
-                                </motion.span>
-                              );
-                            })}
+                            {para}
                           </motion.li>
                         );
                       })}
                     </motion.ul>
                   </div>
                 </div>
-                <h1 className="text-2xl self-center vertical-rl text-shadow-vertical">
+                <motion.h1
+                  variants={subtitleVariants}
+                  initial="hidden"
+                  animate={controls}
+                  ref={ref}
+                  className="text-2xl self-center vertical-rl text-shadow-vertical"
+                >
                   {education.duration.split("").map((char, index) => {
                     return (
                       <motion.span
@@ -286,7 +285,7 @@ export default function About() {
                       </motion.span>
                     );
                   })}
-                </h1>
+                </motion.h1>
               </div>
             );
           })}
@@ -294,7 +293,13 @@ export default function About() {
 
         <div className="bg-white text-green">
           <div className="flex flex-row  gap-24 min-w-full pl-14  my-28">
-            <h1 className="text-6xl self-center vertical-rl text-shadow-vertical-light">
+            <motion.h1
+              variants={sectionTitleVariants}
+              initial="hidden"
+              animate={controls}
+              ref={ref}
+              className="text-6xl self-center vertical-rl text-shadow-vertical-light"
+            >
               {softSkillsSubtitle.split("").map((char, index) => {
                 return (
                   <motion.span
@@ -305,9 +310,15 @@ export default function About() {
                   </motion.span>
                 );
               })}
-            </h1>
+            </motion.h1>
             <div className="flex flex-col items-start gap-16 self-center  w-full mx-auto pr-12">
-              <h2 className="text-4xl self-center text-shadow-light">
+              <motion.h2
+                variants={subtitleVariants}
+                initial="hidden"
+                animate={controls}
+                ref={ref}
+                className="text-4xl self-center text-shadow-light"
+              >
                 {CommunicationSubtitle.split("").map((char, index) => {
                   return (
                     <motion.span
@@ -318,12 +329,18 @@ export default function About() {
                     </motion.span>
                   );
                 })}
-              </h2>
+              </motion.h2>
               <div className="flex flex-row justify-center items-start gap-8 min-w-full">
                 {SoftSkillsCommunication.map((skill, index) => {
                   return (
                     <div className="flex flex-col justify-center items-start gap-4 w-1/2">
-                      <h2 className=" text-lg">
+                      <motion.h2
+                        variants={subtitleVariants}
+                        initial="hidden"
+                        animate={controls}
+                        ref={ref}
+                        className=" text-lg"
+                      >
                         {skill.setting.split("").map((char, index) => {
                           return (
                             <motion.span
@@ -334,11 +351,12 @@ export default function About() {
                             </motion.span>
                           );
                         })}
-                      </h2>
+                      </motion.h2>
                       <motion.ul
-                        variants={paraVariants}
+                        variants={ulVariants}
                         initial="hidden"
-                        animate="visible"
+                        animate={controls}
+                        ref={ref}
                         className="list-disc pl-10 text-lg "
                       >
                         {skill.description.map((para, index) => {
@@ -348,16 +366,7 @@ export default function About() {
                               key={index}
                               className="mb-3"
                             >
-                              {para.split("").map((char, index) => {
-                                return (
-                                  <motion.span
-                                    key={char + "-" + index}
-                                    variants={lettersVariants}
-                                  >
-                                    {char}
-                                  </motion.span>
-                                );
-                              })}
+                              {para}
                             </motion.li>
                           );
                         })}
@@ -367,7 +376,13 @@ export default function About() {
                 })}
               </div>
 
-              <h2 className="text-4xl self-center text-shadow-light">
+              <motion.h2
+                variants={subtitleVariants}
+                initial="hidden"
+                animate={controls}
+                ref={ref}
+                className="text-4xl self-center text-shadow-light"
+              >
                 {TPMSubtitle.split("").map((char, index) => {
                   return (
                     <motion.span
@@ -378,34 +393,26 @@ export default function About() {
                     </motion.span>
                   );
                 })}
-              </h2>
+              </motion.h2>
               <div className="flex flex-row justify-start items-start gap-8 min-w-full">
                 {SoftSkillsTime.map((skill, index) => {
                   return (
                     <div className="flex flex-col justify-center items-start gap-4">
                       <motion.ul
-                        variants={paraVariants}
+                        variants={ulVariants}
                         initial="hidden"
-                        animate="visible"
+                        animate={controls}
+                        ref={ref}
                         className="list-disc pl-10 text-lg "
                       >
                         {skill.description.map((para, index) => {
                           return (
                             <motion.li
-                              variants={paraWordVariants}
+                              variants={liVariants}
                               key={index}
                               className="mb-3"
                             >
-                              {para.split("").map((char, index) => {
-                                return (
-                                  <motion.span
-                                    key={char + "-" + index}
-                                    variants={lettersVariants}
-                                  >
-                                    {char}
-                                  </motion.span>
-                                );
-                              })}
+                             {para}
                             </motion.li>
                           );
                         })}
