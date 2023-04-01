@@ -7,6 +7,8 @@ export const Links = [
 
 ];
 
+
+
 export const aboutPara = [
   "BSc Computing graduate with experience in web and mobile application development. Web development technologies I work with are HTML, CSS, JS and React, while I'm confident in using Adobe XD for design.",
   "As part of my role as a Web developer intern, I have autonomously delivered a project of designing and developing a website for the NTUs Employability department.",
