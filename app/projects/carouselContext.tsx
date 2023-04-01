@@ -6,7 +6,7 @@ interface ContextProps {
 }
 
 const InitialValues: ContextProps = {
-  carouselToggle: false,
+  carouselToggle: true,
   setCarouselToggle: () => undefined,
 };
 

@@ -5,6 +5,8 @@ import Paper from '@mui/material/Paper';
 import Masonry from '@mui/lab/Masonry';
 import image from "public/Images/SnagaPrirode/screen1.png"
 import { useContext } from '../projects/carouselContext';
+import { motion } from 'framer-motion';
+import { gridItemVariants, gridVariants } from '../projects/animations';
 
 const heights = [150, 30, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 30, 50, 80];
 
@@ -75,10 +77,15 @@ export default function SSRMasonry() {
         defaultHeight={500}
         defaultColumns={3}
         defaultSpacing={1}
+        component={motion.div}
+        variants={gridVariants}
+        initial="hidden"
+        animate="visible"
       >
         {itemData.map((item, index) => (
-          <div key={index}>
+          <motion.div key={index} variants={gridItemVariants}>
             <img
+            className='rounded-lg'
               src={`${item.img}?w=162&auto=format`}
               srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
               alt={item.title}
@@ -90,7 +97,7 @@ export default function SSRMasonry() {
                 width: '100%',
               }}
             />
-          </div>
+          </motion.div>
         ))}
       </Masonry>
     </Box>

@@ -1,15 +1,15 @@
 export const imageVariants = {
     hidden: {
       opacity: 0,
-      x: -300
+      y: -300
     },
     visible: {
-     x: 0,
+     y: 0,
       opacity: 1,
       transition: {
-        delay:1,
-        duration: 0.5,
-        x: { type: "spring", stiffness: 300, damping: 30 },
+        delay:0.5,
+        duration: 1,
+        y: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.3 }
       },
     },
@@ -46,4 +46,24 @@ export const titleVariants = {
       }
   }
 
+
+
+  export const gridVariants ={
+    hidden:{},
+    visible:{
+      transition:{
+        staggerChildren:0.5
+      }
+    }
+  }
+  
+
+  export const gridItemVariants ={
+    hidden:{opacity:0},
+    visible:{opacity:1,
+      transition:{
+        duration:1
+      }
+    }
+  }
   
