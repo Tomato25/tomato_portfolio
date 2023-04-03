@@ -6,7 +6,7 @@ import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
 import image from "public/Images/SnagaPrirode/screen1.png";
 import { useContext } from "../projects/carouselContext";
-import { motion } from "framer-motion";
+import { LayoutGroup, motion } from "framer-motion";
 import { gridItemVariants, gridVariants } from "../projects/animations";
 import ReactModal from "react-modal";
 
@@ -140,19 +140,71 @@ export default function SSRMasonry() {
               className="Modal"
               overlayClassName="Overlay"
             >
-              <div className="flex flex-col justify-between items-center">
-                <button className="self-end pr-10 pt-4" onClick={() => closeModal()}>Close Modal</button>
+              <motion.div className="flex flex-col justify-between items-center">
+                <button
+                  className="self-end pr-10 pt-4"
+                  onClick={() => closeModal()}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg"
+                    width="44"
+                    height="44"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#ADE6B9"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
                 <div className="flex flex-row justify-between items-center gap-16">
-                  <button onClick={() => handlePrevImage()}>Prev</button>
+                  <button onClick={() => handlePrevImage()}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg"
+                      width="44"
+                      height="44"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ADE6B9"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <polyline points="15 6 9 12 15 18" />
+                    </svg>
+                  </button>
                   <img
                     src={enlargedImage}
                     alt={item.title}
                     style={{ maxWidth: "auto", height: "90vh" }}
                     className="rounded-2xl"
                   />
-                  <button onClick={() => handleNextImage()}>Next</button>
+                  <button onClick={() => handleNextImage()}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg"
+                      width="44"
+                      height="44"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ADE6B9"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <polyline points="9 6 15 12 9 18" />
+                    </svg>
+                  </button>
                 </div>
-              </div>
+              </motion.div>
             </ReactModal>
           </motion.div>
         ))}
