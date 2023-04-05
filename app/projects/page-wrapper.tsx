@@ -26,7 +26,7 @@ export default function  PageWrapper({children} : MyProps) {
       }, [path]);
 
   return (
-    <AnimatePresence onExitComplete={() => window.scrollTo(0, 0)} mode="popLayout">
+    <AnimatePresence onExitComplete={() => window.scrollTo(0, 0)}>
     <motion.div variants={pageVariants} initial="hidden" animate="visible" exit={{opacity:1, y: "0%"}}  key={path} >
         {children}
     </motion.div>

@@ -6,9 +6,10 @@ import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
 import image from "public/Images/SnagaPrirode/screen1.png";
 import { useContext } from "../projects/carouselContext";
-import { LayoutGroup, motion } from "framer-motion";
+import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import { gridItemVariants, gridVariants } from "../projects/animations";
 import ReactModal from "react-modal";
+import { socialVariants } from "../animations/svgAnimations";
 
 const heights = [
   150, 30, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 30, 50, 80,
@@ -49,18 +50,6 @@ const itemData = [
     img: "/Images/SnagaPrirode/screen5.png",
     title: "Sea star",
   },
-  {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
-  },
 ];
 
 export default function SSRMasonry() {
@@ -99,8 +88,26 @@ export default function SSRMasonry() {
   };
 
   return (
-    <Box sx={{ minwidth: 500, minHeight: 393 }} className="w-full">
-      <button onClick={() => setCarouselToggle(!carouselToggle)}>exit</button>
+    <Box sx={{ minwidth: 500, minHeight: 393 }} className="w-full flex flex-col justify-center">
+      <motion.button variants={socialVariants} initial="hidden" animate="visible" className="mb-8 mx-auto" onClick={() => setCarouselToggle(!carouselToggle)}>
+        {" "}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg"
+          width="44"
+          height="44"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#ADE6B9"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </motion.button>
       <Masonry
         columns={3}
         spacing={5}
@@ -140,7 +147,7 @@ export default function SSRMasonry() {
               className="Modal"
               overlayClassName="Overlay"
             >
-              <motion.div className="flex flex-col justify-between items-center">
+              <motion.div className="flex flex-col justify-between items-center" >
                 <button
                   className="self-end pr-10 pt-4"
                   onClick={() => closeModal()}
