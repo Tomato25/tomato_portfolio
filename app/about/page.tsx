@@ -11,7 +11,7 @@ import SoftSkillsComponent from "./components/SoftSkills";
 export default function About() {
   return (
     <PageWrapper>
-      <main className="flex flex-col  flex-grow  ">
+      <main className="flex flex-col  flex-grow ">
         <LandingComponent />
         <ExperienceComponent />
         <EducationComponent />
