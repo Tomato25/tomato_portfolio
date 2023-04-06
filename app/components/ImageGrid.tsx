@@ -1,65 +1,37 @@
 import * as React from "react";
 import { useState } from "react";
 import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
-import image from "public/Images/SnagaPrirode/screen1.png";
-import { useContext } from "../projects/carouselContext";
+import { useChechuContext } from "../projects/contexts/ChechuContext";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import { gridItemVariants, gridVariants } from "../projects/animations";
 import ReactModal from "react-modal";
 import { socialVariants } from "../animations/svgAnimations";
 
-const heights = [
-  150, 30, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 30, 50, 80,
-];
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(0.5),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
+interface Image {
+  src: string;
+  alt: string;
+}
 
-const imageUrl = [
-  "/Images/SnagaPrirode/screen1.png",
-  "/Images/SnagaPrirode/screen2.png",
-  "/Images/SnagaPrirode/screen3.png",
-];
+interface Props {
+  images: Image[];
+  function: Function;
+  toggle: boolean;  
+}
 
-const itemData = [
-  {
-    img: "/Images/SnagaPrirode/screen1.png",
-    title: "Fern",
-  },
-  {
-    img: "/Images/SnagaPrirode/screen2.png",
-    title: "Snacks",
-  },
-  {
-    img: "/Images/SnagaPrirode/screen3.png",
-    title: "Mushrooms",
-  },
-  {
-    img: "/Images/SnagaPrirode/screen4.png",
-    title: "Tower",
-  },
-  {
-    img: "/Images/SnagaPrirode/screen5.png",
-    title: "Sea star",
-  },
-];
-
-export default function SSRMasonry() {
-  const { carouselToggle, setCarouselToggle } = useContext();
+export default function SSRMasonry(props: Props) {
+  
+  const carouselToggle = props.toggle;
+  const setCarouselToggle = props.function;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [enlargedImage, setEnlargedImage] = useState("");
   const [carouselImages, setCarouselImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = carouselImages.length;
+
+  const itemData = props.images;
 
   const handleImageClick = (img: string, images: string[]) => {
     setIsModalOpen(true);
@@ -119,18 +91,18 @@ export default function SSRMasonry() {
         initial="hidden"
         animate="visible"
       >
-        {itemData.map((item, index) => (
+        {itemData.map((item: Image, index: React.Key | null | undefined) => (
           <motion.div key={index} variants={gridItemVariants}>
             <img
               className="rounded-lg"
-              src={`${item.img}?w=162&auto=format`}
-              srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
-              alt={item.title}
+              src={`${item.src}?w=162&auto=format`}
+              srcSet={`${item.src}?w=162&auto=format&dpr=2 2x`}
+              alt={item.alt}
               loading="lazy"
               onClick={() =>
                 handleImageClick(
-                  item.img,
-                  itemData.map((i) => i.img)
+                  item.src,
+                  itemData.map((i) => i.src)
                 )
               }
               style={{
@@ -189,7 +161,7 @@ export default function SSRMasonry() {
                   </button>
                   <img
                     src={enlargedImage}
-                    alt={item.title}
+                    alt={item.alt}
                     style={{ maxWidth: "auto", height: "90vh" }}
                     className="rounded-2xl"
                   />

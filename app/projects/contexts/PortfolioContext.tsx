@@ -18,7 +18,7 @@ const context = React.createContext(InitialValues);
 
 const { Provider } = context;
 
-export const ContextProvider = ({ children }: WithChildProps) => {
+export const PortfolioContextProvider = ({ children }: WithChildProps) => {
 const[carouselToggle, setCarouselToggle ] = React.useState(InitialValues.carouselToggle)
   const values = {
     carouselToggle,
@@ -28,7 +28,7 @@ const[carouselToggle, setCarouselToggle ] = React.useState(InitialValues.carouse
   return <Provider value={values}>{children}</Provider>;
 };
 
-export const useContext = () => {
+export const usePortfolioContext = () => {
         const {...state} = React.useContext(context)
         return {...state}
 }
