@@ -3,8 +3,8 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
-import { GrReactjs } from "react-icons/gr";
-import { SiAdobexd, SiCss3 } from "react-icons/si";
+import { SiAdobexd, SiTypescript, SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import {TbBrandFramerMotion} from "react-icons/tb"
 import Image from "next/image";
 import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
 import { socialVariants, techVariants } from "../../animations/svgAnimations";
@@ -58,7 +58,7 @@ export default function Tomic_code_portfolio() {
                 >
                   <Image
                     src={PortfolioBanner}
-                    className="w-2/3 rounded-lg"
+                    className="w-2/3 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
                     alt="Snaga prirode"
                     onClick={() => setCarouselToggle(!carouselToggle)}
                   />
@@ -88,21 +88,11 @@ export default function Tomic_code_portfolio() {
                 variants={socialVariants}
                 initial="hidden"
                 animate="visible"
-                href="https://github.com/Tomato25/SnagaPrirode"
+                href="https://github.com/Tomato25/tomato_portfolio"
                 target="_blank"
                 className="text-xl lg:text-4xl"
               >
                 <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
-              </motion.a>
-              <motion.a
-                variants={socialVariants}
-                initial="hidden"
-                animate="visible"
-                href="https://snagaprirode.com.hr"
-                target="_blank"
-                className="text-xl lg:text-5xl"
-              >
-                <HiExternalLink className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
               </motion.a>
             </motion.div>
           </div>
@@ -165,9 +155,57 @@ export default function Tomic_code_portfolio() {
               }}
               className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
             >
-              <h1>React</h1>
+              <h1>NextJS</h1>
               <h1>
-                <GrReactjs />
+                <SiNextdotjs />
+              </h1>
+            </motion.div>
+            <motion.div
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
+            >
+              <h1>Typescript</h1>
+              <h1>
+                <SiTypescript />
+              </h1>
+            </motion.div>
+            <motion.div
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
+            >
+              <h1>TailwindCSS</h1>
+              <h1>
+                <SiTailwindcss />
+              </h1>
+            </motion.div>
+            <motion.div
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
+            >
+              <h1>Framer Motion</h1>
+              <h1>
+                <TbBrandFramerMotion />
               </h1>
             </motion.div>
             <motion.div
@@ -186,40 +224,10 @@ export default function Tomic_code_portfolio() {
                 <SiAdobexd />
               </h1>
             </motion.div>
-            <motion.div
-              variants={techVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{
-                opacity: 1,
-                scale: 1.1,
-                transition: { duration: 0.1 },
-              }}
-              className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
-            >
-              <h1>CSS</h1>
-              <h1>
-                <SiCss3 />
-              </h1>
-            </motion.div>
+            
           </motion.div>
   
-          <motion.div className="w-screen h-fit bg-slate-200 text-green text-xl p-40 shadow-large">
-            <h2>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus
-              repellat dolores, quis, provident suscipit officiis magni laboriosam
-              explicabo aut repellendus est sunt vel, nemo maxime commodi
-              architecto. Deleniti hic illo quisquam sed rerum illum quaerat
-              mollitia tempore iure molestiae aliquam reiciendis, adipisci, sequi
-              vitae. In aperiam facilis modi aliquid consequatur omnis magni
-              suscipit harum illo consequuntur nam iste odio, nihil possimus a ea.
-              Dolorum praesentium excepturi earum pariatur quae aut dolorem libero
-              voluptatum nesciunt, laborum non magni optio inventore obcaecati eos
-              nisi laudantium ab architecto quam, quas sapiente voluptas! Quas
-              tempora hic dicta doloremque possimus dolore sunt quasi voluptas
-              esse?
-            </h2>
-          </motion.div>
+      
         </LayoutGroup>
       </div>
     );

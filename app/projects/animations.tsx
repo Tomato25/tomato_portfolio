@@ -1,7 +1,7 @@
 export const imageVariants = {
     hidden: {
       opacity: 0,
-      y: 300
+      y: 0
     },
     visible: {
      y: 0,

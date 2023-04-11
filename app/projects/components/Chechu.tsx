@@ -4,19 +4,18 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { GrReactjs } from "react-icons/gr";
-import { SiAdobexd, SiCss3 } from "react-icons/si";
-import {TbBrandFramerMotion} from "react-icons/tb"
+import { SiAdobexd, SiTypescript, SiNextdotjs, SiTailwindcss } from "react-icons/si";import {TbBrandFramerMotion} from "react-icons/tb"
 import Image from "next/image";
 import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
 import { socialVariants, techVariants } from "../../animations/svgAnimations";
 import { imageVariants, titleVariants } from "../animations";
 import { lettersVariants, wordVariants } from "../../animations/textAnimations";
-import { snagaPrirode } from "public/projectsContent";
+import { chechu } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
-import SPBanner from "public/Images/SnagaPrirode/screen0.png";
+import ChechuBanner from "public/Images/Chechu/ChechuScreen1.png";
 import { useChechuContext } from "../contexts/ChechuContext";
 
-export default function Snaga_prirode() {
+export default function Chechu() {
   const { carouselToggle, setCarouselToggle } = useChechuContext();
 
   return (
@@ -30,7 +29,7 @@ export default function Snaga_prirode() {
             animate="visible"
             className="text-xl lg:text-5xl self-center vertical-rl text-shadow-vertical"
           >
-            {snagaPrirode.year.split("").map((char, index) => {
+            {chechu.year.split("").map((char, index) => {
               return (
                 <motion.span
                   key={char + "-" + index}
@@ -43,7 +42,6 @@ export default function Snaga_prirode() {
           </motion.h1>
 
           <AnimatePresence mode="wait">
-            {carouselToggle ? (
               <motion.div
                 key="Image"
                 layout
@@ -58,28 +56,12 @@ export default function Snaga_prirode() {
                 className="flex justify-center items-center"
               >
                 <Image
-                  src={SPBanner}
-                  className="w-2/3 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
+                  src={ChechuBanner}
+                  className="w-2/3 rounded-lg svg-shadow"
                   alt="Snaga prirode"
-                  onClick={() => setCarouselToggle(!carouselToggle)}
+                
                 />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="masonry"
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{
-                  opacity: 0,
-                  y: -300,
-                  transition: { duration: 1 },
-                }}
-                className="flex justify-center items-center"
-              >
-                <SSRMasonry images={snagaPrirode.images} function={setCarouselToggle} toggle={carouselToggle}/>
-              </motion.div>
-            )}
+              </motion.div>       
           </AnimatePresence>
           <motion.div
             layout
@@ -95,16 +77,6 @@ export default function Snaga_prirode() {
             >
               <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
             </motion.a>
-            <motion.a
-              variants={socialVariants}
-              initial="hidden"
-              animate="visible"
-              href="https://snagaprirode.com.hr"
-              target="_blank"
-              className="text-xl lg:text-5xl"
-            >
-              <HiExternalLink className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
-            </motion.a>
           </motion.div>
         </div>
         <motion.div
@@ -118,7 +90,7 @@ export default function Snaga_prirode() {
             variants={lettersVariants}
             className="text-4xl text-shadow"
           >
-            2
+            0
           </motion.h1>
           <motion.svg
             variants={lettersVariants}
@@ -139,7 +111,7 @@ export default function Snaga_prirode() {
             animate="visible"
             className="text-4xl text-shadow"
           >
-            {snagaPrirode.name.split("").map((char, index) => {
+            {chechu.name.split("").map((char, index) => {
               return (
                 <motion.span
                   key={char + "-" + index}
@@ -156,70 +128,85 @@ export default function Snaga_prirode() {
           className="flex flex-row justify-between items-center gap-8  text-xl"
         >
           <motion.div
-            variants={techVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover={{
-              opacity: 1,
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
-          >
-            <h1>React</h1>
-            <h1>
-              <GrReactjs />
-            </h1>
-          </motion.div>
-          <motion.div
-            variants={techVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover={{
-              opacity: 1,
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
-          >
-            <h1>CSS</h1>
-            <h1>
-              <SiCss3 />
-            </h1>
-          </motion.div>
-          <motion.div
-            variants={techVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover={{
-              opacity: 1,
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
-          >
-            <h1>Framer Motion</h1>
-            <h1>
-              <TbBrandFramerMotion />
-            </h1>
-          </motion.div>
-          
-          <motion.div
-            variants={techVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover={{
-              opacity: 1,
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
-          >
-            <h1>AdobeXd</h1>
-            <h1>
-              <SiAdobexd />
-            </h1>
-          </motion.div>
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
+            >
+              <h1>NextJS</h1>
+              <h1>
+                <SiNextdotjs />
+              </h1>
+            </motion.div>
+            <motion.div
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
+            >
+              <h1>Typescript</h1>
+              <h1>
+                <SiTypescript />
+              </h1>
+            </motion.div>
+            <motion.div
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
+            >
+              <h1>TailwindCSS</h1>
+              <h1>
+                <SiTailwindcss />
+              </h1>
+            </motion.div>
+            <motion.div
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
+            >
+              <h1>Framer Motion</h1>
+              <h1>
+                <TbBrandFramerMotion />
+              </h1>
+            </motion.div>
+            <motion.div
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
+            >
+              <h1>AdobeXd</h1>
+              <h1>
+                <SiAdobexd />
+              </h1>
+            </motion.div>
          
         </motion.div>
       </LayoutGroup>

@@ -4,19 +4,20 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { GrReactjs } from "react-icons/gr";
-import { SiAdobexd, SiCss3 } from "react-icons/si";
+import { SiAdobexd, SiFlutter,SiFirebase } from "react-icons/si";
 import {TbBrandFramerMotion} from "react-icons/tb"
 import Image from "next/image";
 import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
 import { socialVariants, techVariants } from "../../animations/svgAnimations";
 import { imageVariants, titleVariants } from "../animations";
 import { lettersVariants, wordVariants } from "../../animations/textAnimations";
-import { snagaPrirode } from "public/projectsContent";
+import { WellbeingApp } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
-import SPBanner from "public/Images/SnagaPrirode/screen0.png";
+import WABanner1 from "public/Images/WellbeingApp/1.jpg";
+import WABanner2 from "public/Images/WellbeingApp/4.jpg";
 import { useChechuContext } from "../contexts/ChechuContext";
 
-export default function Snaga_prirode() {
+export default function WellbeingApplication() {
   const { carouselToggle, setCarouselToggle } = useChechuContext();
 
   return (
@@ -30,7 +31,7 @@ export default function Snaga_prirode() {
             animate="visible"
             className="text-xl lg:text-5xl self-center vertical-rl text-shadow-vertical"
           >
-            {snagaPrirode.year.split("").map((char, index) => {
+            {WellbeingApp.year.split("").map((char, index) => {
               return (
                 <motion.span
                   key={char + "-" + index}
@@ -55,12 +56,18 @@ export default function Snaga_prirode() {
                   y: -300,
                   transition: { duration: 1 },
                 }}
-                className="flex justify-center items-center"
+                className="flex flex-row gap-10 justify-center items-center"
               >
                 <Image
-                  src={SPBanner}
-                  className="w-2/3 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
-                  alt="Snaga prirode"
+                  src={WABanner1}
+                  className="w-1/5 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
+                  alt="WellbeingApp"
+                  onClick={() => setCarouselToggle(!carouselToggle)}
+                />
+                <Image
+                  src={WABanner2}
+                  className="w-1/5 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
+                  alt="WellbeingApp"
                   onClick={() => setCarouselToggle(!carouselToggle)}
                 />
               </motion.div>
@@ -77,7 +84,7 @@ export default function Snaga_prirode() {
                 }}
                 className="flex justify-center items-center"
               >
-                <SSRMasonry images={snagaPrirode.images} function={setCarouselToggle} toggle={carouselToggle}/>
+                <SSRMasonry images={WellbeingApp.images} function={setCarouselToggle} toggle={carouselToggle}/>
               </motion.div>
             )}
           </AnimatePresence>
@@ -89,21 +96,11 @@ export default function Snaga_prirode() {
               variants={socialVariants}
               initial="hidden"
               animate="visible"
-              href="https://github.com/Tomato25/SnagaPrirode"
+              href="https://github.com/Tomato25/wellbeing_app"
               target="_blank"
               className="text-xl lg:text-4xl"
             >
               <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
-            </motion.a>
-            <motion.a
-              variants={socialVariants}
-              initial="hidden"
-              animate="visible"
-              href="https://snagaprirode.com.hr"
-              target="_blank"
-              className="text-xl lg:text-5xl"
-            >
-              <HiExternalLink className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
             </motion.a>
           </motion.div>
         </div>
@@ -118,7 +115,7 @@ export default function Snaga_prirode() {
             variants={lettersVariants}
             className="text-4xl text-shadow"
           >
-            2
+            4
           </motion.h1>
           <motion.svg
             variants={lettersVariants}
@@ -139,7 +136,7 @@ export default function Snaga_prirode() {
             animate="visible"
             className="text-4xl text-shadow"
           >
-            {snagaPrirode.name.split("").map((char, index) => {
+            {WellbeingApp.name.split("").map((char, index) => {
               return (
                 <motion.span
                   key={char + "-" + index}
@@ -166,9 +163,9 @@ export default function Snaga_prirode() {
             }}
             className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
           >
-            <h1>React</h1>
+            <h1>Flutter</h1>
             <h1>
-              <GrReactjs />
+              <SiFlutter />
             </h1>
           </motion.div>
           <motion.div
@@ -182,25 +179,9 @@ export default function Snaga_prirode() {
             }}
             className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
           >
-            <h1>CSS</h1>
+            <h1>Firebase</h1>
             <h1>
-              <SiCss3 />
-            </h1>
-          </motion.div>
-          <motion.div
-            variants={techVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover={{
-              opacity: 1,
-              scale: 1.1,
-              transition: { duration: 0.1 },
-            }}
-            className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
-          >
-            <h1>Framer Motion</h1>
-            <h1>
-              <TbBrandFramerMotion />
+              <SiFirebase />
             </h1>
           </motion.div>
           

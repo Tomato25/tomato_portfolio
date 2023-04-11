@@ -8,6 +8,10 @@ export const snagaPrirode = {
   year: "2023",
   images: [
     {
+        src: "/Images/SnagaPrirode/screen0.png",
+        alt: "screenshot0",
+      },
+    {
       src: "/Images/SnagaPrirode/screen1.png",
       alt: "screenshot1",
     },
@@ -35,24 +39,24 @@ export const portfolio = {
   year: "2023",
   images: [
     {
-      src: "/Images/SnagaPrirode/screen1.png",
+      src: "/Images/Portfolio/1.png",
       alt: "screenshot1",
     },
     {
-      src: "/Images/SnagaPrirode/screen2.png",
-      alt: "screenshot2",
+        src: "/Images/Portfolio/2.png",
+        alt: "screenshot2",
     },
     {
-      src: "/Images/SnagaPrirode/screen3.png",
-      alt: "screenshot3",
+        src: "/Images/Portfolio/3.png",
+        alt: "screenshot3",
     },
     {
-      src: "/Images/SnagaPrirode/screen4.png",
-      alt: "screenshot4",
+        src: "/Images/Portfolio/4.png",
+        alt: "screenshot4",
     },
     {
-      src: "/Images/SnagaPrirode/screen5.png",
-      alt: "screenshot5",
+        src: "/Images/Portfolio/5.png",
+        alt: "screenshot5",
     },
   ],
 };
@@ -81,6 +85,10 @@ export const NTURise = {
       src: "/Images/NTURise/5.png",
       alt: "screenshot5",
     },
+    {
+        src: "/Images/NTURise/6.png",
+        alt: "screenshot6",
+      },
   ],
 };
 
@@ -89,23 +97,23 @@ export const WellbeingApp = {
   year: "2020",
   images: [
     {
-      src: "/Images/WellbeingApp/1.png",
+      src: "/Images/WellbeingApp/1.jpg",
       alt: "screenshot1",
     },
     {
-      src: "/Images/WellbeingApp/2.png",
+      src: "/Images/WellbeingApp/2.jpg",
       alt: "screenshot2",
     },
     {
-      src: "/Images/WellbeingApp/3.png",
+      src: "/Images/WellbeingApp/3.jpg",
       alt: "screenshot3",
     },
     {
-      src: "/Images/WellbeingApp/4.png",
+      src: "/Images/WellbeingApp/4.jpg",
       alt: "screenshot4",
     },
     {
-      src: "/Images/WellbeingApp/5.png",
+      src: "/Images/WellbeingApp/5.jpg",
       alt: "screenshot5",
     },
   ],

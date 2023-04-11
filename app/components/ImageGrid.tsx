@@ -83,7 +83,7 @@ export default function SSRMasonry(props: Props) {
       <Masonry
         columns={3}
         spacing={5}
-        defaultHeight={500}
+        defaultHeight={700}
         defaultColumns={3}
         defaultSpacing={10}
         component={motion.div}
@@ -94,7 +94,7 @@ export default function SSRMasonry(props: Props) {
         {itemData.map((item: Image, index: React.Key | null | undefined) => (
           <motion.div key={index} variants={gridItemVariants}>
             <img
-              className="rounded-lg"
+              className="rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
               src={`${item.src}?w=162&auto=format`}
               srcSet={`${item.src}?w=162&auto=format&dpr=2 2x`}
               alt={item.alt}

@@ -141,6 +141,25 @@ body {
   left: 0;
 }
 
+.InitialModal{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  background-color: rgb(233, 233, 233);
+  height: 30vh;
+  width: 30vw;
+
+}
+
+.InitialModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:rgba(0, 0, 0, 0.20);
+}
 
 .Modal {
   position: absolute;

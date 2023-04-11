@@ -14,6 +14,7 @@ import { socialVariants } from "./animations/svgAnimations";
 import { Links } from "@/public/aboutContent";
 import Logo from "public/Images/Logo.svg";
 import PageWrapper from "./projects/page-wrapper";
+import InitialModal from "./components/InitialModal";
 
 export default function Home() {
   const name = "Hrvoje Tomic";
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <PageWrapper>
     <main className="h-screen w-screen flex flex-col justify-start">
+      <InitialModal />
       <Particlesbackground />
       <div className="flex flex-row h-100 justify-between items-center  mx-16 text-4xl mt-4 z-10">
         <div className="flex flex-row h-100 justify-between items-start gap-16 mx-16">

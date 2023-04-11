@@ -1,18 +1,16 @@
 "useClient";
 
 import React from "react";
-import { FaGithub } from "react-icons/fa";
-import { HiExternalLink } from "react-icons/hi";
-import { GrReactjs } from "react-icons/gr";
-import { SiAdobexd, SiCss3 } from "react-icons/si";
+
+import { SiAdobexd, SiBootstrap, SiHtml5 } from "react-icons/si";
 import Image from "next/image";
 import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
-import { socialVariants, techVariants } from "../../animations/svgAnimations";
+import { techVariants } from "../../animations/svgAnimations";
 import { imageVariants, titleVariants } from "../animations";
 import { lettersVariants, wordVariants } from "../../animations/textAnimations";
 import { NTURise } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
-import RiseBanner from "public/Images/NTURise/3.png";
+import RiseBanner from "public/Images/NTURise/6.png";
 import { useNtuRiseContext } from "../contexts/NtuRiseContext";
 
 export default function NtuRise() {
@@ -58,7 +56,7 @@ export default function NtuRise() {
                 >
                   <Image
                     src={RiseBanner}
-                    className="w-2/3 rounded-lg"
+                    className="w-full rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
                     alt="Snaga prirode"
                     onClick={() => setCarouselToggle(!carouselToggle)}
                   />
@@ -84,26 +82,7 @@ export default function NtuRise() {
               layout
               className="flex flex-col justify-center items-center gap-4 "
             >
-              <motion.a
-                variants={socialVariants}
-                initial="hidden"
-                animate="visible"
-                href="https://github.com/Tomato25/SnagaPrirode"
-                target="_blank"
-                className="text-xl lg:text-4xl"
-              >
-                <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
-              </motion.a>
-              <motion.a
-                variants={socialVariants}
-                initial="hidden"
-                animate="visible"
-                href="https://snagaprirode.com.hr"
-                target="_blank"
-                className="text-xl lg:text-5xl"
-              >
-                <HiExternalLink className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
-              </motion.a>
+             
             </motion.div>
           </div>
           <motion.div
@@ -165,9 +144,25 @@ export default function NtuRise() {
               }}
               className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
             >
-              <h1>React</h1>
+              <h1>HTML</h1>
               <h1>
-                <GrReactjs />
+                <SiHtml5 />
+              </h1>
+            </motion.div>
+            <motion.div
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
+            >
+              <h1>Bootstrap</h1>
+              <h1>
+                <SiBootstrap />
               </h1>
             </motion.div>
             <motion.div
@@ -186,22 +181,7 @@ export default function NtuRise() {
                 <SiAdobexd />
               </h1>
             </motion.div>
-            <motion.div
-              variants={techVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{
-                opacity: 1,
-                scale: 1.1,
-                transition: { duration: 0.1 },
-              }}
-              className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
-            >
-              <h1>CSS</h1>
-              <h1>
-                <SiCss3 />
-              </h1>
-            </motion.div>
+            
           </motion.div>
   
           <motion.div className="w-screen h-fit bg-slate-200 text-green text-xl p-40 shadow-large">
