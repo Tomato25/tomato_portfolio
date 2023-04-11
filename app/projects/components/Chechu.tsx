@@ -59,7 +59,7 @@ export default function Chechu() {
                   src={ChechuBanner}
                   className="w-2/3 rounded-lg svg-shadow"
                   alt="Snaga prirode"
-                
+                  placeholder="blur"
                 />
               </motion.div>       
           </AnimatePresence>
