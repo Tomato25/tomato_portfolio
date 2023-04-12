@@ -9,6 +9,7 @@ import { socialVariants } from "../animations/svgAnimations";
 import logo from "public/Images/Logo.svg";
 import Image from "next/image";
 import PageWrapper from "../projects/page-wrapper";
+import { lettersVariants } from "../animations/textAnimations";
 
 function Contact() {
   return (
@@ -31,6 +32,9 @@ function Contact() {
             </motion.a>
             <motion.svg
               className="svg-shadow"
+              variants={socialVariants}
+              initial="hidden"
+              animate="visible"
               width="6"
               height="50"
               viewBox="0 0 6 101"
@@ -64,6 +68,9 @@ function Contact() {
             </motion.a>
             <motion.svg
               className="svg-shadow"
+              variants={socialVariants}
+              initial="hidden"
+              animate="visible"
               width="6"
               height="50"
               viewBox="0 0 6 101"
@@ -97,6 +104,9 @@ function Contact() {
             </motion.a>
             <motion.svg
               className="svg-shadow"
+              variants={socialVariants}
+              initial="hidden"
+              animate="visible"
               width="6"
               height="50"
               viewBox="0 0 6 101"
@@ -130,6 +140,9 @@ function Contact() {
         </motion.a>
         <motion.svg
                 className="svg-shadow"
+                variants={socialVariants}
+              initial="hidden"
+              animate="visible"
                 width="6"
                 height="50"
                 viewBox="0 0 6 101"
@@ -193,9 +206,9 @@ function Contact() {
               "HTML",
               "Next",
               "JavaScript",
-              "Express.js",
-              "MongoDB",
-              "MERN",
+              "TailwindCSS",
+              "Flutter",
+              "Photoshop",
               "Framer Motion",
               "Agile",
               "SCRUM",

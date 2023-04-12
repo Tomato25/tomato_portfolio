@@ -12,9 +12,18 @@ import { NTURise } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
 import RiseBanner from "public/Images/NTURise/6.png";
 import { useNtuRiseContext } from "../contexts/NtuRiseContext";
+import { liVariants, ulVariants } from "@/app/about/aboutAnimations";
 
 export default function NtuRise() {
   const { carouselToggle, setCarouselToggle } = useNtuRiseContext();
+
+  const projectDescription = [
+    "Code or preview of the website is not available due to NTU policy and website being available only to NTU students",
+    "Creating UI using lists, tables, buttons, images etc.",
+    "Using customized Bootstrap 5 elements such as accordions, containers and navBars",
+    "Using Bootstrap 5 to develop a fully responsive layout",
+    "Using CSS transitions, gradients, pseudo-classes and other more basic styling options"
+  ]
 
     return (
       <div className="flex flex-col justify-center items-center gap-8 mt-16 mb-16">
@@ -185,20 +194,24 @@ export default function NtuRise() {
           </motion.div>
   
           <motion.div className="w-screen h-fit bg-slate-200 text-green text-xl p-40 shadow-large">
-            <h2>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus
-              repellat dolores, quis, provident suscipit officiis magni laboriosam
-              explicabo aut repellendus est sunt vel, nemo maxime commodi
-              architecto. Deleniti hic illo quisquam sed rerum illum quaerat
-              mollitia tempore iure molestiae aliquam reiciendis, adipisci, sequi
-              vitae. In aperiam facilis modi aliquid consequatur omnis magni
-              suscipit harum illo consequuntur nam iste odio, nihil possimus a ea.
-              Dolorum praesentium excepturi earum pariatur quae aut dolorem libero
-              voluptatum nesciunt, laborum non magni optio inventore obcaecati eos
-              nisi laudantium ab architecto quam, quas sapiente voluptas! Quas
-              tempora hic dicta doloremque possimus dolore sunt quasi voluptas
-              esse?
-            </h2>
+          <motion.ul
+                      className="list-disc pl-10 text-lg  w-full"
+                      variants={ulVariants}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      {projectDescription.map((para, index) => {
+                        return (
+                          <motion.li
+                            variants={liVariants}
+                            key={index}
+                            className="mb-3"
+                          >
+                            {para}
+                          </motion.li>
+                        );
+                      })}
+                    </motion.ul>
           </motion.div>
         </LayoutGroup>
       </div>

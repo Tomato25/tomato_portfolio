@@ -42,7 +42,8 @@ export const Education = [
   {
     university: "Nottingham Trent University",
     course: "BSc Computing",
-    description: [""],
+    description: ["Graduated with a grade of 2.1",
+     "Gained knowledge from the wide range of topics such as Information Security, System Analysis and Design, UI Developemnt and Design, Project management, Mobile and Internet Application Development"],
     duration: "2018-2021",
   },
 ];

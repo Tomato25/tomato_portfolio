@@ -19,7 +19,7 @@ export const techVariants = {
         opacity:0.4,
         transition:{
             delay:1,
-            duration:1
+            duration:0.3
         }
     }
 }

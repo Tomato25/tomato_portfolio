@@ -38,7 +38,7 @@ export default function InitialModal() {
         </button>
         <div className="flex flex-col justify-around mt-8 items-center gap-10">
           <h1 className="text-green text-xl">
-            Page is still under construction!
+            Website is still under construction!
           </h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"

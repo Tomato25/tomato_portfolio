@@ -1,13 +1,14 @@
 "useClient";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { GrReactjs } from "react-icons/gr";
 import { SiAdobexd, SiCss3 } from "react-icons/si";
-import {TbBrandFramerMotion} from "react-icons/tb"
+import { TbBrandFramerMotion } from "react-icons/tb";
 import Image from "next/image";
-import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
+import { LayoutGroup, AnimatePresence } from "framer-motion";
 import { socialVariants, techVariants } from "../../animations/svgAnimations";
 import { imageVariants, titleVariants } from "../animations";
 import { lettersVariants, wordVariants } from "../../animations/textAnimations";
@@ -18,6 +19,7 @@ import { useChechuContext } from "../contexts/ChechuContext";
 
 export default function Snaga_prirode() {
   const { carouselToggle, setCarouselToggle } = useChechuContext();
+
 
   return (
     <div className="flex flex-col justify-center items-center gap-8 mt-16 mb-16">
@@ -43,43 +45,51 @@ export default function Snaga_prirode() {
           </motion.h1>
 
           <AnimatePresence mode="wait">
-            {carouselToggle ? (
-              <motion.div
-                key="Image"
-                layout
-                variants={imageVariants}
-                initial="hidden"
-                animate="visible"
-                exit={{
-                  opacity: 0,
-                  y: -300,
-                  transition: { duration: 1 },
-                }}
-                className="flex justify-center items-center"
-              >
-                <Image
-                  src={SPBanner}
-                  className="w-2/3 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
-                  alt="Snaga prirode"
-                  onClick={() => setCarouselToggle(!carouselToggle)}
-                />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="masonry"
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{
-                  opacity: 0,
-                  y: -300,
-                  transition: { duration: 1 },
-                }}
-                className="flex justify-center items-center"
-              >
-                <SSRMasonry images={snagaPrirode.images} function={setCarouselToggle} toggle={carouselToggle}/>
-              </motion.div>
-            )}
+            <motion.div
+              layout
+              key="Image"
+              variants={imageVariants}
+              initial="hidden"
+              animate="visible"
+
+              exit={{
+                opacity: 0,
+                transition: { duration: 1 },
+              }}
+            >
+              {carouselToggle ? (
+                <motion.div
+                  
+                  className="flex justify-center items-center"
+                >
+                  <Image
+                    src={SPBanner}
+                    className="w-2/3 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
+                    alt="Snaga prirode"
+                    onClick={() => setCarouselToggle(!carouselToggle)}
+                  />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="masonry"
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{
+                    opacity: 0,
+                    y: -300,
+                    transition: { duration: 1 },
+                  }}
+                  className="flex justify-center items-center"
+                >
+                  <SSRMasonry
+                    images={snagaPrirode.images}
+                    function={setCarouselToggle}
+                    toggle={carouselToggle}
+                  />
+                </motion.div>
+              )}
+            </motion.div>
           </AnimatePresence>
           <motion.div
             layout
@@ -89,6 +99,7 @@ export default function Snaga_prirode() {
               variants={socialVariants}
               initial="hidden"
               animate="visible"
+
               href="https://github.com/Tomato25/SnagaPrirode"
               target="_blank"
               className="text-xl lg:text-4xl"
@@ -99,6 +110,7 @@ export default function Snaga_prirode() {
               variants={socialVariants}
               initial="hidden"
               animate="visible"
+
               href="https://snagaprirode.com.hr"
               target="_blank"
               className="text-xl lg:text-5xl"
@@ -111,6 +123,7 @@ export default function Snaga_prirode() {
           variants={titleVariants}
           initial="hidden"
           animate="visible"
+
           layout
           className="flex flex-row justify-center gap-4 items-center"
         >
@@ -137,6 +150,7 @@ export default function Snaga_prirode() {
             variants={wordVariants}
             initial="hidden"
             animate="visible"
+
             className="text-4xl text-shadow"
           >
             {snagaPrirode.name.split("").map((char, index) => {
@@ -159,6 +173,7 @@ export default function Snaga_prirode() {
             variants={techVariants}
             initial="hidden"
             animate="visible"
+
             whileHover={{
               opacity: 1,
               scale: 1.1,
@@ -175,6 +190,7 @@ export default function Snaga_prirode() {
             variants={techVariants}
             initial="hidden"
             animate="visible"
+
             whileHover={{
               opacity: 1,
               scale: 1.1,
@@ -191,6 +207,7 @@ export default function Snaga_prirode() {
             variants={techVariants}
             initial="hidden"
             animate="visible"
+
             whileHover={{
               opacity: 1,
               scale: 1.1,
@@ -203,11 +220,12 @@ export default function Snaga_prirode() {
               <TbBrandFramerMotion />
             </h1>
           </motion.div>
-          
+
           <motion.div
             variants={techVariants}
             initial="hidden"
             animate="visible"
+
             whileHover={{
               opacity: 1,
               scale: 1.1,
@@ -220,7 +238,6 @@ export default function Snaga_prirode() {
               <SiAdobexd />
             </h1>
           </motion.div>
-         
         </motion.div>
       </LayoutGroup>
     </div>

@@ -4,7 +4,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { GrStripe } from "react-icons/gr";
-import { SiAdobexd, SiTypescript, SiNextdotjs, SiTailwindcss } from "react-icons/si";import {TbBrandFramerMotion} from "react-icons/tb"
+import { SiAdobexd, SiTypescript, SiNextdotjs, SiTailwindcss, SiPrisma } from "react-icons/si";import {TbBrandFramerMotion} from "react-icons/tb"
 import Image from "next/image";
 import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
 import { socialVariants, techVariants } from "../../animations/svgAnimations";
@@ -189,6 +189,22 @@ export default function Chechu() {
               <h1>Stripe</h1>
               <h1>
                 <GrStripe />
+              </h1>
+            </motion.div>
+            <motion.div
+              variants={techVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                opacity: 1,
+                scale: 1.1,
+                transition: { duration: 0.1 },
+              }}
+              className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
+            >
+              <h1>Prisma</h1>
+              <h1>
+                <SiPrisma />
               </h1>
             </motion.div>
             <motion.div

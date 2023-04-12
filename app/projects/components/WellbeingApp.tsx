@@ -13,12 +13,14 @@ import { imageVariants, titleVariants } from "../animations";
 import { lettersVariants, wordVariants } from "../../animations/textAnimations";
 import { WellbeingApp } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
-import WABanner1 from "public/Images/WellbeingApp/1.jpg";
+import WABanner1 from "public/Images/WellbeingApp/6.jpg";
 import WABanner2 from "public/Images/WellbeingApp/4.jpg";
 import { useChechuContext } from "../contexts/ChechuContext";
 
 export default function WellbeingApplication() {
   const { carouselToggle, setCarouselToggle } = useChechuContext();
+
+  
 
   return (
     <div className="flex flex-col justify-center items-center gap-8 mt-16 mb-16">

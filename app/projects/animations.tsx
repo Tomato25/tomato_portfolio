@@ -66,4 +66,11 @@ export const titleVariants = {
       }
     }
   }
-  
+
+  export const projectVariants = {
+    hidden: {opacity:0},
+    visible: {
+      opacity:1
+    
+    }
+}
