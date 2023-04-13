@@ -134,6 +134,12 @@ body {
 }
 
 
+.tooltip-primary {
+  --tooltip-color: #ADE6B9;
+  --tooltip-text-color: #003D2B;
+}
+
+
 .tagcloud {
 
   position: absolute;
@@ -160,6 +166,31 @@ body {
   bottom: 0;
   background-color:rgba(0, 0, 0, 0.20);
 }
+
+.ImageModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+background-color: rgb(233, 233, 233);
+height: 30vh;
+width: 30vw;
+}
+
+.ImageModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:rgba(0, 0, 0, 0.20);
+}
+
+
+
+
 
 .Modal {
   position: absolute;

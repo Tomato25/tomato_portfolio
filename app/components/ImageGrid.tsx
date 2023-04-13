@@ -7,7 +7,7 @@ import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import { gridItemVariants, gridVariants } from "../projects/animations";
 import ReactModal from "react-modal";
 import { socialVariants } from "../animations/svgAnimations";
-
+import { TfiMoreAlt } from "react-icons/tfi";
 
 interface Image {
   src: string;
@@ -17,21 +17,23 @@ interface Image {
 interface Props {
   images: Image[];
   function: Function;
-  toggle: boolean;  
+  toggle: boolean;
 }
 
 export default function SSRMasonry(props: Props) {
-  
   const carouselToggle = props.toggle;
   const setCarouselToggle = props.function;
+  const itemData = props.images;
+
+  const [overlayStates, setOverlayStates] = useState(
+    Array(itemData.length).fill(false)
+  );
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [enlargedImage, setEnlargedImage] = useState("");
   const [carouselImages, setCarouselImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = carouselImages.length;
-
-  const itemData = props.images;
 
   const handleImageClick = (img: string, images: string[]) => {
     setIsModalOpen(true);
@@ -60,8 +62,17 @@ export default function SSRMasonry(props: Props) {
   };
 
   return (
-    <Box sx={{ minwidth: 500, minHeight: 393 }} className="w-full flex flex-col justify-center">
-      <motion.button variants={socialVariants} initial="hidden" animate="visible" className="mb-8 mx-auto" onClick={() => setCarouselToggle(!carouselToggle)}>
+    <Box
+      sx={{ minwidth: 500, minHeight: 393 }}
+      className="w-full flex flex-col justify-center"
+    >
+      <motion.button
+        variants={socialVariants}
+        initial="hidden"
+        animate="visible"
+        className="mb-8 mx-auto"
+        onClick={() => setCarouselToggle(!carouselToggle)}
+      >
         {" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +102,22 @@ export default function SSRMasonry(props: Props) {
         initial="hidden"
         animate="visible"
       >
-        {itemData.map((item: Image, index: React.Key | null | undefined) => (
-          <motion.div key={index} variants={gridItemVariants}>
+        {itemData.map((item: Image, index: number) => (
+          <motion.div
+            key={index}
+            variants={gridItemVariants}
+            onMouseEnter={() => {
+              const newStates = [...overlayStates];
+              newStates[index] = true;
+              setOverlayStates(newStates);
+            }}
+            onMouseLeave={() => {
+              const newStates = [...overlayStates];
+              newStates[index] = false;
+              setOverlayStates(newStates);
+            }}
+            className="relative"
+          >
             <img
               className="rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
               src={`${item.src}?w=162&auto=format`}
@@ -112,14 +137,30 @@ export default function SSRMasonry(props: Props) {
                 width: "100%",
               }}
             />
-
+            {overlayStates[index] && (
+              <motion.div
+                onClick={() =>
+                  handleImageClick(
+                    item.src,
+                    itemData.map((i) => i.src)
+                  )
+                }
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-2xl rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center transition-opacity"
+              >
+                <h1 className="cursor-pointer ">Check out more</h1>
+                <TfiMoreAlt className="cursor-pointer text-4xl" />
+              </motion.div>
+            )}
             <ReactModal
               isOpen={isModalOpen}
               contentLabel="Minimal Modal Example"
               className="Modal"
               overlayClassName="Overlay"
             >
-              <motion.div className="flex flex-col justify-between items-center" >
+              <motion.div className="flex flex-col justify-between items-center">
                 <button
                   className="self-end pr-10 pt-4"
                   onClick={() => closeModal()}

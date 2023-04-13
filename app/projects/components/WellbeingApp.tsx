@@ -1,6 +1,6 @@
 "useClient";
 
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { GrReactjs } from "react-icons/gr";
@@ -14,11 +14,13 @@ import { lettersVariants, wordVariants } from "../../animations/textAnimations";
 import { WellbeingApp } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
 import WABanner1 from "public/Images/WellbeingApp/6.jpg";
-import WABanner2 from "public/Images/WellbeingApp/4.jpg";
+import WABanner2 from "public/Images/WellbeingApp/4.jpg"; 
 import { useChechuContext } from "../contexts/ChechuContext";
+import { TfiMoreAlt } from "react-icons/tfi";
 
 export default function WellbeingApplication() {
   const { carouselToggle, setCarouselToggle } = useChechuContext();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   
 
@@ -46,54 +48,68 @@ export default function WellbeingApplication() {
           </motion.h1>
 
           <AnimatePresence mode="wait">
-            {carouselToggle ? (
-              <motion.div
-                key="Image"
-                layout
-                variants={imageVariants}
-                initial="hidden"
-                animate="visible"
-                exit={{
-                  opacity: 0,
-                  y: -300,
-                  transition: { duration: 1 },
-                }}
-                className="flex flex-row gap-10 justify-center items-center"
-              >
-                <Image
-                  src={WABanner1}
-                  className="w-1/5 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
-                  alt="WellbeingApp"
+            <motion.div
+              layout
+              key="Image"
+              variants={imageVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{
+                opacity: 0,
+                transition: { duration: 1 },
+              }}
+              className="flex justify-center items-center"
+            >
+              {carouselToggle ? (
+                <motion.div
+                  onMouseEnter={() => setIsModalOpen(true)}
+                  onMouseLeave={() => setIsModalOpen(false)}
+                  className="w-1/4 flex justify-center items-center relative  svg-shadow hover:scale-105 transform transition-all"
                   onClick={() => setCarouselToggle(!carouselToggle)}
-                />
-                <Image
-                  src={WABanner2}
-                  className="w-1/5 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
-                  alt="WellbeingApp"
-                  onClick={() => setCarouselToggle(!carouselToggle)}
-                />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="masonry"
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{
-                  opacity: 0,
-                  y: -300,
-                  transition: { duration: 1 },
-                }}
-                className="flex justify-center items-center"
-              >
-                <SSRMasonry images={WellbeingApp.images} function={setCarouselToggle} toggle={carouselToggle}/>
-              </motion.div>
-            )}
+                >
+                  <Image
+                    src={WABanner1}
+                    className="rounded-lg transform transition-all "
+                    alt="Snaga prirode"
+                    
+                  />
+                  {isModalOpen && (
+                    <motion.div initial={{opacity:0, scale:0}} animate={{opacity:1, scale:1}} transition={{duration:0.5}} className="text-xl rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center transition-opacity">
+                      <h1 className="cursor-pointer ">Check out more</h1>
+                      <TfiMoreAlt className="cursor-pointer text-3xl"/>
+                    </motion.div>
+                  )}
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="masonry"
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{
+                    opacity: 0,
+                    y: -300,
+                    transition: { duration: 1 },
+                  }}
+                  className="flex justify-center items-center"
+                >
+                  <SSRMasonry
+                    images={WellbeingApp.images}
+                    function={setCarouselToggle}
+                    toggle={carouselToggle}
+                  />
+                </motion.div>
+              )}
+            </motion.div>
           </AnimatePresence>
           <motion.div
             layout
             className="flex flex-col justify-center items-center gap-4 "
           >
+            <div
+              className="tooltip tooltip-left tooltip-primary pl-3"
+              data-tip="Check the code on Github"
+            >
             <motion.a
               variants={socialVariants}
               initial="hidden"
@@ -104,6 +120,7 @@ export default function WellbeingApplication() {
             >
               <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
             </motion.a>
+            </div>
           </motion.div>
         </div>
         <motion.div

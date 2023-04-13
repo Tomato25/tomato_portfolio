@@ -63,10 +63,12 @@ export default function Chechu() {
                 />
               </motion.div>       
           </AnimatePresence>
+         
           <motion.div
             layout
             className="flex flex-col justify-center items-center gap-4 "
           >
+             <div className="tooltip tooltip-left tooltip-primary pl-3" data-tip="Check the code on Github">
             <motion.a
               variants={socialVariants}
               initial="hidden"
@@ -77,7 +79,9 @@ export default function Chechu() {
             >
               <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
             </motion.a>
+            </div>
           </motion.div>
+          
         </div>
         <motion.div
           variants={titleVariants}

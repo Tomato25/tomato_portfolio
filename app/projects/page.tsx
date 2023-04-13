@@ -1,6 +1,7 @@
 "use client";
 
 import NtuRise from "./components/ntuRise";
+import Head from 'next/head'
 import Tomic_code_portfolio from "./components/portfolio";
 import Snaga_prirode from "./components/snaga_prirode";
 import PageWrapper from "./page-wrapper";
@@ -15,12 +16,14 @@ import Chechu from "./components/Chechu";
 
 export default function Projects() {
   return (
+    
     <WellbeingAppContextProvider>
       <SnagaPrirodeContextProvider>
         <NtuRiseContextProvider>
           <ChechuContextProvider>
             <PortfolioContextProvider>
               <PageWrapper>
+             
                 <div className="flex flex-col justify-center items-center gap-8  mb-16">
                   <Chechu />
                   <Tomic_code_portfolio key="component1" />

@@ -1,6 +1,6 @@
 "useClient";
 
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { SiAdobexd, SiTypescript, SiNextdotjs, SiTailwindcss } from "react-icons/si";
@@ -14,9 +14,11 @@ import { portfolio } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
 import PortfolioBanner from "public/Images/Portfolio/1.png";
 import { usePortfolioContext } from "../contexts/PortfolioContext";
+import { TfiMoreAlt } from "react-icons/tfi";
 
 export default function Tomic_code_portfolio() {
   const { carouselToggle, setCarouselToggle } = usePortfolioContext();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
       <div className="flex flex-col justify-center items-center gap-8 mt-16 mb-16">
@@ -42,26 +44,37 @@ export default function Tomic_code_portfolio() {
             </motion.h1>
   
             <AnimatePresence mode="wait">
+            <motion.div
+              layout
+              key="Image"
+              variants={imageVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{
+                opacity: 0,
+                transition: { duration: 1 },
+              }}
+              className="flex justify-center items-center"
+            >
               {carouselToggle ? (
                 <motion.div
-                  key="Image"
-                  layout
-                  variants={imageVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit={{
-                    opacity: 0,
-                    y: -300,
-                    transition: { duration: 1 },
-                  }}
-                  className="flex justify-center items-center"
+                  onMouseEnter={() => setIsModalOpen(true)}
+                  onMouseLeave={() => setIsModalOpen(false)}
+                  className="w-2/3 flex justify-center items-center relative  svg-shadow hover:scale-105 transform transition-all"
+                  onClick={() => setCarouselToggle(!carouselToggle)}
                 >
                   <Image
                     src={PortfolioBanner}
-                    className="w-2/3 rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
+                    className="rounded-lg transform transition-all "
                     alt="Snaga prirode"
-                    onClick={() => setCarouselToggle(!carouselToggle)}
+                    
                   />
+                  {isModalOpen && (
+                    <motion.div initial={{opacity:0, scale:0}} animate={{opacity:1, scale:1}} transition={{duration:0.5}} className="text-2xl rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center transition-opacity">
+                      <h1 className="cursor-pointer ">Check out more</h1>
+                      <TfiMoreAlt className="cursor-pointer text-4xl"/>
+                    </motion.div>
+                  )}
                 </motion.div>
               ) : (
                 <motion.div
@@ -76,14 +89,20 @@ export default function Tomic_code_portfolio() {
                   }}
                   className="flex justify-center items-center"
                 >
-                  <SSRMasonry images={portfolio.images}  function={setCarouselToggle} toggle={carouselToggle}/>
+                  <SSRMasonry
+                    images={portfolio.images}
+                    function={setCarouselToggle}
+                    toggle={carouselToggle}
+                  />
                 </motion.div>
               )}
-            </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>
             <motion.div
               layout
               className="flex flex-col justify-center items-center gap-4 "
             >
+               <div className="tooltip tooltip-left tooltip-primary pl-3" data-tip="Check the code on Github">
               <motion.a
                 variants={socialVariants}
                 initial="hidden"
@@ -94,6 +113,7 @@ export default function Tomic_code_portfolio() {
               >
                 <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
               </motion.a>
+              </div>
             </motion.div>
           </div>
           <motion.div
