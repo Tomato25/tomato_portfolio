@@ -7,7 +7,7 @@ import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import { gridItemVariants, gridVariants } from "../projects/animations";
 import ReactModal from "react-modal";
 import { socialVariants } from "../animations/svgAnimations";
-import { TfiMoreAlt } from "react-icons/tfi";
+import { TbArrowsMaximize } from "react-icons/tb";
 
 interface Image {
   src: string;
@@ -116,10 +116,10 @@ export default function SSRMasonry(props: Props) {
               newStates[index] = false;
               setOverlayStates(newStates);
             }}
-            className="relative"
+            className="relative  transform transition-all svg-shadow hover:scale-105 "
           >
             <img
-              className="rounded-lg transform transition-all svg-shadow hover:scale-105 cursor-pointer"
+              className="rounded-lg cursor-pointer"
               src={`${item.src}?w=162&auto=format`}
               srcSet={`${item.src}?w=162&auto=format&dpr=2 2x`}
               alt={item.alt}
@@ -131,8 +131,6 @@ export default function SSRMasonry(props: Props) {
                 )
               }
               style={{
-                borderBottomLeftRadius: 4,
-                borderBottomRightRadius: 4,
                 display: "block",
                 width: "100%",
               }}
@@ -148,10 +146,9 @@ export default function SSRMasonry(props: Props) {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="text-2xl rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center transition-opacity"
+                className="text-2xl rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-50 flex flex-col justify-center items-center transition-opacity"
               >
-                <h1 className="cursor-pointer ">Check out more</h1>
-                <TfiMoreAlt className="cursor-pointer text-4xl" />
+                <TbArrowsMaximize className="cursor-pointer text-4xl" />
               </motion.div>
             )}
             <ReactModal

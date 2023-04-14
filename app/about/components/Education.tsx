@@ -66,13 +66,13 @@ export default function EducationComponent() {
   };
 
   return (
-    <div className="flex flex-row  gap-24 min-w-full pl-14  my-28">
+    <div className="flex flex-row  md:gap-24 gap-4 min-w-full lg:pl-14 pl-6 mb-10 my-28">
       <motion.h1
         variants={sectionTitleVariants}
         initial="hidden"
         animate={controls}
         ref={ref}
-        className="text-6xl self-center vertical-rl text-shadow-vertical"
+        className="md:text-6xl text-4xl self-center vertical-rl text-shadow-vertical"
       >
         {educationSubtitle.split("").map((char, index) => {
           return (
@@ -85,12 +85,12 @@ export default function EducationComponent() {
 
       {Education.map((education, index) => {
         return (
-          <div className="flex flex-row justify-between w-full pr-14">
+          <div className="flex md:flex-row flex-col-reverse justify-between w-full md:pr-14 pr-4">
             <div className="flex flex-col justify-start items-start">
               <div className="flex flex-col justify-start items-start gap-4">
                 <span>
                   <motion.h2
-                    className="text-4xl  text-shadow-light"
+                    className="md:text-4xl text-lg  text-shadow-light"
                     variants={subtitleVariants}
                     initial="hidden"
                     ref={ref}
@@ -113,7 +113,7 @@ export default function EducationComponent() {
                     initial="hidden"
                     ref={ref}
                     animate={controls}
-                    className="text-xl  text-shadow-light"
+                    className="md:text-lg text-sm   text-shadow-light"
                   >
                     {education.course.split("").map((char, index) => {
                       return (
@@ -133,22 +133,22 @@ export default function EducationComponent() {
                   initial="hidden"
                   animate={controls}
                   ref={ref}
-                  className="list-disc pl-10 text-lg "
+                  className="list-disc pl-10 md:text-lg text-sm w-9/12"
                 >
                   {education.description.map((para, index) => {
                     return (
                       <motion.li
                         variants={liVariants}
                         key={index}
-                        className="mb-3"
+                        className="mb-3 pr-10"
                       >
-                        {para}
+                      {para}
                       </motion.li>
                     );
                   })}
                 </motion.ul>
 
-                <div className="flex flex-col items-start gap-16 self-center  w-full mx-auto pr-12">
+                <div className="flex flex-col items-start gap-16 self-center  w-11/12 mx-auto pr-12">
                   <motion.h2
                     variants={subtitleVariants}
                     initial="hidden"
@@ -249,7 +249,7 @@ export default function EducationComponent() {
                       initial="hidden"
                       animate={controls}
                       ref={ref}
-                      className=" text-2xl self-center mb-8"
+                      className="text-2xl self-center mb-8"
                     >
                       {CCDProject.name.split("").map((char, index) => {
                         return (
@@ -378,7 +378,7 @@ export default function EducationComponent() {
               initial="hidden"
               animate={controls}
               ref={ref}
-              className="text-2xl self-center vertical-rl text-shadow-vertical"
+              className="md:text-2xl text-lg self-center md:vertical-rl text-shadow-vertical"
             >
               {education.duration.split("").map((char, index) => {
                 return (

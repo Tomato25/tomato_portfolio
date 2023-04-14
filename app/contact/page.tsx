@@ -14,11 +14,12 @@ import { lettersVariants } from "../animations/textAnimations";
 function Contact() {
   return (
     <PageWrapper>
-      <div className="flex flex-row items-center justify-center h-900 ">
-        <h1 className="text-6xl self-center vertical-rl pl-14 ">
+      <div className="flex flex-col-reverse gap-28 mt-20 md:flex-row items-center justify-center h-auto bg-bg1">
+        <div className="lg:w-1/3 flex flex-row  gap-14 justify-between w-screen">
+        <h1 className="text-3xl  md:pl-14 pl-6  md:text-6xl self-center vertical-rl ">
           Get in touch
         </h1>
-        <div className="text-4xl w-1/3 flex flex-col justify-center gap-28 items-center h-full pr-20">
+        <div className="text-4xl pr-24 lg:pr-12 w-3/4 lg:w-1/3 flex flex-col justify-center gap-14 md:gap-28 items-center h-full  mb-20 md:mb-0">
           <div className="flex flex-row justify-end items-center gap-3 w-full ">
           <motion.a
               variants={socialVariants}
@@ -28,7 +29,7 @@ function Contact() {
               href="tel:+447598236657"
               target="_blank"
             >
-            <h1 className="text-2xl transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">Telephone</h1>
+            <h1 className="md:text-2xl text-base transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">Telephone</h1>
             </motion.a>
             <motion.svg
               className="svg-shadow"
@@ -64,7 +65,7 @@ function Contact() {
               href="https://github.com/Tomato25/"
               target="_blank"
             >
-            <h1 className="text-2xl transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">LinkedIn</h1>
+            <h1 className="md:text-2xl text-base transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">LinkedIn</h1>
             </motion.a>
             <motion.svg
               className="svg-shadow"
@@ -100,7 +101,7 @@ function Contact() {
               href="https://github.com/Tomato25/"
               target="_blank"
             >
-            <h1 className="text-2xl  transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">Email</h1>
+            <h1 className="md:text-2xl text-base  transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">Email</h1>
             </motion.a>
             <motion.svg
               className="svg-shadow"
@@ -136,7 +137,7 @@ function Contact() {
               href="https://github.com/Tomato25/"
               target="_blank"
             >
-        <h1 className="text-2xl transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">Telegram</h1>
+        <h1 className="md:text-2xl text-base transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">Telegram</h1>
         </motion.a>
         <motion.svg
                 className="svg-shadow"
@@ -164,6 +165,7 @@ function Contact() {
           </motion.a>
           </div>
         </div>
+        </div>
         <div className="w-2/3 h-600 relative">
           <Image
             alt="logo"
@@ -189,7 +191,7 @@ function Contact() {
               opacity: "0.",
             }}
             options={(w: Window & typeof globalThis): TagCloudOptions => ({
-              radius: Math.min(600, w.innerWidth, w.innerHeight) / 1.4,
+              radius: Math.min(600, w.innerWidth) / 1.4,
               maxSpeed: "fast",
             })}
             onClickOptions={{ passive: true }}

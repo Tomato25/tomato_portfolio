@@ -175,7 +175,7 @@ body {
   bottom: 0;
   transform: translate(-50%, -50%);
 background-color: rgb(233, 233, 233);
-height: 30vh;
+height: 40vh;
 width: 30vw;
 }
 
@@ -222,6 +222,35 @@ width: 30vw;
 
 .ReactModal__Overlay--before-close{
   opacity: 0;
+}
+
+
+
+
+
+@media screen and (max-width: 900px) {
+  .InitialModal {
+    height: 40vh;
+    width: 90vw;
+  }
+
+  .tagcloud {
+
+    font-size: smaller;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+}
+
+
+
+@media screen and (min-width: 900px) and (max-width: 1400px)  {
+  .InitialModal {
+    height: 40vh;
+    width: 50vw;
+  }
 }
 
 

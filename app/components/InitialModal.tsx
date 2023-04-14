@@ -18,7 +18,7 @@ export default function InitialModal() {
       overlayClassName="InitialModalOverlay"
     >
       <motion.div className="flex flex-col justify-between items-center">
-        <button className="self-end pr-10 pt-4" onClick={() => closeModal()}>
+        <button className="self-end pr-4 lg:pr-10 pt-4 text-xs" onClick={() => closeModal()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className=" transform transition-all svg-shadow hover:scale-125"
@@ -37,7 +37,7 @@ export default function InitialModal() {
           </svg>
         </button>
         <div className="flex flex-col justify-around mt-8 items-center gap-10">
-          <h1 className="text-green text-xl">
+          <h1 className="text-green text-sm  lg:text-xl align-middle mx-auto text-center">
             Website is still under construction!
           </h1>
           <svg

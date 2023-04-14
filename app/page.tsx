@@ -21,10 +21,10 @@ export default function Home() {
 
   return (
     <PageWrapper>
-    <main className="h-screen w-screen flex flex-col justify-start">
+    <main className="h-screen w-screen flex flex-col justify-start ">
       <InitialModal />
       <Particlesbackground />
-      <div className="flex flex-row h-100 justify-between items-center  mx-16 text-4xl mt-4 z-10">
+      <div className="flex flex-row h-100 justify-center sm:justify-between items-center text-4xl mt-4 z-10">
         <div className="flex flex-row h-100 justify-between items-start gap-16 mx-16">
 
           <motion.div
@@ -37,10 +37,10 @@ export default function Home() {
             <div className="relative h-2/3 w-full">
               <Image alt="logo" src={Logo} fill />
             </div>
-            <h3 className="text-xs whitespace-nowrap	">Tomic codes</h3>
+            <h3 className="text-xs whitespace-nowrap">Tomic codes</h3>
           </motion.div>
         </div>
-        <div className="flex flex-col h-100 justify-center items-start gap-16 mx-16 text-2xl">
+        <div className="flex flex-col h-100 justify-center items-start gap-16 mx-16 text-base text-center lg:text-2xl">
           <Link href="/about" className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">
             <motion.p
               variants={wordVariants}
@@ -66,7 +66,7 @@ export default function Home() {
         variants={linksVariants}
         initial="hidden"
         animate="visible"
-        className="h-900 w-screen flex flex-row justify-center gap-20 items-center  text-2xl relative mx-auto z-10"
+        className="h-screen w-screen flex flex-col md:flex-row justify-center gap-20 items-center  text-2xl relative mx-auto z-10"
       >
         {Links.map((link, index) => {
           return (
@@ -91,8 +91,8 @@ export default function Home() {
           );
         })}
       </motion.div>
-      <div className="flex flex-row h-100 justify-between items-center  mx-16 text-4xl z-10">
-        <div className="flex flex-row h-100 justify-between items-center gap-16 mx-16">
+      <div className="h-400 flex gap-6 flex-row justify-evenly md:justify-between items-center  md:mx-16 text-4xl z-10">
+        <div className="flex flex-row h-100 justify-between items-center gap-16 md:gap-16 md:mx-16">
           <motion.a
             variants={socialVariants}
             initial="hidden"
@@ -114,7 +114,7 @@ export default function Home() {
             <FaLinkedin className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg " />
           </motion.a>
         </div>
-        <div className="flex flex-row h-100 justify-between  items-center gap-16 mx-16">
+        <div className="flex flex-row h-100 justify-between  items-center  gap-16 md:gap-16 md:mx-16">
           <motion.a
             variants={socialVariants}
             initial="hidden"

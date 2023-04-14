@@ -52,3 +52,54 @@
     object-fit: cover;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
+
+
+@media screen and (max-width: 1300px) {
+ 
+.profileImg {
+  height: 30vh;
+  width: 30vh;
+  }
+
+  
+.circle-container {
+  @include on-circle($item-count:5, $circle-size: 20em, $item-size: 4rem); 
+  position:absolute;
+
+}
+
+@mixin on-circle($item-count, $circle-size, $item-size) {
+  position: relative;
+  width:  $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%; 
+  list-style: none;       
+  
+  > * {
+    display: block;
+    position: absolute;
+    top:  40%; 
+    left: 30%;
+    width:  $item-size;
+    height: $item-size;
+    margin: -0;
+  
+    $angle: (180 / $item-count);
+    $rot: 110;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform: 
+          rotate($rot * 1deg) 
+          translate($circle-size / 2) 
+          rotate($rot * -1deg);
+      }
+
+      $rot: $rot + $angle;
+    }
+  }
+}
+}
+

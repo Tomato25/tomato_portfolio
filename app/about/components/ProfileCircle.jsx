@@ -12,8 +12,7 @@ function ProfileCircle() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-brand-html5"
-              width="80"
-              height="80"
+
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="#ADE6B9"
@@ -33,8 +32,7 @@ function ProfileCircle() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-brand-css3"
-              width="80"
-              height="80"
+
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="#ADE6B9"
@@ -92,8 +90,7 @@ function ProfileCircle() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-brand-javascript"
-              width="80"
-              height="80"
+
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="#ADE6B9"
@@ -113,8 +110,7 @@ function ProfileCircle() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-brand-react-native"
-              width="80"
-              height="80"
+
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="#ADE6B9"
@@ -138,8 +134,7 @@ function ProfileCircle() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-brand-javascript"
-              width="80"
-              height="80"
+
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="#ADE6B9"

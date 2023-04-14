@@ -5,7 +5,7 @@ export default function AboutLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className="bg-bg1">
+  return <section className="bg-green flex flex-col min-h-fit">
     <NavBar />
     {children}
     </section>;
