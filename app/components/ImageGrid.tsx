@@ -92,8 +92,8 @@ export default function SSRMasonry(props: Props) {
         </svg>
       </motion.button>
       <Masonry
-        columns={3}
-        spacing={5}
+        columns={2}
+        spacing={3}
         defaultHeight={700}
         defaultColumns={3}
         defaultSpacing={10}

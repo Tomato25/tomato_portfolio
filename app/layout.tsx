@@ -2,6 +2,7 @@ import "./globals.css";
 import {Noto_Sans_Mono } from "@next/font/google"
 
 
+
 const NotoSans = Noto_Sans_Mono({
   weight:["400", "600"],
   subsets:["latin"],

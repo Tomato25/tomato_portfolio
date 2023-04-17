@@ -1,19 +1,16 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import {
-  lettersVariants,
-  linksVariants,
-  wordVariants,
-} from "../animations/textAnimations";
-import NavBar from "../components/NavBar";
-import NavBarDrawer from "../components/NavBarDrawer";
-import { Links } from "@/public/aboutContent";
-import { socialVariants } from "../animations/svgAnimations";
-import Image from "next/image";
-import Logo from "public/Images/Logo.svg";
-import Particlesbackground from "../components/particles/Particlesbackground";
-import { URL } from "url";
+  "use client";
+  import { motion } from "framer-motion";
+  import Link from "next/link";
+  import {
+    lettersVariants,
+    linksVariants,
+    wordVariants,
+  } from "../animations/textAnimations";
+  import { Links } from "@/public/aboutContent";
+  import { socialVariants } from "../animations/svgAnimations";
+  import Image from "next/image";
+  import Logo from "public/Images/Logo.svg";
+  import Particlesbackground from "../components/particles/Particlesbackground";
 
 
 export default function AboutLayout({
