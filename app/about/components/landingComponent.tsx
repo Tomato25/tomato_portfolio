@@ -47,7 +47,7 @@ export default function LandingComponent() {
                     <motion.p
                       variants={paraWordVariants}
                       key={index}
-                      className="md:text-2xl text-sm"
+                      className="md:text-xl text-sm"
                     >
                       {para.split("").map((char, index) => {
                         return (

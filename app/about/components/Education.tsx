@@ -61,7 +61,7 @@ export default function EducationComponent() {
       "Recording and editing data",
       "Searching the database for information (use of basic SQL queries)",
       "Visualising the data using charts",
-      "Using classes/objects/inheritance/polymorphism",
+      "Using classes / objects / inheritance / polymorphism",
     ],
   };
 
@@ -87,7 +87,7 @@ export default function EducationComponent() {
         return (
           <div className="flex md:flex-row flex-col-reverse justify-between w-full md:pr-14 pr-4">
             <div className="flex flex-col justify-start items-start">
-              <div className="flex flex-col justify-start items-start gap-4">
+              <div className="flex flex-col justify-start items-start gap-4 w-full">
                 <span>
                   <motion.h2
                     className="md:text-4xl text-lg  text-shadow-light"
@@ -133,7 +133,7 @@ export default function EducationComponent() {
                   initial="hidden"
                   animate={controls}
                   ref={ref}
-                  className="list-disc pl-10 md:text-lg text-sm w-9/12"
+                  className="list-disc pl-10 md:text-lg text-sm"
                 >
                   {education.description.map((para, index) => {
                     return (
@@ -148,13 +148,13 @@ export default function EducationComponent() {
                   })}
                 </motion.ul>
 
-                <div className="flex flex-col items-start gap-16 self-center  w-11/12 mx-auto pr-12">
+                <div className="flex flex-col items-start gap-16 self-center w-full mx-auto pr-12">
                   <motion.h2
                     variants={subtitleVariants}
                     initial="hidden"
                     animate={controls}
                     ref={ref}
-                    className="text-4xl self-center text-shadow-light"
+                    className="md:text-4xl text-2xl self-center text-shadow-light"
                   >
                     {"Projects".split("").map((char, index) => {
                       return (
@@ -173,7 +173,7 @@ export default function EducationComponent() {
                       initial="hidden"
                       animate={controls}
                       ref={ref}
-                      className=" text-2xl self-center mb-8"
+                      className=" md:text-2xl text-xl self-center mb-8"
                     >
                       {ECommerceProject.name.split("").map((char, index) => {
                         return (
@@ -187,7 +187,7 @@ export default function EducationComponent() {
                       })}
                     </motion.h2>
                     <motion.ul
-                      className="list-disc pl-10 text-lg  w-full"
+                      className="list-disc pl-10 md:text-lg text-sm  w-full"
                       ref={ref}
                       variants={ulVariants}
                       initial="hidden"
@@ -207,7 +207,7 @@ export default function EducationComponent() {
                       <motion.li
                         variants={liVariants}
                         key={index}
-                        className=" text-xl mb-3 flex flex-row justify-center items-center w-full mx-auto gap-20"
+                        className="md:text-lg text-sm mb-3 flex flex-row justify-center items-center w-full mx-auto md:gap-20 gap-6"
                       >
                         <div className="flex flex-col justify-center items-center gap-3">
                           <h1>HTML</h1>
@@ -249,7 +249,7 @@ export default function EducationComponent() {
                       initial="hidden"
                       animate={controls}
                       ref={ref}
-                      className="text-2xl self-center mb-8"
+                      className=" md:text-2xl text-xl self-center mb-8"
                     >
                       {CCDProject.name.split("").map((char, index) => {
                         return (
@@ -263,7 +263,7 @@ export default function EducationComponent() {
                       })}
                     </motion.h2>
                     <motion.ul
-                      className="list-disc pl-10 text-lg w-full"
+                      className="list-disc pl-10 md:text-lg text-sm w-full"
                       ref={ref}
                       variants={ulVariants}
                       initial="hidden"
@@ -283,7 +283,7 @@ export default function EducationComponent() {
                       <motion.li
                         variants={liVariants}
                         key={index}
-                        className=" text-xl mb-3 flex flex-row justify-center items-center w-full mx-auto gap-20"
+                        className="  md:text-xl text-sm mb-3 flex flex-row justify-center items-center w-full mx-auto md:gap-20 gap-6"
                       >
                         <div className="flex flex-col justify-center items-center gap-3">
                           <h1>HTML</h1>
@@ -325,7 +325,7 @@ export default function EducationComponent() {
                       initial="hidden"
                       animate={controls}
                       ref={ref}
-                      className=" text-2xl self-center mb-8"
+                      className=" md:text-2xl text-lg self-center mb-8"
                     >
                       {DBProject.name.split("").map((char, index) => {
                         return (
@@ -339,7 +339,7 @@ export default function EducationComponent() {
                       })}
                     </motion.h2>
                     <motion.ul
-                      className="list-disc pl-10 text-lg  w-full"
+                      className="list-disc pl-10 md:text-xl text-sm  w-full "
                       ref={ref}
                       variants={ulVariants}
                       initial="hidden"
@@ -359,7 +359,7 @@ export default function EducationComponent() {
                       <motion.li
                         variants={liVariants}
                         key={index}
-                        className=" text-xl mb-3 flex flex-row justify-center items-center self-center w-full mx-auto gap-20"
+                        className=" md:text-xl text-sm mb-3 flex flex-row justify-center items-center self-center w-full mx-auto d:gap-20 gap-6"
                       >
                         <div className="flex flex-col justify-center items-center gap-3">
                           <h1>C#</h1>

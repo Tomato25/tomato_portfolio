@@ -31,7 +31,7 @@ export default function Snaga_prirode() {
             variants={wordVariants}
             initial="hidden"
             animate="visible"
-            className="text-xl lg:text-5xl self-center vertical-rl text-shadow-vertical"
+            className="text-2xl lg:text-5xl self-center vertical-rl text-shadow-vertical"
           >
             {snagaPrirode.year.split("").map((char, index) => {
               return (
@@ -62,7 +62,7 @@ export default function Snaga_prirode() {
                 <motion.div
                   onMouseEnter={() => setIsModalOpen(true)}
                   onMouseLeave={() => setIsModalOpen(false)}
-                  className="w-2/3 flex justify-center items-center relative  svg-shadow hover:scale-105 transform transition-all"
+                  className="md:w-2/3 w-3/4 flex justify-center items-center relative  svg-shadow hover:scale-105 transform transition-all"
                   onClick={() => setCarouselToggle(!carouselToggle)}
                 >
                   <Image
@@ -72,7 +72,7 @@ export default function Snaga_prirode() {
                     
                   />
                   {isModalOpen && (
-                    <motion.div initial={{opacity:0, scale:0}} animate={{opacity:1, scale:1}} transition={{duration:0.5}} className="text-2xl rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center transition-opacity">
+                    <motion.div initial={{opacity:0, scale:0}} animate={{opacity:1, scale:1}} transition={{duration:0.5}} className="md:text-2xl text-sm rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center transition-opacity">
                       <h1 className="cursor-pointer ">Check out more</h1>
                       <TfiMoreAlt className="cursor-pointer text-4xl"/>
                     </motion.div>
@@ -114,7 +114,7 @@ export default function Snaga_prirode() {
                 animate="visible"
                 href="https://github.com/Tomato25/SnagaPrirode"
                 target="_blank"
-                className="text-xl lg:text-4xl"
+                className="text-2xl lg:text-4xl"
               >
                 <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
               </motion.a>
@@ -129,7 +129,7 @@ export default function Snaga_prirode() {
                 animate="visible"
                 href="https://snagaprirode.com.hr"
                 target="_blank"
-                className="text-xl lg:text-5xl"
+                className="text-2xl lg:text-5xl"
               >
                 <HiExternalLink className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
               </motion.a>
@@ -145,7 +145,7 @@ export default function Snaga_prirode() {
         >
           <motion.h1
             variants={lettersVariants}
-            className="text-4xl text-shadow"
+            className="md:text-4xl text-2xl text-shadow"
           >
             2
           </motion.h1>
@@ -166,7 +166,7 @@ export default function Snaga_prirode() {
             variants={wordVariants}
             initial="hidden"
             animate="visible"
-            className="text-4xl text-shadow"
+            className="md:text-4xl text-2xl text-shadow"
           >
             {snagaPrirode.name.split("").map((char, index) => {
               return (
@@ -182,7 +182,7 @@ export default function Snaga_prirode() {
         </motion.div>
         <motion.div
           layout
-          className="flex flex-row justify-between items-center gap-8  text-xl"
+          className="flex flex-row flex-wrap justify-center items-center md:gap-8 gap-4  md:text-xl text-sm w-4/5"
         >
           <motion.div
             variants={techVariants}

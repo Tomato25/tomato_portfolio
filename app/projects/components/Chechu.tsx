@@ -27,7 +27,7 @@ export default function Chechu() {
             variants={wordVariants}
             initial="hidden"
             animate="visible"
-            className="text-xl lg:text-5xl self-center vertical-rl text-shadow-vertical"
+            className="text-2xl lg:text-5xl self-center vertical-rl text-shadow-vertical"
           >
             {chechu.year.split("").map((char, index) => {
               return (
@@ -57,7 +57,7 @@ export default function Chechu() {
               >
                 <Image
                   src={ChechuBanner}
-                  className="w-2/3 rounded-lg svg-shadow"
+                  className="md:w-2/3 w-3/4 rounded-lg svg-shadow"
                   alt="Snaga prirode"
                   placeholder="blur"
                 />
@@ -75,7 +75,7 @@ export default function Chechu() {
               animate="visible"
               href="https://github.com/Tomato25/SnagaPrirode"
               target="_blank"
-              className="text-xl lg:text-4xl"
+              className="text-2xl lg:text-4xl"
             >
               <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
             </motion.a>
@@ -88,11 +88,11 @@ export default function Chechu() {
           initial="hidden"
           animate="visible"
           layout
-          className="flex flex-row justify-center gap-4 items-center"
+          className="flex flex-row md:text-4xl text-2xl justify-center gap-4 items-center"
         >
           <motion.h1
             variants={lettersVariants}
-            className="text-4xl text-shadow"
+            className=" text-shadow"
           >
             0
           </motion.h1>
@@ -113,7 +113,7 @@ export default function Chechu() {
             variants={wordVariants}
             initial="hidden"
             animate="visible"
-            className="text-4xl text-shadow"
+            className=" text-shadow"
           >
             {chechu.name.split("").map((char, index) => {
               return (
@@ -129,7 +129,7 @@ export default function Chechu() {
         </motion.div>
         <motion.div
           layout
-          className="flex flex-row justify-between items-center gap-8  text-xl"
+          className="flex flex-row flex-wrap justify-center items-center md:gap-8 gap-4  md:text-xl text-sm w-4/5"
         >
           <motion.div
               variants={techVariants}

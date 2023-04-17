@@ -39,6 +39,10 @@
     filter: drop-shadow(3px 5px 2px #002a1e);
   }
 
+  .svg-shadow-light{
+    filter: drop-shadow(0 2px 3px #46706385);
+  }
+
   .svg-shadow-lg{
     filter: drop-shadow(4px 6px 3px #002a1e);
 
