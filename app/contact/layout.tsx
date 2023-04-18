@@ -110,7 +110,7 @@ export default function ContactLayout({
                     <Link
                       key={index}
                       href={link.to}
-                      className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg text-2xl z-10"
+                      className="transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg text-2xl z-10"
                     >
                       <motion.p
                         variants={wordVariants}

@@ -73,7 +73,7 @@ export default function AboutLayout({
                     <Link
                       key={index}
                       href={link.to}
-                      className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "
+                      className="hover-underline-animation transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "
                     >
                       <motion.p
                         variants={wordVariants}
@@ -91,7 +91,7 @@ export default function AboutLayout({
                         })}
                       </motion.p>
                     </Link>
-                    
+
                     </li>
                   );
                 })}

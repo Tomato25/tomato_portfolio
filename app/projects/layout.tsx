@@ -71,7 +71,7 @@ export default function ProjectsLayout({
                     <Link
                       key={index}
                       href={link.to}
-                      className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg font-notosans"
+                      className="hover-underline-animation transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg font-notosans"
                     >
                       <motion.p
                         variants={wordVariants}
