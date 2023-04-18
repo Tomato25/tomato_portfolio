@@ -73,7 +73,7 @@ export default function Home() {
             <Link
               key={index}
               href={link.to}
-              className="hover-underline-animation transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg font-notosans"
+              className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg font-notosans"
             >
               <motion.p variants={wordVariants} whileTap={{ scale: 0.9 }}>
                 {link.name.split("").map((char, index) => {
