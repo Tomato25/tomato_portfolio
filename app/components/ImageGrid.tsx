@@ -103,54 +103,38 @@ export default function SSRMasonry(props: Props) {
         animate="visible"
       >
         {itemData.map((item: Image, index: number) => (
+          
           <motion.div
             key={index}
             variants={gridItemVariants}
-            onMouseEnter={() => {
-              const newStates = [...overlayStates];
-              newStates[index] = true;
-              setOverlayStates(newStates);
-            }}
-            onMouseLeave={() => {
-              const newStates = [...overlayStates];
-              newStates[index] = false;
-              setOverlayStates(newStates);
-            }}
-            className="relative  transform transition-all svg-shadow hover:scale-105 "
+            className="svg-shadow "
           >
-            <img
-              className="rounded-lg cursor-pointer"
-              src={`${item.src}?w=162&auto=format`}
-              srcSet={`${item.src}?w=162&auto=format&dpr=2 2x`}
-              alt={item.alt}
-              loading="lazy"
-              onClick={() =>
-                handleImageClick(
-                  item.src,
-                  itemData.map((i) => i.src)
-                )
-              }
-              style={{
-                display: "block",
-                width: "100%",
-              }}
-            />
-            {overlayStates[index] && (
-              <motion.div
+            <motion.div
+          initial={{scale:0, opacity:0}}
+          animate={{scale:1, opacity:1}}
+
+          className="tooltip tooltip-top tooltip-primary pb-10"
+          data-tip="Click to enlarge"
+        >
+              <img
+                className=" transform transition-all rounded-lg cursor-pointer hover:scale-105 "
+                src={`${item.src}?w=162&auto=format`}
+                srcSet={`${item.src}?w=162&auto=format&dpr=2 2x`}
+                alt={item.alt}
+                loading="lazy"
                 onClick={() =>
                   handleImageClick(
                     item.src,
                     itemData.map((i) => i.src)
                   )
                 }
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="text-2xl rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-50 flex flex-col justify-center items-center transition-opacity"
-              >
-                <TbArrowsMaximize className="cursor-pointer text-4xl" />
-              </motion.div>
-            )}
+                style={{
+                  display: "block",
+                  width: "100%",
+                }}
+              />
+                        </motion.div>
+
             <ReactModal
               isOpen={isModalOpen}
               contentLabel="Minimal Modal Example"
@@ -180,10 +164,10 @@ export default function SSRMasonry(props: Props) {
                   </svg>
                 </button>
                 <img
-                    src={enlargedImage}
-                    alt={item.alt}
-                    className="rounded-2xl max-w-full max-h-full mx-auto"
-                  />
+                  src={enlargedImage}
+                  alt={item.alt}
+                  className="rounded-2xl max-w-full max-h-full mx-auto"
+                />
                 <div className="flex  flex-row  justify-between items-center md:gap-16 gap-3 ">
                   <button onClick={() => handlePrevImage()}>
                     <svg
@@ -223,6 +207,7 @@ export default function SSRMasonry(props: Props) {
               </motion.div>
             </ReactModal>
           </motion.div>
+
         ))}
       </Masonry>
     </Box>

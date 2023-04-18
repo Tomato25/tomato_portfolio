@@ -50,6 +50,18 @@
 }
 
 
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):focus),
+  .menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):hover) {
+    background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.0 !important;
+}
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):focus),
+  .menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):hover) {
+    background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.0 !important;
+}
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
