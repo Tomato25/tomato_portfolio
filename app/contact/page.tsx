@@ -14,7 +14,7 @@ import { lettersVariants } from "../animations/textAnimations";
 function Contact() {
   return (
     <PageWrapper>
-      <div className="flex flex-col-reverse gap-28 mt-20 md:flex-row items-center justify-center h-auto bg-green">
+      <div className="flex flex-col-reverse gap-28 mt-20 md:flex-row items-center justify-center h-auto bg-bg1">
         <div className="lg:w-1/3 flex flex-row  gap-14 justify-between w-screen">
         <h1 className="text-3xl  md:pl-14 pl-6  md:text-6xl self-center vertical-rl ">
           Get in touch
@@ -166,7 +166,7 @@ function Contact() {
           </div>
         </div>
         </div>
-        <div className="w-2/3 h-600 relative">
+        <div className="w-2/3 h-600 mt-32 mb-32 relative">
           <Image
             alt="logo"
             src={logo}

@@ -157,7 +157,7 @@ export default function SSRMasonry(props: Props) {
               className="Modal"
               overlayClassName="Overlay"
             >
-              <motion.div className="flex flex-col justify-between items-center">
+              <motion.div className="flex flex-col justify-between items-center h-800 w-screen">
                 <button
                   className="self-end pr-10 pt-4"
                   onClick={() => closeModal()}
@@ -179,7 +179,12 @@ export default function SSRMasonry(props: Props) {
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
                 </button>
-                <div className="flex flex-row justify-between items-center gap-16">
+                <img
+                    src={enlargedImage}
+                    alt={item.alt}
+                    className="rounded-2xl max-w-full max-h-full mx-auto"
+                  />
+                <div className="flex  flex-row  justify-between items-center md:gap-16 gap-3 ">
                   <button onClick={() => handlePrevImage()}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -197,12 +202,6 @@ export default function SSRMasonry(props: Props) {
                       <polyline points="15 6 9 12 15 18" />
                     </svg>
                   </button>
-                  <img
-                    src={enlargedImage}
-                    alt={item.alt}
-                    style={{ maxWidth: "auto", height: "90vh" }}
-                    className="rounded-2xl"
-                  />
                   <button onClick={() => handleNextImage()}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

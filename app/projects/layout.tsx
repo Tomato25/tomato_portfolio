@@ -21,7 +21,7 @@ export default function ProjectsLayout({
      <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
-          <div className="w-full navbar flex justify-between bg-green">
+          <div className="w-full navbar flex justify-between bg-bg1">
             <div className="flex-none lg:hidden">
               <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
                 <svg
@@ -71,7 +71,7 @@ export default function ProjectsLayout({
                     <Link
                       key={index}
                       href={link.to}
-                      className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "
+                      className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg font-notosans"
                     >
                       <motion.p
                         variants={wordVariants}
@@ -110,7 +110,7 @@ export default function ProjectsLayout({
                     <Link
                       key={index}
                       href={link.to}
-                      className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg text-2xl z-10"
+                      className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg text-2xl z-10 font-notosans"
                     >
                       <motion.p
                         variants={wordVariants}
