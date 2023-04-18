@@ -20,9 +20,6 @@ module.exports = {
         bg2: "url('../public/Images/contactBg.png')",
 
     },
-    fontFamily: {
-      notosans:["var(--font-notosans)"]
-    },
 
     textShadow: {
       sm: '0 1px 2px var(--tw-shadow-color)',

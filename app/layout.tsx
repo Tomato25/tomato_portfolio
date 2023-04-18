@@ -1,13 +1,4 @@
 import "./globals.css";
-import {Noto_Sans_Mono } from "@next/font/google"
-
-
-
-const NotoSans = Noto_Sans_Mono({
-  weight:["400", "600"],
-  subsets:["latin"],
-  variable: "--font-notosans"
-})
 
 
 export default function RootLayout({
@@ -27,7 +18,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={`${NotoSans.variable} font-notosans text-lightGreen`}> 
+      <body className="text-lightGreen"> 
         <div  className="flex flex-col flex-grow min-h-screen" >      
         {children}
         </div>

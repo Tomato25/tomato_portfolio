@@ -17,7 +17,7 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className="bg-bg1 h-screen w-screen font-notosans">
+  return <section className="bg-bg1 h-screen w-screen">
          <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col font-notosans">

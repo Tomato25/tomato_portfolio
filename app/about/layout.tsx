@@ -19,7 +19,7 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="bg-bg1 flex flex-col min-h-fit font-notosans">
+    <section className="bg-bg1 flex flex-col min-h-fit">
       <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
