@@ -17,7 +17,7 @@ export default function ProjectsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className="bg-bg1">
+  return <section className="bg-bg1 font-notosans">
      <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">

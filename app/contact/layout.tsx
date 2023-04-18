@@ -17,10 +17,10 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className="bg-bg1 h-screen w-screen">
+  return <section className="bg-bg1 h-screen w-screen font-notosans">
          <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col">
+        <div className="drawer-content flex flex-col font-notosans">
           <div className="w-full navbar flex justify-between bg-bg1">
             <div className="flex-none lg:hidden">
               <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
