@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
@@ -19,6 +21,10 @@ module.exports = {
         bg1: "url('../public/Images/backgroundGreen.png')",
         bg2: "url('../public/Images/contactBg.png')",
 
+    },
+
+    fontFamily: {
+      sans: ['var(--font-notosans)', ...fontFamily.sans],
     },
 
     textShadow: {

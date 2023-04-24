@@ -1,11 +1,12 @@
 import "./globals.css";
-import { Noto_Sans_Mono } from '@next/font/google';
+import { Noto_Sans_Mono} from 'next/font/google'
 
 
-const inter = Noto_Sans_Mono({
+const notoSans = Noto_Sans_Mono({
   subsets: ['latin'],
-  display: 'swap'
-});
+  variable: '--font-notosans',
+})
+
 
 export default function RootLayout({
   children,
@@ -24,7 +25,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={inter.className}> 
+      <body className={`${notoSans.variable} font-sans`}> 
         <div  className="flex flex-col flex-grow min-h-screen text-lightGreen" >      
         {children}
         </div>
