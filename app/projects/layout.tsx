@@ -10,7 +10,7 @@ import { Links } from "@/public/aboutContent";
 import { socialVariants } from "../animations/svgAnimations";
 import Image from "next/image";
 import Logo from "public/Images/Logo.svg";
-import Particlesbackground from "../components/particles/Particlesbackground";
+import MenuParticlesBackground from "../components/MenuParticlesBackground";
 
 export default function ProjectsLayout({
   children,
@@ -103,8 +103,8 @@ export default function ProjectsLayout({
           <motion.ul  variants={socialVariants}
             initial="hidden"
             animate="visible"
-            whileTap={{ scale: 0.9 }} className="menu w-80 bg-green flex flex-col justify-center items-center gap-24">
-          <Particlesbackground />
+           className="menu w-80 bg-green flex flex-col justify-center items-center gap-24">
+          <MenuParticlesBackground />
           {Links.map((link, index) => {
                   return (
                     <Link

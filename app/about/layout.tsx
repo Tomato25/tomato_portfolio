@@ -1,5 +1,5 @@
   "use client";
-  import { motion } from "framer-motion";
+  import { AnimatePresence, motion } from "framer-motion";
   import Link from "next/link";
   import {
     lettersVariants,
@@ -10,7 +10,7 @@
   import { socialVariants } from "../animations/svgAnimations";
   import Image from "next/image";
   import Logo from "public/Images/Logo.svg";
-  import Particlesbackground from "../components/particles/Particlesbackground";
+  import MenuParticlesBackground from "../components/MenuParticlesBackground";
 
 
 export default function AboutLayout({
@@ -101,13 +101,13 @@ export default function AboutLayout({
           {children}
         </div>
         <div className="drawer-side">
-          
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
           <motion.ul  variants={socialVariants}
             initial="hidden"
             animate="visible"
-            whileTap={{ scale: 0.9 }} className="menu w-80 bg-green flex flex-col justify-center items-center gap-24">
-          <Particlesbackground />
+           className="menu w-80 bg-green flex flex-col justify-center items-center gap-24">
+            <MenuParticlesBackground />
+            <AnimatePresence>
           {Links.map((link, index) => {
                   return (
                     <Link
@@ -118,6 +118,7 @@ export default function AboutLayout({
                       <motion.p
                         variants={wordVariants}
                         whileTap={{ scale: 0.9 }}
+                        exit={{opacity:0, y:-20}}
                       >
                         {link.name.split("").map((char, index) => {
                           return (
@@ -133,6 +134,7 @@ export default function AboutLayout({
                     </Link>
                   );
                 })}
+                </AnimatePresence>
           </motion.ul>
         </div>
       </div>

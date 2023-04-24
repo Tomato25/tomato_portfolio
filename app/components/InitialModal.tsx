@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
 import ReactModal from "react-modal";
-import { motion } from "framer-motion";
 
 export default function InitialModal() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -11,17 +10,18 @@ export default function InitialModal() {
   };
 
   return (
+   
     <ReactModal
       isOpen={isModalOpen}
       contentLabel="Minimal Modal Example"
       className="InitialModal"
       overlayClassName="InitialModalOverlay"
     >
-      <motion.div initial={{scale:0, opacity:0}} animate={{scale:1, opacity:1}} className="flex flex-col justify-between items-center">
+      <div className="flex flex-col justify-between items-center">
         <button className="self-end pr-4 lg:pr-10 pt-4 text-xs" onClick={() => closeModal()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className=" transform transition-all svg-shadow hover:scale-125"
+            className=" transform transition-all svg-shadow-light hover:scale-125"
             width="44"
             height="44"
             viewBox="0 0 24 24"
@@ -59,7 +59,7 @@ export default function InitialModal() {
             <path d="M17 9v4a2 2 0 1 1 -2 2" />
           </svg>
         </div>
-      </motion.div>
+      </div>
     </ReactModal>
   );
 }

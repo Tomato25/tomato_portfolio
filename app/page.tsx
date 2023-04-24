@@ -15,18 +15,18 @@ import { Links } from "@/public/aboutContent";
 import Logo from "public/Images/Logo.svg";
 import PageWrapper from "./projects/page-wrapper";
 import InitialModal from "./components/InitialModal";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const name = "Hrvoje Tomic";
 
+
   return (
-    <PageWrapper>
-    <main className="h-screen w-screen flex flex-col justify-start ">
-      <InitialModal />
+    <main className="h-screen w-screen flex flex-col justify-start">
       <Particlesbackground />
       <div className="flex flex-row h-100 justify-center sm:justify-between items-center text-4xl mt-4 z-10">
+        <InitialModal />
         <div className="flex flex-row h-100 justify-between items-start gap-16 mx-16">
-
           <motion.div
             className="h-full w-14 flex flex-col justify-start items-center transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg"
             variants={socialVariants}
@@ -41,7 +41,10 @@ export default function Home() {
           </motion.div>
         </div>
         <div className="flex flex-col h-100 justify-center items-start gap-16 mx-16 text-base text-center lg:text-2xl">
-          <Link href="/about" className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg ">
+          <Link
+            href="/about"
+            className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "
+          >
             <motion.p
               variants={wordVariants}
               initial="hidden"
@@ -138,6 +141,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-    </PageWrapper>
   );
 }

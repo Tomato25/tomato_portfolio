@@ -25,10 +25,9 @@ export default function  PageWrapper({children} : MyProps) {
       }, [path]);
 
   return (
-    
     <motion.div variants={pageVariants} initial="hidden" animate="visible" exit={{opacity:0}}  key={path} >
       <AnimatePresence onExitComplete={() => window.scrollTo(0, 0)}>
-        {children }
+        {children}
       </AnimatePresence>
 
     </motion.div>

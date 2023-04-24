@@ -23,7 +23,7 @@ export default function Tomic_code_portfolio() {
     return (
       <div className="flex flex-col justify-center items-center gap-8 mt-16 mb-16 bg-slate-200 text-green py-20">
         <LayoutGroup>
-          <div className="flex md:flex-row flex-col gap-4 px-4 2xl:flex-nowrap md:flex-wrap lg:gap-20 lg:px-14 justify-between w-screen">
+          <div className="flex md:flex-row flex-col gap-4 px-4 2xl:flex-nowrap lg:gap-20 lg:px-14 justify-between w-screen">
             <motion.h1
               layout
               variants={wordVariants}

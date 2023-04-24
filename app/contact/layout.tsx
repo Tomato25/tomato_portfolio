@@ -10,14 +10,17 @@ import { Links } from "@/public/aboutContent";
 import { socialVariants } from "../animations/svgAnimations";
 import Image from "next/image";
 import Logo from "public/Images/Logo.svg";
-import Particlesbackground from "../components/particles/Particlesbackground";
+import {usePathname} from "next/navigation"
+import MenuParticlesBackground from "../components/MenuParticlesBackground";
 
 export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <section className="bg-bg1 h-screen w-screen">
+
+  const path = usePathname();
+  return <section className="bg-bg1 h-screen w-screen" key={path}>
          <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col font-notosans">
@@ -71,7 +74,7 @@ export default function ContactLayout({
                     <Link
                       key={index}
                       href={link.to}
-                      className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "
+                      className=" hover-underline-animation transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "
                     >
                       <motion.p
                         variants={wordVariants}
@@ -103,8 +106,8 @@ export default function ContactLayout({
           <motion.ul  variants={socialVariants}
             initial="hidden"
             animate="visible"
-            whileTap={{ scale: 0.9 }} className="menu w-80 bg-green flex flex-col justify-center items-center gap-24">
-          <Particlesbackground />
+            className="menu w-80 bg-green flex flex-col justify-center items-center gap-24">
+          <MenuParticlesBackground />
           {Links.map((link, index) => {
                   return (
                     <Link
