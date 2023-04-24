@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Noto_Sans_Mono} from 'next/font/google'
 import PageWrapper from "./projects/page-wrapper";
+import NavBar from "./components/NavBar";
 
 
 const notoSans = Noto_Sans_Mono({
@@ -14,8 +15,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 })
-
-
 
 {
 
