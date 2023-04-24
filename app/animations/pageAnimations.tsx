@@ -1,12 +1,12 @@
 export const pageVariants = {
         hidden: {
-            y:"100%"
+            opacity:0
         },
-        visible:{         
-            y:"0%",
+        visible:{       
+            opacity:1, 
             transition: {
                 ease: "easeOut",
-                duration:0.75
+                duration:1
             } 
         }
 }

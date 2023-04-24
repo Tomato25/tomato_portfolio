@@ -17,7 +17,7 @@ export default function InitialModal() {
       className="InitialModal"
       overlayClassName="InitialModalOverlay"
     >
-      <motion.div className="flex flex-col justify-between items-center">
+      <motion.div initial={{scale:0, opacity:0}} animate={{scale:1, opacity:1}} className="flex flex-col justify-between items-center">
         <button className="self-end pr-4 lg:pr-10 pt-4 text-xs" onClick={() => closeModal()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

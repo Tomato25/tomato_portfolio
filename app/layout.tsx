@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Noto_Sans_Mono} from 'next/font/google'
+import PageWrapper from "./projects/page-wrapper";
 
 
 const notoSans = Noto_Sans_Mono({
@@ -26,8 +27,10 @@ export default function RootLayout({
       */}
       <head />
       <body className={`${notoSans.variable} font-sans`}> 
-        <div  className="flex flex-col flex-grow min-h-screen text-lightGreen" >      
+        <div  className="flex flex-col flex-grow min-h-screen text-lightGreen bg-bg1" >
+        <PageWrapper>     
         {children}
+        </PageWrapper>
         </div>
 
       </body>

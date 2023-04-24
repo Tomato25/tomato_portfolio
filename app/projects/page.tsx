@@ -21,9 +21,7 @@ export default function Projects() {
       <SnagaPrirodeContextProvider>
         <NtuRiseContextProvider>
           <ChechuContextProvider>
-            <PortfolioContextProvider>
-              <PageWrapper>
-             
+            <PortfolioContextProvider>         
                 <div className="flex flex-col justify-center items-center gap-8  mb-16">
                   <Chechu />
                   <Tomic_code_portfolio key="component1" />
@@ -31,7 +29,6 @@ export default function Projects() {
                   <NtuRise key="component3" />
                   <WellbeingApplication />
                 </div>
-              </PageWrapper>
             </PortfolioContextProvider>
           </ChechuContextProvider>
         </NtuRiseContextProvider>

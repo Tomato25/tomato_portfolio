@@ -10,13 +10,11 @@ import SoftSkillsComponent from "./components/SoftSkills";
 
 export default function About() {
   return (
-    <PageWrapper>
       <main className="flex flex-col  flex-grow ">
         <LandingComponent />
         <ExperienceComponent />
         <EducationComponent />
         <SoftSkillsComponent />
       </main>
-    </PageWrapper>
   );
 }
