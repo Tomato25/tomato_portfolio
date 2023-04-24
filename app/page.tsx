@@ -20,12 +20,10 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const name = "Hrvoje Tomic";
 
-
   return (
     <main className="h-screen w-screen flex flex-col justify-start">
       <Particlesbackground />
       <div className="flex flex-row h-100 justify-center sm:justify-between items-center text-4xl mt-4 z-10">
-        <InitialModal />
         <div className="flex flex-row h-100 justify-between items-start gap-16 mx-16">
           <motion.div
             className="h-full w-14 flex flex-col justify-start items-center transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg"

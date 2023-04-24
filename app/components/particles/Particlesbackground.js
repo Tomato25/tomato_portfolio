@@ -77,7 +77,7 @@ export default function Particlesbackground() {
                 directions: "none",
                 enable: true,
                 outModes: {
-                    default: "bounce",
+                    default: "bounceHorizontal",
                 },
                 random: false,
                 speed: 3,
@@ -88,7 +88,7 @@ export default function Particlesbackground() {
                     enable: true,
                     area: 800,
                 },
-                value: 80,
+                value: 100,
             },
             opacity: {
                 value: 0.5,
