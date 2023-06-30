@@ -3,20 +3,17 @@ import { AnimatePresence, motion } from "framer-motion";
 import ProfileCircle from "../components/ProfileCircle";
 
 import {
-  paraWordVariants,
   paraVariants,
-  lettersVariants,
   sectionTitleVariants,
 } from "../aboutAnimations";
 import { aboutPara } from "@/public/aboutContent";
-import { pageVariants } from "@/app/animations/pageAnimations";
 
 export default function LandingComponent() {
-  const aboutSubtitle = "About";
 
   return (
     <AnimatePresence>
-      <motion.div className="lg:grid lg:grid-cols-2 w-screen my-20" variants={pageVariants} initial="hidden" animate="visible" exit={{opacity:0}} >
+      <div
+        className="lg:grid lg:grid-cols-2 w-screen my-20">
         <div className="flex flex-col mx-auto h-max gap-20 self-center justify-center  items-center w-full">
           <div className="flex flex-row md:gap-24 gap-10 min-w-full lg:pl-14 pl-6 mb-10">
             <motion.h1
@@ -25,16 +22,7 @@ export default function LandingComponent() {
               animate="visible"
               className="md:text-6xl text-4xl self-center vertical-rl text-shadow-vertical"
             >
-              {aboutSubtitle.split("").map((char, index) => {
-                return (
-                  <motion.span
-                    key={char + "-" + index}
-                    variants={lettersVariants}
-                  >
-                    {char}
-                  </motion.span>
-                );
-              })}
+              About
             </motion.h1>
             <motion.div
               variants={paraVariants}
@@ -45,20 +33,13 @@ export default function LandingComponent() {
               {aboutPara.map((para, index) => {
                 return (
                   <motion.p
-                    variants={paraWordVariants}
+                    variants={paraVariants}
+                    initial="hidden"
+                    animate="visible"
                     key={index}
                     className="md:text-xl text-sm"
                   >
-                    {para.split("").map((char, index) => {
-                      return (
-                        <motion.span
-                          key={char + "-" + index}
-                          variants={lettersVariants}
-                        >
-                          {char}
-                        </motion.span>
-                      );
-                    })}
+                   {para}
                   </motion.p>
                 );
               })}
@@ -72,7 +53,7 @@ export default function LandingComponent() {
         >
           <ProfileCircle />
         </motion.div>
-      </motion.div>
+      </div>
     </AnimatePresence>
   );
 }

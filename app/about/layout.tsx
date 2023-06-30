@@ -43,7 +43,7 @@ export default function AboutLayout({
             </div>
             <div className="lg:flex-1 lg:pl-8 pr-8 lg:pr-0 ">
             <motion.div
-            className="lg:h-16 h-10 w-14 pr-2  flex flex-col justify-start items-center transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg"
+            className="pr-2  transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg"
             variants={socialVariants}
             initial="hidden"
             animate="visible"
@@ -52,12 +52,10 @@ export default function AboutLayout({
             
             <div className="relative h-full w-full">
             <Link href="/">
-              <Image alt="logo" src={Logo} fill />
-              </Link>
-            </div>
-            <Link href="/">
-            <h3 className="text-xs whitespace-nowrap	">Tomic codes</h3>
+            <h3 className="text-lg whitespace-nowrap">Tomic Codes</h3>
             </Link>
+
+            </div>
 
           </motion.div>
           </div>
@@ -73,7 +71,7 @@ export default function AboutLayout({
                     <Link
                       key={index}
                       href={link.to}
-                      className="hover-underline-animation hover-underline-animation transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "
+                      className="hover-underline-animation hover-underline-animation transform transition-all svg-shadow "
                     >
                       <motion.p
                         variants={wordVariants}
@@ -113,7 +111,7 @@ export default function AboutLayout({
                     <Link
                       key={index}
                       href={link.to}
-                      className=" transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg text-2xl z-10"
+                      className=" transform transition-all svg-shadow text-2xl z-10"
                     >
                       <motion.p
                         variants={wordVariants}

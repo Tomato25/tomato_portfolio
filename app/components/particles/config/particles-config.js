@@ -100,7 +100,7 @@ const particlesConfig = {
           quantity: 4
         },
         remove: {
-          quantity: 2
+          quantity: 1
         },
         repulse: {
           distance: 200,

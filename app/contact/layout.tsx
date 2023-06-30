@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import {
   lettersVariants,
@@ -10,7 +10,7 @@ import { Links } from "@/public/aboutContent";
 import { socialVariants } from "../animations/svgAnimations";
 import Image from "next/image";
 import Logo from "public/Images/Logo.svg";
-import {usePathname} from "next/navigation"
+import { usePathname } from "next/navigation";
 import MenuParticlesBackground from "../components/MenuParticlesBackground";
 
 export default function ContactLayout({
@@ -18,12 +18,12 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   const path = usePathname();
-  return <section className="bg-bg1 h-screen w-screen" key={path}>
-         <div className="drawer">
+  return (
+    <section className="bg-bg1 flex flex-col min-h-fit">
+      <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col font-notosans">
+        <div className="drawer-content flex flex-col">
           <div className="w-full navbar flex justify-between bg-bg1">
             <div className="flex-none lg:hidden">
               <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
@@ -44,7 +44,7 @@ export default function ContactLayout({
             </div>
             <div className="lg:flex-1 lg:pl-8 pr-8 lg:pr-0 ">
             <motion.div
-            className="lg:h-16 h-10 w-14 pr-2  flex flex-col justify-start items-center transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg"
+            className="pr-2  transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg"
             variants={socialVariants}
             initial="hidden"
             animate="visible"
@@ -53,12 +53,10 @@ export default function ContactLayout({
             
             <div className="relative h-full w-full">
             <Link href="/">
-              <Image alt="logo" src={Logo} fill />
-              </Link>
-            </div>
-            <Link href="/">
-            <h3 className="text-xs whitespace-nowrap	">Tomic codes</h3>
+            <h3 className="text-lg whitespace-nowrap">Tomic Codes</h3>
             </Link>
+
+            </div>
 
           </motion.div>
           </div>
@@ -74,7 +72,7 @@ export default function ContactLayout({
                     <Link
                       key={index}
                       href={link.to}
-                      className=" hover-underline-animation transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg "
+                      className="hover-underline-animation hover-underline-animation transform transition-all svg-shadow "
                     >
                       <motion.p
                         variants={wordVariants}
@@ -92,6 +90,7 @@ export default function ContactLayout({
                         })}
                       </motion.p>
                     </Link>
+
                     </li>
                   );
                 })}
@@ -101,23 +100,24 @@ export default function ContactLayout({
           {children}
         </div>
         <div className="drawer-side">
-          
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
           <motion.ul  variants={socialVariants}
             initial="hidden"
             animate="visible"
-            className="menu w-80 bg-green flex flex-col justify-center items-center gap-24">
-          <MenuParticlesBackground />
+           className="menu w-80 bg-green flex flex-col justify-center items-center gap-24">
+            <MenuParticlesBackground />
+            <AnimatePresence>
           {Links.map((link, index) => {
                   return (
                     <Link
                       key={index}
                       href={link.to}
-                      className="transform transition-all svg-shadow hover:scale-110 hover:svg-shadow-lg text-2xl z-10"
+                      className=" transform transition-all svg-shadow text-2xl z-10"
                     >
                       <motion.p
                         variants={wordVariants}
                         whileTap={{ scale: 0.9 }}
+                        exit={{opacity:0, y:-20}}
                       >
                         {link.name.split("").map((char, index) => {
                           return (
@@ -133,8 +133,10 @@ export default function ContactLayout({
                     </Link>
                   );
                 })}
+                </AnimatePresence>
           </motion.ul>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }

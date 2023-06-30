@@ -1,29 +1,43 @@
 export const sectionTitleVariants = {
-  hidden: {},
+  hidden: { opacity: 0, x: -30 },
   visible: {
+    opacity: 1,
+    x: 0,
     transition: {
-      delayChildren: 1,
-      staggerChildren: 0.2,
-    },
-  },
-};
-export const paraVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      delay: 3,
-      staggerChildren: 3,
+      delay: 0.5,
     },
   },
 };
 
-export const paraWordVariants = {
-  hidden: {},
+export const sectionContainerVariants = {
+  hidden: { opacity: 0 },
   visible: {
+    opacity: 1,
     transition: {
-      delay: 2,
-      delayChildren: 1,
-      staggerChildren: 0.015,
+      delay: 1.5,
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+export const sectionVariants = {
+  hidden: { opacity: 0, y: -30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 1,
+    },
+  },
+};
+
+export const paraVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1.5,
+      staggerChildren: 0.5,
     },
   },
 };
@@ -32,7 +46,7 @@ export const ulVariants = {
   hidden: {},
   visible: {
     transition: {
-        delayChildren: 4,
+      delayChildren: 4,
       staggerChildren: 1,
     },
   },
@@ -43,8 +57,7 @@ export const liVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-    },
+    transition: {},
   },
 };
 
@@ -57,14 +70,3 @@ export const subtitleVariants = {
     },
   },
 };
-
-export const lettersVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration:0.01
-    }
-  },
-};
-

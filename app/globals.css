@@ -179,6 +179,16 @@ body {
   --tooltip-text-color: #003D2B;
 }
 
+.tooltip-secondary {
+  --tooltip-color: #003D2B;
+  --tooltip-text-color:  #ADE6B9;
+}
+
+.alert-info {
+  background-color: #ADE6B9;
+  color: #003D2B;
+}
+
 
 .tagcloud {
 

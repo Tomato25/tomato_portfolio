@@ -9,11 +9,11 @@ import {
   SiCsharp,
 } from "react-icons/si";
 import {
-  lettersVariants,
   subtitleVariants,
   liVariants,
   sectionTitleVariants,
   ulVariants,
+  sectionContainerVariants,
 } from "../aboutAnimations";
 import { techVariants } from "../../animations/svgAnimations";
 import { Education } from "@/public/aboutContent";
@@ -74,67 +74,28 @@ export default function EducationComponent() {
         ref={ref}
         className="md:text-6xl text-4xl self-center vertical-rl text-shadow-vertical"
       >
-        {educationSubtitle.split("").map((char, index) => {
-          return (
-            <motion.span key={char + "-" + index} variants={lettersVariants}>
-              {char}
-            </motion.span>
-          );
-        })}
+        Education
       </motion.h1>
 
       {Education.map((education, index) => {
         return (
           <div className="flex md:flex-row flex-col-reverse justify-between w-full md:pr-14 pr-4">
             <div className="flex flex-col justify-start items-start">
-              <div className="flex flex-col justify-start items-start gap-4 w-full">
+              <motion.div   variants={sectionContainerVariants}
+                  animate={controls}
+                  viewport={{ once: true }}
+                  ref={ref}
+                  initial="hidden" className="flex flex-col justify-start items-start gap-4 w-full">
                 <span>
-                  <motion.h2
-                    className="md:text-4xl text-lg  text-shadow-light"
-                    variants={subtitleVariants}
-                    initial="hidden"
-                    ref={ref}
-                    animate={controls}
-                  >
-                    {education.university.split("").map((char, index) => {
-                      return (
-                        <motion.span
-                          key={char + "-" + index}
-                          variants={lettersVariants}
-                        >
-                          {char}
-                        </motion.span>
-                      );
-                    })}
+                  <motion.h2 className="md:text-4xl text-lg  text-shadow-light">
+                    {education.university}
                   </motion.h2>
-                  <motion.h2
-                    variants={subtitleVariants}
-                    viewport={{ once: true }}
-                    initial="hidden"
-                    ref={ref}
-                    animate={controls}
-                    className="md:text-lg text-sm   text-shadow-light"
-                  >
-                    {education.course.split("").map((char, index) => {
-                      return (
-                        <motion.span
-                          key={char + "-" + index}
-                          variants={lettersVariants}
-                        >
-                          {char}
-                        </motion.span>
-                      );
-                    })}
+                  <motion.h2 className="md:text-lg text-sm   text-shadow-light">
+                    {education.course}
                   </motion.h2>
                 </span>
 
-                <motion.ul
-                  variants={ulVariants}
-                  initial="hidden"
-                  animate={controls}
-                  ref={ref}
-                  className="list-disc pl-10 md:text-lg text-sm"
-                >
+                <motion.ul  className="list-disc pl-10 md:text-lg text-sm">
                   {education.description.map((para, index) => {
                     return (
                       <motion.li
@@ -142,71 +103,42 @@ export default function EducationComponent() {
                         key={index}
                         className="mb-3 pr-10"
                       >
-                      {para}
+                        {para}
                       </motion.li>
                     );
                   })}
                 </motion.ul>
 
-                <div className="flex flex-col items-start gap-16 self-center w-full mx-auto pr-12">
+                <motion.div
+                  variants={sectionContainerVariants}
+                  animate={controls}
+                  viewport={{ once: true }}
+                  ref={ref}
+                  initial="hidden"
+                  className="flex flex-col items-start gap-16 self-center w-full mx-auto pr-12"
+                >
                   <motion.h2
-                    variants={subtitleVariants}
-                    initial="hidden"
-                    animate={controls}
-                    ref={ref}
+                    variants={sectionContainerVariants}
                     className="md:text-4xl text-2xl self-center text-shadow-light"
                   >
-                    {"Projects".split("").map((char, index) => {
-                      return (
-                        <motion.span
-                          key={char + "-" + index}
-                          variants={lettersVariants}
-                        >
-                          {char}
-                        </motion.span>
-                      );
-                    })}
+                    Projects
                   </motion.h2>
                   <div className="flex flex-col justify-center items-start gap-4 w-full">
                     <motion.h2
-                      variants={subtitleVariants}
-                      initial="hidden"
-                      animate={controls}
-                      ref={ref}
+                      variants={sectionContainerVariants}
                       className=" md:text-2xl text-xl self-center mb-8"
                     >
-                      {ECommerceProject.name.split("").map((char, index) => {
-                        return (
-                          <motion.span
-                            key={char + "-" + index}
-                            variants={lettersVariants}
-                          >
-                            {char}
-                          </motion.span>
-                        );
-                      })}
+                      {ECommerceProject.name}
                     </motion.h2>
                     <motion.ul
+                      variants={sectionContainerVariants}
                       className="list-disc pl-10 md:text-lg text-sm  w-full"
-                      ref={ref}
-                      variants={ulVariants}
-                      initial="hidden"
-                      animate={controls}
                     >
                       {ECommerceProject.description.map((para, index) => {
-                        return (
-                          <motion.li
-                            variants={liVariants}
-                            key={index}
-                            className="mb-3"
-                          >
-                            {para}
-                          </motion.li>
-                        );
+                        return <motion.li className="mb-3">{para}</motion.li>;
                       })}
                       <motion.li
-                        variants={liVariants}
-                        key={index}
+                        variants={sectionContainerVariants}
                         className="md:text-lg text-sm mb-3 flex flex-row justify-center items-center w-full mx-auto md:gap-20 gap-6"
                       >
                         <div className="flex flex-col justify-center items-center gap-3">
@@ -245,43 +177,24 @@ export default function EducationComponent() {
 
                   <div className="flex flex-col justify-center items-start gap-4 w-full">
                     <motion.h2
-                      variants={subtitleVariants}
-                      initial="hidden"
-                      animate={controls}
-                      ref={ref}
+                      variants={sectionContainerVariants}
                       className=" md:text-2xl text-xl self-center mb-8"
                     >
-                      {CCDProject.name.split("").map((char, index) => {
-                        return (
-                          <motion.span
-                            key={char + "-" + index}
-                            variants={lettersVariants}
-                          >
-                            {char}
-                          </motion.span>
-                        );
-                      })}
+                      {CCDProject.name}
                     </motion.h2>
                     <motion.ul
+                      variants={sectionContainerVariants}
                       className="list-disc pl-10 md:text-lg text-sm w-full"
-                      ref={ref}
-                      variants={ulVariants}
-                      initial="hidden"
-                      animate={controls}
                     >
                       {CCDProject.description.map((para, index) => {
                         return (
-                          <motion.li
-                            variants={liVariants}
-                            key={index}
-                            className="mb-3"
-                          >
+                          <motion.li key={index} className="mb-3">
                             {para}
                           </motion.li>
                         );
                       })}
                       <motion.li
-                        variants={liVariants}
+                        variants={sectionContainerVariants}
                         key={index}
                         className="  md:text-xl text-sm mb-3 flex flex-row justify-center items-center w-full mx-auto md:gap-20 gap-6"
                       >
@@ -320,44 +233,18 @@ export default function EducationComponent() {
                   </div>
 
                   <div className="flex flex-col justify-center items-start gap-4 w-full">
-                    <motion.h2
-                      variants={subtitleVariants}
-                      initial="hidden"
-                      animate={controls}
-                      ref={ref}
-                      className=" md:text-2xl text-lg self-center mb-8"
-                    >
-                      {DBProject.name.split("").map((char, index) => {
-                        return (
-                          <motion.span
-                            key={char + "-" + index}
-                            variants={lettersVariants}
-                          >
-                            {char}
-                          </motion.span>
-                        );
-                      })}
+                    <motion.h2 className=" md:text-2xl text-lg self-center mb-8">
+                      {DBProject.name}
                     </motion.h2>
-                    <motion.ul
-                      className="list-disc pl-10 md:text-xl text-sm  w-full "
-                      ref={ref}
-                      variants={ulVariants}
-                      initial="hidden"
-                      animate={controls}
-                    >
+                    <motion.ul className="list-disc pl-10 md:text-xl text-sm  w-full ">
                       {DBProject.description.map((para, index) => {
                         return (
-                          <motion.li
-                            variants={liVariants}
-                            key={index}
-                            className="mb-3"
-                          >
+                          <motion.li key={index} className="mb-3">
                             {para}
                           </motion.li>
                         );
                       })}
                       <motion.li
-                        variants={liVariants}
                         key={index}
                         className=" md:text-xl text-sm mb-3 flex flex-row justify-center items-center self-center w-full mx-auto d:gap-20 gap-6"
                       >
@@ -370,26 +257,11 @@ export default function EducationComponent() {
                       </motion.li>
                     </motion.ul>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
-            <motion.h1
-              variants={subtitleVariants}
-              initial="hidden"
-              animate={controls}
-              ref={ref}
-              className="md:text-2xl text-lg self-center md:vertical-rl text-shadow-vertical"
-            >
-              {education.duration.split("").map((char, index) => {
-                return (
-                  <motion.span
-                    key={char + "-" + index}
-                    variants={lettersVariants}
-                  >
-                    {char}
-                  </motion.span>
-                );
-              })}
+            <motion.h1 className="md:text-2xl text-lg self-center md:vertical-rl text-shadow-vertical">
+              {education.duration}
             </motion.h1>
           </div>
         );

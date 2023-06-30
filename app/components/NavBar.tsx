@@ -9,7 +9,6 @@ import {
 import { socialVariants } from "../animations/svgAnimations";
 import { Links } from "@/public/aboutContent";
 import Image from "next/image";
-import Logo from "public/Images/Logo.svg";
 import { ReactNode } from "react";
 import Particlesbackground from "./particles/Particlesbackground";
 
@@ -52,13 +51,9 @@ export default function NavBar( {
         
         <div className="relative h-full w-full">
         <Link href="/">
-          <Image alt="logo" src={Logo} fill />
-          </Link>
-        </div>
-        <Link href="/">
-        <h3 className="text-xs whitespace-nowrap	">Tomic codes</h3>
+        <h3 className="text-base whitespace-nowrap">Tomic codes</h3>
         </Link>
-
+        </div>
       </motion.div>
       </div>
         <div className="flex-none hidden lg:block">

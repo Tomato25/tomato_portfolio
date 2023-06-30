@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaGithubSquare } from "react-icons/fa";
 import {TfiMoreAlt} from "react-icons/tfi"
 import { HiExternalLink } from "react-icons/hi";
 import { GrReactjs } from "react-icons/gr";
@@ -17,6 +17,7 @@ import { snagaPrirode } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
 import SPBanner from "public/Images/SnagaPrirode/screen0.png";
 import { useChechuContext } from "../contexts/ChechuContext";
+import { sectionTitleVariants } from "@/app/about/aboutAnimations";
 
 export default function Snaga_prirode() {
   const { carouselToggle, setCarouselToggle } = useChechuContext();
@@ -27,22 +28,13 @@ export default function Snaga_prirode() {
       <LayoutGroup>
         <div className="flex flex-col md:flex-row gap-4 px-4 2xl:flex-nowrap  lg:gap-20 lg:px-14 justify-between w-screen">
           <motion.h1
-            layout
-            variants={wordVariants}
+                      variants={sectionTitleVariants}
             initial="hidden"
             animate="visible"
-            className="text-2xl lg:text-5xl self-center md:vertical-rl text-shadow-vertical"
+            layout
+            className="invisible md:visible text-2xl lg:text-5xl self-center md:vertical-rl text-shadow-vertical"
           >
-            {snagaPrirode.year.split("").map((char, index) => {
-              return (
-                <motion.span
-                  key={char + "-" + index}
-                  variants={lettersVariants}
-                >
-                  {char}
-                </motion.span>
-              );
-            })}
+            {snagaPrirode.year}
           </motion.h1>
 
           <AnimatePresence mode="wait">
@@ -62,7 +54,7 @@ export default function Snaga_prirode() {
                 <motion.div
                   onMouseEnter={() => setIsModalOpen(true)}
                   onMouseLeave={() => setIsModalOpen(false)}
-                  className="md:w-2/3 w-11/12 flex justify-center items-center relative  svg-shadow hover:scale-105 transform transition-all"
+                  className="md:w-2/3 w-11/12 flex justify-center items-center relative cursor-pointer"
                   onClick={() => setCarouselToggle(!carouselToggle)}
                 >
                   <Image
@@ -71,12 +63,23 @@ export default function Snaga_prirode() {
                     alt="Snaga prirode"
                     
                   />
+                  <AnimatePresence>
                   {isModalOpen && (
-                    <motion.div initial={{opacity:0, scale:0}} animate={{opacity:1, scale:1}} transition={{duration:0.5}} className="md:text-2xl text-sm rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center transition-opacity">
-                      <h1 className="cursor-pointer ">Check out more</h1>
-                      <TfiMoreAlt className="cursor-pointer text-4xl"/>
+                    <motion.div
+                      initial={{ opacity: 0,}}
+                      animate={{ opacity: 1,}}
+                      transition={{ duration: 0.5 }}
+                      exit={{opacity:0}}
+                      className="md:text-xl text-base rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center text-lightGreen transition-opacity"
+                    >
+                      <div  className="h-40 w-40 p-4 flex flex-col items-center justify-center rounded-full bg-lightGreen text-green text-xl text-center ">
+                      <h1 className="cursor-pointer whitespace-normal">Check out more</h1>
+                      <TfiMoreAlt className="cursor-pointer text-3xl" />
+                      
+                      </div>
                     </motion.div>
                   )}
+                  </AnimatePresence>
                 </motion.div>
               ) : (
                 <motion.div
@@ -109,14 +112,25 @@ export default function Snaga_prirode() {
               data-tip="Check the code on Github"
             >
               <motion.a
-                variants={socialVariants}
-                initial="hidden"
-                animate="visible"
+                initial={{ opacity: 0, x: 40 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    delay: 0.5,
+                  },
+                }}
+                whileHover={{
+                  rotate: 360,
+                  scale: 1.1,
+                  transition: { duration: 0.8, type: "spring" },
+                }}
+                whileTap={{ rotate: -20, scale: 0.8 }}
+                className="h-16 w-16 flex items-center justify-center rounded-full bg-lightGreen text-green text-4xl cursor-pointer"
                 href="https://github.com/Tomato25/SnagaPrirode"
                 target="_blank"
-                className="text-2xl lg:text-4xl"
               >
-                <FaGithub className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
+                <FaGithubSquare />
               </motion.a>
             </div>
             <div
@@ -124,14 +138,25 @@ export default function Snaga_prirode() {
               data-tip="Go to the website"
             >
               <motion.a
-                variants={socialVariants}
-                initial="hidden"
-                animate="visible"
+                initial={{ opacity: 0, x: 40 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    delay: 0.5,
+                  },
+                }}
+                whileHover={{
+                  rotate: 360,
+                  scale: 1.1,
+                  transition: { duration: 0.8, type: "spring" },
+                }}
+                whileTap={{ rotate: -20, scale: 0.8 }}
+                className="h-16 w-16 flex items-center justify-center rounded-full bg-lightGreen text-green text-4xl cursor-pointer"
                 href="https://snagaprirode.com.hr"
                 target="_blank"
-                className="text-2xl lg:text-5xl"
               >
-                <HiExternalLink className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg" />
+                <HiExternalLink/>
               </motion.a>
             </div>
           </motion.div>
@@ -144,45 +169,16 @@ export default function Snaga_prirode() {
           className="flex flex-row justify-center gap-4 items-center"
         >
           <motion.h1
-            variants={lettersVariants}
-            className="md:text-4xl text-2xl text-shadow"
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}        
+            className="md:text-3xl text-2xl text-shadow"
           >
-            2
-          </motion.h1>
-          <motion.svg
-            variants={lettersVariants}
-            className="svg-shadow"
-            width="6"
-            height="60"
-            viewBox="0 0 6 101"
-            stroke="#ADE6B9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M3 0.5V100.5" stroke="#ADE6B9" stroke-width="5" />
-          </motion.svg>
-
-          <motion.h1
-            variants={wordVariants}
-            initial="hidden"
-            animate="visible"
-            className="md:text-4xl text-2xl text-shadow"
-          >
-            {snagaPrirode.name.split("").map((char, index) => {
-              return (
-                <motion.span
-                  key={char + "-" + index}
-                  variants={lettersVariants}
-                >
-                  {char}
-                </motion.span>
-              );
-            })}
+            {snagaPrirode.name}
           </motion.h1>
         </motion.div>
         <motion.div
           layout
-          className="flex flex-row flex-wrap justify-center items-center md:gap-8 gap-4  md:text-xl text-sm w-4/5"
+          className="flex flex-row flex-wrap justify-center items-center md:gap-16 gap-8  md:text-3xl text-xl w-4/5"
         >
           <motion.div
             variants={techVariants}
@@ -195,7 +191,6 @@ export default function Snaga_prirode() {
             }}
             className="flex flex-col justify-center items-center gap-3 transform transition-all hover:svg-shadow"
           >
-            <h1>React</h1>
             <h1>
               <GrReactjs />
             </h1>
@@ -211,7 +206,6 @@ export default function Snaga_prirode() {
             }}
             className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
           >
-            <h1>CSS</h1>
             <h1>
               <SiCss3 />
             </h1>
@@ -227,7 +221,6 @@ export default function Snaga_prirode() {
             }}
             className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
           >
-            <h1>Framer Motion</h1>
             <h1>
               <TbBrandFramerMotion />
             </h1>
@@ -244,7 +237,6 @@ export default function Snaga_prirode() {
             }}
             className="flex flex-col justify-center items-center gap-3 opacity-40 transform transition-all hover:opacity-100 hover:scale-110 hover:svg-shadow"
           >
-            <h1>AdobeXd</h1>
             <h1>
               <SiAdobexd />
             </h1>

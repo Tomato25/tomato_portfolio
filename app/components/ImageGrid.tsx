@@ -70,15 +70,15 @@ export default function SSRMasonry(props: Props) {
         variants={socialVariants}
         initial="hidden"
         animate="visible"
-        className="mb-8 mx-auto"
+        className="mb-8 mx-auto flex flex-col items-center justify-center bg-bg1 rounded-full w-16 h-16"
         onClick={() => setCarouselToggle(!carouselToggle)}
       >
         {" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg"
-          width="44"
-          height="44"
+          className=" transform transition-all"
+          width="38"
+          height="38"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="#ADE6B9"
@@ -107,14 +107,12 @@ export default function SSRMasonry(props: Props) {
           <motion.div
             key={index}
             variants={gridItemVariants}
-            className="svg-shadow "
+            
           >
             <motion.div
           initial={{scale:0, opacity:0}}
           animate={{scale:1, opacity:1}}
 
-          className="tooltip tooltip-top tooltip-primary pb-10"
-          data-tip="Click to enlarge"
         >
               <img
                 className=" transform transition-all rounded-lg cursor-pointer hover:scale-105 "
@@ -141,14 +139,14 @@ export default function SSRMasonry(props: Props) {
               className="Modal"
               overlayClassName="Overlay"
             >
-              <motion.div className="flex flex-col justify-between items-center h-800 w-screen">
+              <motion.div className="flex flex-col gap-6 justify-between items-center h-800">
                 <button
                   className="self-end pr-10 pt-4"
                   onClick={() => closeModal()}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg"
+                    className=" transform transition-all hover:scale-110 "
                     width="44"
                     height="44"
                     viewBox="0 0 24 24"
@@ -172,7 +170,7 @@ export default function SSRMasonry(props: Props) {
                   <button onClick={() => handlePrevImage()}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg"
+                      className=" transform transition-all  hover:scale-110 "
                       width="44"
                       height="44"
                       viewBox="0 0 24 24"
@@ -189,7 +187,7 @@ export default function SSRMasonry(props: Props) {
                   <button onClick={() => handleNextImage()}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className=" transform transition-all svg-shadow hover:scale-125 hover:svg-shadow-lg"
+                      className=" transform transition-all  hover:scale-110 "
                       width="44"
                       height="44"
                       viewBox="0 0 24 24"
