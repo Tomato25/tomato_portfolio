@@ -79,13 +79,14 @@ export default function EducationComponent() {
 
       {Education.map((education, index) => {
         return (
-          <div className="flex md:flex-row flex-col-reverse justify-between w-full md:pr-14 pr-4">
-            <div className="flex flex-col justify-start items-start">
-              <motion.div   variants={sectionContainerVariants}
-                  animate={controls}
-                  viewport={{ once: true }}
-                  ref={ref}
-                  initial="hidden" className="flex flex-col justify-start items-start gap-4 w-full">
+          <motion.div variants={sectionContainerVariants}
+          animate={controls}
+          viewport={{ once: true }}
+          initial="hidden" 
+          ref={ref} className="flex md:flex-row flex-col-reverse justify-between w-full md:pr-14 pr-4">
+            <div  className="flex flex-col justify-start items-start">
+              <div   
+                  className="flex flex-col justify-start items-start gap-4 w-full">
                 <span>
                   <motion.h2 className="md:text-4xl text-lg  text-shadow-light">
                     {education.university}
@@ -108,7 +109,12 @@ export default function EducationComponent() {
                     );
                   })}
                 </motion.ul>
-
+                <motion.h2
+                    variants={sectionContainerVariants}
+                    className="md:text-4xl text-2xl self-center text-shadow-light mt-12 pr-12"
+                  >
+                    Projects
+                  </motion.h2>
                 <motion.div
                   variants={sectionContainerVariants}
                   animate={controls}
@@ -117,12 +123,7 @@ export default function EducationComponent() {
                   initial="hidden"
                   className="flex flex-col items-start gap-16 self-center w-full mx-auto pr-12"
                 >
-                  <motion.h2
-                    variants={sectionContainerVariants}
-                    className="md:text-4xl text-2xl self-center text-shadow-light"
-                  >
-                    Projects
-                  </motion.h2>
+                  
                   <div className="flex flex-col justify-center items-start gap-4 w-full">
                     <motion.h2
                       variants={sectionContainerVariants}
@@ -178,7 +179,7 @@ export default function EducationComponent() {
                   <div className="flex flex-col justify-center items-start gap-4 w-full">
                     <motion.h2
                       variants={sectionContainerVariants}
-                      className=" md:text-2xl text-xl self-center mb-8"
+                      className=" md:text-2xl text-xl self-center mb-8 text-center"
                     >
                       {CCDProject.name}
                     </motion.h2>
@@ -233,7 +234,7 @@ export default function EducationComponent() {
                   </div>
 
                   <div className="flex flex-col justify-center items-start gap-4 w-full">
-                    <motion.h2 className=" md:text-2xl text-lg self-center mb-8">
+                    <motion.h2 className=" md:text-2xl text-lg self-center mb-8 text-center">
                       {DBProject.name}
                     </motion.h2>
                     <motion.ul className="list-disc pl-10 md:text-xl text-sm  w-full ">
@@ -258,12 +259,12 @@ export default function EducationComponent() {
                     </motion.ul>
                   </div>
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
-            <motion.h1 className="md:text-2xl text-lg self-center md:vertical-rl text-shadow-vertical">
+            <motion.h1 variants={sectionContainerVariants} className="md:text-2xl text-lg self-center md:vertical-rl md:mb-0 mb-8 text-shadow-vertical">
               {education.duration}
             </motion.h1>
-          </div>
+          </motion.div>
         );
       })}
     </div>

@@ -20,11 +20,11 @@ export default function ContactLayout({
 }) {
   const path = usePathname();
   return (
-    <section className="bg-bg1 flex flex-col min-h-fit">
+    <section className=" flex flex-col min-h-fit ">
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
-        <div className="w-full navbar flex justify-between bg-bg1">
+        <div className="w-full navbar flex justify-between  z-10">
           <div className="flex-none lg:hidden">
             <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
               <svg
@@ -107,9 +107,9 @@ export default function ContactLayout({
           variants={socialVariants}
           initial="hidden"
           animate="visible"
-          className="menu w-80 bg-green flex flex-col justify-center items-center gap-24"
+          className="menu w-80 bg-bg1 flex flex-col justify-center items-center gap-24"
         >
-          <MenuParticlesBackground />
+
           <AnimatePresence>
             {Links.map((link, index) => {
               return (

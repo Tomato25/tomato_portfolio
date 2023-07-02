@@ -13,6 +13,7 @@ import {
 } from "../animations/contactAnimations";
 import { useRef } from "react";
 import AnimatedTextContact from "./AnimatedTextContact";
+import Particlesbackground from "../components/particles/Particlesbackground";
 
 function Contact() {
   const h2Refs = useRef<(HTMLHeadingElement | null)[]>([null, null, null, null]); // Initialize with null values
@@ -37,27 +38,32 @@ function Contact() {
     }
   }};
 
-  return (
-    <div className="flex gap-28 mt-20 flex-row items-center h-full w-screen bg-bg1">
-      <motion.h1
+  return (  
+    <div className="flex-row flex items-center">
+    <Particlesbackground />
+    <div className=" flex lg:gap-28 lg:mt-20 flex-col items-center h-full w-screen z-10">
+    <AnimatedTextContact />
+      <div className="flex flex-row w-full items-center justify-between relative">
+
+        <LayoutGroup>
+        <motion.div  layout>
+        <motion.h1
         variants={sectionTitleVariants}
         initial="hidden"
         animate="visible"
-        className="text-3xl  md:pl-14 pl-6  md:text-6xl self-center vertical-rl text-shadow-vertical"
+        className="text-3xl md:text-6xl pl-6 md:pl-12 self-center vertical-rl text-shadow-vertical"
       >
         Contact
       </motion.h1>
-      <div className="flex flex-col gap-36 self-start items-center justify-around w-full px-24">
-        <LayoutGroup>
-        <motion.div  layout>
-      <AnimatedTextContact />
       </motion.div>
+
+
         <motion.div
            layout
           variants={iconContainerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-row justify-evenly gap-16 items-center"
+          className="flex flex-wrap flex-row justify-evenly gap-16 items-center mx-auto 75%"
         >
           <motion.div
             variants={cardVariants}
@@ -231,6 +237,7 @@ function Contact() {
           )}
         </AnimatePresence>
         </LayoutGroup>
+      </div>
       </div>
     </div>
   );

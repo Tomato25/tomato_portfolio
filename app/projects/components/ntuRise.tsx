@@ -32,7 +32,7 @@ export default function NtuRise() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center gap-8 mt-16 mb-16 py-20 bg-slate-200 text-green">
+    <div className="flex flex-col justify-center items-center gap-8 md:mt-16 md:mb-16 py-20 bg-slate-200 text-green">
       <LayoutGroup>
         <div className="flex flex-col md:flex-row gap-4 px-4 2xl:flex-nowrap lg:gap-20 lg:px-14 justify-between w-screen">
           <motion.h1
@@ -78,7 +78,7 @@ export default function NtuRise() {
                       exit={{opacity:0}}
                       className="md:text-xl text-base rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center text-lightGreen transition-opacity"
                     >
-                      <div  className="h-40 w-40 p-4 flex flex-col items-center justify-center rounded-full bg-lightGreen text-green text-xl text-center ">
+                      <div  className="h-28 w-28 lg:h-40 lg:w-40  text-base lg:text-xl p-4 flex flex-col items-center justify-center rounded-full bg-lightGreen text-green text-center ">
                       <h1 className="cursor-pointer whitespace-normal">Check out more</h1>
                       <TfiMoreAlt className="cursor-pointer text-3xl" />
                       
@@ -179,7 +179,7 @@ export default function NtuRise() {
 
         <motion.div className="w-screen h-fit md:text-xl text-xs md:p-20 p-8">
           <motion.ul
-            className="list-disc pl-10 text-lg  w-full"
+            className="list-disc pl-10 text-sm md:text-lg  w-full"
             variants={ulVariants}
             initial="hidden"
             animate="visible"

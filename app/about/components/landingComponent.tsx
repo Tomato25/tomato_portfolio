@@ -28,7 +28,7 @@ export default function LandingComponent() {
               variants={paraVariants}
               initial="hidden"
               animate="visible"
-              className="flex flex-col justify-center items-center gap-10 pr-3"
+              className="flex flex-col justify-center items-center gap-10 pr-12"
             >
               {aboutPara.map((para, index) => {
                 return (
