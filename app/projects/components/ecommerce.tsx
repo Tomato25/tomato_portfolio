@@ -10,13 +10,13 @@ import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
 import { socialVariants, techVariants } from "../../animations/svgAnimations";
 import { imageVariants, titleVariants } from "../animations";
 import { lettersVariants, wordVariants } from "../../animations/textAnimations";
-import { chechu } from "public/projectsContent";
+import { ecommerce } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
-import ChechuBanner from "public/Images/Chechu/ChechuScreen1.png";
+import EcommerceBanner from "public/Images/Ecommerce/1.png";
 import { useChechuContext } from "../contexts/ChechuContext";
 import { sectionTitleVariants } from "@/app/about/aboutAnimations";
 
-export default function Chechu() {
+export default function Ecommerce() {
   const { carouselToggle, setCarouselToggle } = useChechuContext();
 
   return (
@@ -30,7 +30,7 @@ export default function Chechu() {
             animate="visible"
             className="invisible md:visible text-2xl lg:text-5xl self-center md:vertical-rl text-shadow-vertical"
           >
-            {chechu.year}
+            {ecommerce.year}
           </motion.h1>
 
           <AnimatePresence mode="wait">
@@ -48,7 +48,7 @@ export default function Chechu() {
                 className="flex justify-center items-center"
               >
                 <Image
-                  src={ChechuBanner}
+                  src={EcommerceBanner}
                   className="md:w-2/3 w-11/12 rounded-lg svg-shadow"
                   alt="Snaga prirode"
                   placeholder="blur"
@@ -59,7 +59,7 @@ export default function Chechu() {
          
           <motion.div
             layout
-            className="flex flex-col justify-center items-center gap-4 "
+            className="flex flex-row md:flex-col justify-center items-center gap-4 "
           >
                <div
               className="tooltip tooltip-left tooltip-primary pl-3"
@@ -81,7 +81,7 @@ export default function Chechu() {
                 }}
                 whileTap={{ rotate: -20, scale: 0.8 }}
                 className="h-16 w-16 flex items-center justify-center rounded-full bg-lightGreen text-green text-4xl cursor-pointer"
-                href="https://github.com/Tomato25/SnagaPrirode"
+                href="https://github.com/Tomato25/next-ecommerce"
                 target="_blank"
               >
                 <FaGithubSquare />
@@ -107,7 +107,7 @@ export default function Chechu() {
                 }}
                 whileTap={{ rotate: -20, scale: 0.8 }}
                 className="h-16 w-16 flex items-center justify-center rounded-full bg-lightGreen text-green text-4xl cursor-pointer"
-                href="https://snagaprirode.com.hr"
+                href="https://next-ecommerce-taupe.vercel.app/"
                 target="_blank"
               >
                 <HiExternalLink/>
@@ -126,7 +126,7 @@ export default function Chechu() {
  animate={{ opacity: 1, y: 0 }}   
             className=" text-shadow"
           >
-            {chechu.name}
+            {ecommerce.name}
           </motion.h1>
         </motion.div>
         <motion.div

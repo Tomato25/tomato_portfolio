@@ -1,5 +1,5 @@
-export const chechu = {
-  name: "Chechu E-commerce",
+export const ecommerce = {
+  name: "Fullstack E-commerce",
   year: "2023",
 };
 
