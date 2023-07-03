@@ -14,7 +14,7 @@ export const sectionContainerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 1.5,
+      delay: 0.8,
       staggerChildren: 0.5,
     },
   },

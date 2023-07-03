@@ -10,14 +10,14 @@
   > * {
     display: block;
     position: absolute;
-    top:  40%; 
-    left: 30%;
+    top:  51%; 
+    left: 51%;
     width:  $item-size;
     height: $item-size;
-    margin: -0;
+    margin: -($item-size / 2);
   
-    $angle: (180 / $item-count);
-    $rot: 110;
+    $angle: (360 / $item-count);
+    $rot: 0;
 
     @for $i from 1 through $item-count {
       &:nth-of-type(#{$i}) {
@@ -33,7 +33,7 @@
 }
 
 .circle-container {
-  @include on-circle($item-count:5, $circle-size: 35em, $item-size: 5rem); 
+  @include on-circle($item-count: 8, $circle-size: 34em, $item-size: 6em); 
   position:absolute;
 
 }
@@ -65,42 +65,27 @@
 
   
 .circle-container {
-  @include on-circle($item-count:5, $circle-size: 20em, $item-size: 4rem); 
+  @include on-circle($item-count:8, $circle-size: 25em, $item-size: 4rem); 
   position:absolute;
 
 }
 
-@mixin on-circle($item-count, $circle-size, $item-size) {
-  position: relative;
-  width:  $circle-size;
-  height: $circle-size;
-  padding: 0;
-  border-radius: 50%; 
-  list-style: none;       
-  
-  > * {
-    display: block;
-    position: absolute;
-    top:  40%; 
-    left: 30%;
-    width:  $item-size;
-    height: $item-size;
-    margin: -0;
-  
-    $angle: (180 / $item-count);
-    $rot: 110;
+}
 
-    @for $i from 1 through $item-count {
-      &:nth-of-type(#{$i}) {
-        transform: 
-          rotate($rot * 1deg) 
-          translate($circle-size / 2) 
-          rotate($rot * -1deg);
-      }
 
-      $rot: $rot + $angle;
+
+@media screen and (max-width: 450px) {
+ 
+  .profileImg {
+    height: 25vh;
+    width: 25vh;
     }
+  
+    
+  .circle-container {
+    @include on-circle($item-count:8, $circle-size: 20em, $item-size: 4rem); 
+    position:absolute;
+  
   }
-}
-}
-
+  
+  }

@@ -15,7 +15,6 @@ import {
   ulVariants,
   sectionContainerVariants,
 } from "../aboutAnimations";
-import { techVariants } from "../../animations/svgAnimations";
 import { Education } from "@/public/aboutContent";
 
 export default function EducationComponent() {

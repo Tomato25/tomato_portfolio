@@ -1,17 +1,17 @@
-  "use client";
-  import { AnimatePresence, motion } from "framer-motion";
-  import Link from "next/link";
-  import {
-    lettersVariants,
-    linksVariants,
-    wordVariants,
-  } from "../animations/textAnimations";
-  import { Links } from "@/public/aboutContent";
-  import { socialVariants } from "../animations/svgAnimations";
-  import Image from "next/image";
-  import Logo from "public/Images/Logo.svg";
-  import MenuParticlesBackground from "../components/MenuParticlesBackground";
-
+"use client";
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
+import {
+  lettersVariants,
+  linksVariants,
+  wordVariants,
+} from "../animations/textAnimations";
+import { Links } from "@/public/aboutContent";
+import { socialVariants } from "../animations/svgAnimations";
+import Image from "next/image";
+import Logo from "public/Images/Logo.svg";
+import MenuParticlesBackground from "../components/MenuParticlesBackground";
+import { parseJsonText } from "typescript";
 
 export default function AboutLayout({
   children,
@@ -42,26 +42,25 @@ export default function AboutLayout({
               </label>
             </div>
             <div className="lg:flex-1 lg:pl-8 pr-8 lg:pr-0 ">
-              <motion.div
+            <motion.div
                 variants={socialVariants}
                 initial="hidden"
                 animate="visible"
+                className="relative rounded-2xl"
+                whileTap={{ scale: 0.9 }}
+                whileHover={{
+                  rotateY: 180,
+                  backgroundColor: "rgb(173 230 185 0.75)",
+                  color: "rgb(0 61 43)",
+                  transition: { duration: 0.4 },
+                
+                }}
               >
-                <div className="relative h-full w-full">
-                  <Link href="/">
-                    <motion.h3
-                      whileTap={{ scale: 0.9 }}
-                      whileHover={{
-                        backgroundColor: "rgb(173 230 185 0.75)",
-                        color: "rgb(0 61 43)",
-                        transition: { duration: 0.3 },
-                      }}
-                      className="rounded-2xl px-2 py-1 text-lg whitespace-nowrap"
-                    >
-                      Tomic Codes
-                    </motion.h3>
-                  </Link>
-                </div>
+                <Link href="/">
+                  <motion.h3 whileHover={{rotateY:-180}}  className="rounded-2xl px-2 py-1 text-lg whitespace-nowrap">
+                    Tomic Codes
+                  </motion.h3>
+                </Link>
               </motion.div>
             </div>
             <div className="flex-none hidden lg:block">
@@ -112,11 +111,7 @@ export default function AboutLayout({
             <AnimatePresence>
               {Links.map((link, index) => {
                 return (
-                  <Link
-                    key={index}
-                    href={link.to}
-                    className=" text-2xl z-10"
-                  >
+                  <Link key={index} href={link.to} className=" text-2xl z-10">
                     <motion.p
                       variants={wordVariants}
                       whileTap={{ scale: 0.9 }}

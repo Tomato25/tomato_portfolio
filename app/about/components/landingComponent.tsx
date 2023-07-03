@@ -1,6 +1,7 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ProfileCircle from "../components/ProfileCircle";
+import IconCircle from "../components/IconCircle";
 
 import {
   paraVariants,
@@ -49,11 +50,14 @@ export default function LandingComponent() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 1.5 } }}
-          className="flex flex-col ml-10 md:mx-auto justify-start my-40 md:w-1/2 w-screen"
+          className="flex flex-col md:mx-auto justify-start my-20 md:my-40 md:w-1/2 w-screen"
         >
-          <ProfileCircle />
+          <ProfileCircle/>
         </motion.div>
+        
+
       </div>
+
     </AnimatePresence>
   );
 }
