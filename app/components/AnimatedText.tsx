@@ -4,8 +4,9 @@ import { animatedTextVariant } from "../animations/homeAnimations";
 
 const sentences = [
   "Hi! Im Hrvoje!",
-  "Frontend developer",
-  "Feel free to browse the website",
+  "Frontend developer with aspiration for Full-stack development",
+  "Feel free to check some of my projects!!",
+  "Contact me if you have any questions or opportunities :)"
 ];
 
 

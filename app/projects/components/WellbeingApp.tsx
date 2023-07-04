@@ -24,7 +24,7 @@ export default function WellbeingApplication() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="flex flex-col justify-center items-center gap-8 md:mt-16 md:mb-16">
+    <div className=" flex flex-col justify-center items-center gap-8 md:mt-16 md:mb-16">
       <LayoutGroup>
         <div className="flex flex-col md:flex-row gap-4 px-4 2xl:flex-nowrap  lg:gap-20 lg:px-14 justify-between w-screen">
           <motion.h1

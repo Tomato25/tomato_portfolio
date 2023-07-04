@@ -42,24 +42,23 @@ export default function AboutLayout({
               </label>
             </div>
             <div className="lg:flex-1 lg:pl-8 pr-8 lg:pr-0 ">
-            <motion.div
+              <motion.div
                 variants={socialVariants}
                 initial="hidden"
                 animate="visible"
                 className="relative rounded-2xl"
                 whileTap={{ scale: 0.9 }}
                 whileHover={{
-                  rotateY: 180,
+                  scale:1.1,
                   backgroundColor: "rgb(173 230 185 0.75)",
                   color: "rgb(0 61 43)",
-                  transition: { duration: 0.4 },
-                
+                  transition: { duration: 0.3 },
                 }}
               >
                 <Link href="/">
-                  <motion.h3 whileHover={{rotateY:-180}}  className="rounded-2xl px-2 py-1 text-lg whitespace-nowrap">
-                    Tomic Codes
-                  </motion.h3>
+                  <motion.h2 className="rounded-2xl px-2 py-1 text-xl  whitespace-nowrap">
+                    Home
+                  </motion.h2>
                 </Link>
               </motion.div>
             </div>
@@ -73,22 +72,14 @@ export default function AboutLayout({
                           variants={wordVariants}
                           whileTap={{ scale: 0.9 }}
                           whileHover={{
+                            scale:1.1,
                             backgroundColor: "rgb(173 230 185 0.75)",
                             color: "rgb(0 61 43)",
                             transition: { duration: 0.3 },
                           }}
                           className="rounded-2xl px-2 py-1"
                         >
-                          {link.name.split("").map((char, index) => {
-                            return (
-                              <motion.span
-                                key={char + "-" + index}
-                                variants={lettersVariants}
-                              >
-                                {char}
-                              </motion.span>
-                            );
-                          })}
+                          {link.name}
                         </motion.p>
                       </Link>
                     </li>

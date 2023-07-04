@@ -21,7 +21,7 @@ export default function Projects() {
       <SnagaPrirodeContextProvider>
         <NtuRiseContextProvider>
           <ChechuContextProvider>
-            <PortfolioContextProvider>         
+            <PortfolioContextProvider>        
                 <div className="flex flex-col justify-center items-center gap-8  mb-16">
                   <Ecommerce />
                   <Tomic_code_portfolio key="component1" />

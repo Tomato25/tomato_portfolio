@@ -45,22 +45,20 @@ export default function ProjectsLayout({
                 variants={socialVariants}
                 initial="hidden"
                 animate="visible"
+                className="relative rounded-2xl"
+                whileTap={{ scale: 0.9 }}
+                whileHover={{
+                  scale:1.1,
+                  backgroundColor: "rgb(173 230 185 0.75)",
+                  color: "rgb(0 61 43)",
+                  transition: { duration: 0.3 },
+                }}
               >
-                <div className="relative h-full w-full">
-                  <Link href="/">
-                    <motion.h3
-                      whileTap={{ scale: 0.9 }}
-                      whileHover={{
-                        backgroundColor: "rgb(173 230 185 0.75)",
-                        color: "rgb(0 61 43)",
-                        transition: { duration: 0.3 },
-                      }}
-                      className="rounded-2xl px-2 py-1 text-lg whitespace-nowrap"
-                    >
-                      Tomic Codes
-                    </motion.h3>
-                  </Link>
-                </div>
+                <Link href="/">
+                  <motion.h2 className="rounded-2xl px-2 py-1 text-xl  whitespace-nowrap">
+                    Home
+                  </motion.h2>
+                </Link>
               </motion.div>
             </div>
             <div className="flex-none hidden lg:block">
@@ -73,22 +71,14 @@ export default function ProjectsLayout({
                           variants={wordVariants}
                           whileTap={{ scale: 0.9 }}
                           whileHover={{
+                            scale:1.1,
                             backgroundColor: "rgb(173 230 185 0.75)",
                             color: "rgb(0 61 43)",
                             transition: { duration: 0.3 },
                           }}
                           className="rounded-2xl px-2 py-1"
                         >
-                          {link.name.split("").map((char, index) => {
-                            return (
-                              <motion.span
-                                key={char + "-" + index}
-                                variants={lettersVariants}
-                              >
-                                {char}
-                              </motion.span>
-                            );
-                          })}
+                          {link.name}
                         </motion.p>
                       </Link>
                     </li>

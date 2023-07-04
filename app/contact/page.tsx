@@ -45,11 +45,9 @@ function Contact() {
   };
 
   return (
-    <div className="flex-row flex items-center">
+    <div className="flex-row flex justify-center ">
       <Particlesbackground />
-      <div className=" flex lg:gap-28 lg:mt-20 flex-col items-center h-full w-screen z-10">
-        <AnimatedTextContact />
-        <div className="flex flex-row w-full items-center justify-between relative mt-8">
+        <div className="flex flex-row items-center mt-14 md:mt-0 mb-20 md:mb-0 lg:overflow-y-hidden h-screen w-screen z-10">
           <LayoutGroup>
             <motion.div layout>
               <motion.h1
@@ -130,7 +128,7 @@ function Contact() {
                   <motion.h2
                     ref={(el) => (h2Refs.current[1] = el)}
                     onClick={() => copyToClipboard(1)}
-                    className="text-center text-sm md:text-xl"
+                    className="text-center text-xs md:text-xl"
                     variants={cardTextVariants}
                   >
                     linkedin.com/in/hrvoje-tomic/
@@ -271,7 +269,6 @@ function Contact() {
           </LayoutGroup>
         </div>
       </div>
-    </div>
   );
 }
 
