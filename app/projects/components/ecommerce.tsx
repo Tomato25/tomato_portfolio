@@ -1,6 +1,6 @@
 "useClient";
 
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub, FaGithubSquare } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
 import { GrStripe } from "react-icons/gr";
@@ -15,9 +15,11 @@ import SSRMasonry from "../../components/ImageGrid";
 import EcommerceBanner from "public/Images/Ecommerce/1.png";
 import { useChechuContext } from "../contexts/ChechuContext";
 import { sectionTitleVariants } from "@/app/about/aboutAnimations";
+import { TfiMoreAlt } from "react-icons/tfi";
 
 export default function Ecommerce() {
   const { carouselToggle, setCarouselToggle } = useChechuContext();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="flex flex-col justify-center items-center gap-8 mt-16 mb-16">
@@ -47,13 +49,56 @@ export default function Ecommerce() {
                 }}
                 className="flex justify-center items-center"
               >
-                <Image
-                  src={EcommerceBanner}
-                  className="md:w-2/3 w-11/12 rounded-lg svg-shadow"
-                  alt="Snaga prirode"
-                  placeholder="blur"
-                />
-                
+               {carouselToggle ? (
+                <motion.div
+                  onMouseEnter={() => setIsModalOpen(true)}
+                  onMouseLeave={() => setIsModalOpen(false)}
+                  className="md:w-2/3 w-11/12 flex justify-center items-center relative cursor-pointer"
+                  onClick={() => setCarouselToggle(!carouselToggle)}
+                >
+                  <Image
+                    src={EcommerceBanner}
+                    className="rounded-lg transform transition-all "
+                    alt="portfolio images"
+                  />
+                  <AnimatePresence>
+                  {isModalOpen && (
+                    <motion.div
+                      initial={{ opacity: 0,}}
+                      animate={{ opacity: 1,}}
+                      transition={{ duration: 0.5 }}
+                      exit={{opacity:0}}
+                      className="md:text-xl text-base rounded-lg  absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col justify-center items-center text-lightGreen transition-opacity"
+                    >
+                      <div  className="h-28 w-28 lg:h-40 lg:w-40  text-base lg:text-xl p-4 flex flex-col items-center justify-center rounded-full bg-lightGreen text-green text-center ">
+                      <h1 className="cursor-pointer whitespace-normal">Check out more</h1>
+                      <TfiMoreAlt className="cursor-pointer text-3xl" />
+                      
+                      </div>
+                    </motion.div>
+                  )}
+                  </AnimatePresence>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="masonry"
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{
+                    opacity: 0,
+                    y: -300,
+                    transition: { duration: 1 },
+                  }}
+                  className="flex justify-center items-center"
+                >
+                  <SSRMasonry
+                    images={ecommerce.images}
+                    function={setCarouselToggle}
+                    toggle={carouselToggle}
+                  />
+                </motion.div>
+              )}
               </motion.div>       
           </AnimatePresence>
          
@@ -107,7 +152,7 @@ export default function Ecommerce() {
                 }}
                 whileTap={{ rotate: -20, scale: 0.8 }}
                 className="h-16 w-16 flex items-center justify-center rounded-full bg-lightGreen text-green text-4xl cursor-pointer"
-                href="https://next-ecommerce-taupe.vercel.app/"
+                href="https://next-ecommerce-roan-kappa.vercel.app/"
                 target="_blank"
               >
                 <HiExternalLink/>
