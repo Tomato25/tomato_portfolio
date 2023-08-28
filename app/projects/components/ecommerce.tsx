@@ -59,7 +59,7 @@ export default function Ecommerce() {
                   <Image
                     src={EcommerceBanner}
                     className="rounded-lg transform transition-all "
-                    alt="portfolio images"
+                    alt="ecommerce image"
                   />
                   <AnimatePresence>
                   {isModalOpen && (
