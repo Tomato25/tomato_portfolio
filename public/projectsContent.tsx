@@ -1,29 +1,64 @@
+export const instagram = {
+  name: "Fullstack Instagram clone",
+  year: "2023",
+  images: [
+    {
+      src: "/Images/Instagram/1.png",
+      alt: "screenshot1",
+    },
+    {
+        src: "/Images/Instagram/2.png",
+        alt: "screenshot2",
+    },
+    {
+        src: "/Images/Instagram/3.png",
+        alt: "screenshot3",
+    },
+    {
+        src: "/Images/Instagram/4.png",
+        alt: "screenshot4",
+    },
+    {
+        src: "/Images/Instagram/5.png",
+        alt: "screenshot5",
+    },
+    {
+      src: "/Images/Instagram/6.png",
+      alt: "screenshot6",
+  },
+  {
+    src: "/Images/Instagram/7.png",
+    alt: "screenshot7",
+},
+  ],
+};
+
 export const ecommerce = {
   name: "Fullstack E-commerce",
   year: "2023",
   images: [
     {
-      src: "/Images/ecommerce/1.png",
+      src: "/Images/Ecommerce/1.png",
       alt: "screenshot1",
     },
     {
-        src: "/Images/ecommerce/2.png",
+        src: "/Images/Ecommerce/2.png",
         alt: "screenshot2",
     },
     {
-        src: "/Images/ecommerce/3.png",
+        src: "/Images/Ecommerce/3.png",
         alt: "screenshot3",
     },
     {
-        src: "/Images/ecommerce/4.png",
+        src: "/Images/Ecommerce/4.png",
         alt: "screenshot4",
     },
     {
-        src: "/Images/ecommerce/5.png",
+        src: "/Images/Ecommerce/5.png",
         alt: "screenshot5",
     },
     {
-      src: "/Images/ecommerce/6.png",
+      src: "/Images/Ecommerce/6.png",
       alt: "screenshot6",
   },
   ],

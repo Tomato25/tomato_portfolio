@@ -15,12 +15,12 @@ import { WellbeingApp } from "public/projectsContent";
 import SSRMasonry from "../../components/ImageGrid";
 import WABanner1 from "public/Images/WellbeingApp/6.jpg";
 import WABanner2 from "public/Images/WellbeingApp/4.jpg";
-import { useChechuContext } from "../contexts/ChechuContext";
+import { useWellbeingAppContext } from "../contexts/WellbeingAppContext";
 import { TfiMoreAlt } from "react-icons/tfi";
 import { sectionTitleVariants } from "@/app/about/aboutAnimations";
 
 export default function WellbeingApplication() {
-  const { carouselToggle, setCarouselToggle } = useChechuContext();
+  const { carouselToggle, setCarouselToggle } = useWellbeingAppContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (

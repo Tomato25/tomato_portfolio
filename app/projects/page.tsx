@@ -13,6 +13,8 @@ import { WellbeingAppContextProvider } from "./contexts/WellbeingAppContext";
 import WellbeingApp from "./components/WellbeingApp";
 import WellbeingApplication from "./components/WellbeingApp";
 import Ecommerce from "./components/ecommerce";
+import Instagram from "./components/instagram";
+import { InstagramContextProvider } from "./contexts/InstagramContext";
 
 export default function Projects() {
   return (
@@ -21,14 +23,17 @@ export default function Projects() {
       <SnagaPrirodeContextProvider>
         <NtuRiseContextProvider>
           <ChechuContextProvider>
-            <PortfolioContextProvider>        
+            <PortfolioContextProvider> 
+              <InstagramContextProvider>       
                 <div className="flex flex-col justify-center items-center gap-8  mb-16">
+                  <Instagram />
                   <Ecommerce />
                   <Tomic_code_portfolio key="component1" />
                   <Snaga_prirode key="component2" />
                   <NtuRise key="component3" />
                   <WellbeingApplication />
                 </div>
+                </InstagramContextProvider>
             </PortfolioContextProvider>
           </ChechuContextProvider>
         </NtuRiseContextProvider>
