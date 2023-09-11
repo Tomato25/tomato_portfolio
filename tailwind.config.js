@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        "primary": 'white',
+        "pink": '#DDACE6',
         "green":"#003D2B",
         "red" : "#A8001E",
         "lightGreen" : "#ADE6B9"
@@ -22,9 +22,12 @@ module.exports = {
         bg2: "url('../public/Images/contactBg.png')",
 
     },
+      gridTemplateColumns: {
+        fluid: "repeat(auto-fit, minmax(20rem,1fr))",
+      },
 
     fontFamily: {
-      sans: ['var(--font-notosans)', ...fontFamily.sans],
+      poppins: ['var(--font-poppins)'],
     },
 
     textShadow: {

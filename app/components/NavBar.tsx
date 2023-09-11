@@ -8,9 +8,6 @@ import {
 } from "../animations/textAnimations";
 import { socialVariants } from "../animations/svgAnimations";
 import { Links } from "@/public/aboutContent";
-import Image from "next/image";
-import { ReactNode } from "react";
-import Particlesbackground from "./particles/Particlesbackground";
 
 
 export default function NavBar( {
@@ -101,7 +98,6 @@ export default function NavBar( {
         initial="hidden"
         animate="visible"
         whileTap={{ scale: 0.9 }} className="menu w-80 bg-green flex flex-col justify-center items-center gap-24">
-      <Particlesbackground />
       {Links.map((link, index) => {
               return (
                 <Link

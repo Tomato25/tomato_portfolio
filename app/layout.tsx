@@ -1,10 +1,11 @@
 import "./globals.css";
-import { Noto_Sans_Mono } from "next/font/google";
-import PageWrapper from "./projects/page-wrapper";
+import { Poppins } from "next/font/google";
+import PageWrapper from "./components/page-wrapper";
 
-const notoSans = Noto_Sans_Mono({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-notosans",
+  variable: "--font-poppins",
+  weight: ["400","500","700"]
 });
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={`${notoSans.variable} font-sans`}>
+      <body className={`${poppins.variable} font-sans`}>
         <div className="flex flex-col flex-grow min-h-screen text-lightGreen bg-bg1">
           <PageWrapper>
             {children}

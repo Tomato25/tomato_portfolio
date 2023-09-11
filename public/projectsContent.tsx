@@ -1,128 +1,230 @@
-export const instagram = {
-  name: "Fullstack Instagram clone",
-  year: "2023",
-  images: [
-    {
-      src: "/Images/Instagram/1.png",
-      alt: "screenshot1",
-    },
-    {
+import {
+  SiAdobexd,
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiPrisma,
+  SiFirebase,
+} from "react-icons/si";
+import { TbBrandFramerMotion } from "react-icons/tb";
+
+export const projects = [
+  {
+    name: "Instagram clone",
+    id: "1",
+    year: "2023",
+    description: [
+      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+    ],
+    technologies: [
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs />,
+      },
+      {
+        name: "Typescript",
+        icon: <SiTypescript />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss />,
+      },
+      {
+        name: "Firebase",
+        icon: <SiFirebase />,
+      },
+    ],
+    images: [
+      {
+        src: "/Images/Instagram/1.png",
+        alt: "screenshot1",
+      },
+      {
         src: "/Images/Instagram/2.png",
         alt: "screenshot2",
-    },
-    {
+      },
+      {
         src: "/Images/Instagram/3.png",
         alt: "screenshot3",
-    },
-    {
+      },
+      {
         src: "/Images/Instagram/4.png",
         alt: "screenshot4",
-    },
-    {
+      },
+      {
         src: "/Images/Instagram/5.png",
         alt: "screenshot5",
-    },
-    {
-      src: "/Images/Instagram/6.png",
-      alt: "screenshot6",
+      },
+      {
+        src: "/Images/Instagram/6.png",
+        alt: "screenshot6",
+      },
+      {
+        src: "/Images/Instagram/7.png",
+        alt: "screenshot7",
+      },
+    ],
   },
   {
-    src: "/Images/Instagram/7.png",
-    alt: "screenshot7",
-},
-  ],
-};
+    name: "E-commerce",
+    id: "2",
+    year: "2023",
+    description: [
+      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+    ],
+    technologies: [
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs />,
+      },
+      {
+        name: "Typescript",
+        icon: <SiTypescript />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss />,
+      },
+      {
+        name: "Firebase",
+        icon: <SiFirebase />,
+      },
+    ],
 
-export const ecommerce = {
-  name: "Fullstack E-commerce",
-  year: "2023",
-  images: [
-    {
-      src: "/Images/Ecommerce/1.png",
-      alt: "screenshot1",
-    },
-    {
+    images: [
+      {
+        src: "/Images/Ecommerce/1.png",
+        alt: "screenshot1",
+      },
+      {
         src: "/Images/Ecommerce/2.png",
         alt: "screenshot2",
-    },
-    {
+      },
+      {
         src: "/Images/Ecommerce/3.png",
         alt: "screenshot3",
-    },
-    {
+      },
+      {
         src: "/Images/Ecommerce/4.png",
         alt: "screenshot4",
-    },
-    {
+      },
+      {
         src: "/Images/Ecommerce/5.png",
         alt: "screenshot5",
-    },
-    {
-      src: "/Images/Ecommerce/6.png",
-      alt: "screenshot6",
+      },
+      {
+        src: "/Images/Ecommerce/6.png",
+        alt: "screenshot6",
+      },
+    ],
   },
-  ],
-};
+  {
+    name: "Snaga Prirode",
+    id: "3",
+    year: "2023",
+    description: [
+      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+    ],
+    technologies: [
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs />,
+      },
+      {
+        name: "Typescript",
+        icon: <SiTypescript />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss />,
+      },
+      {
+        name: "Firebase",
+        icon: <SiFirebase />,
+      },
+    ],
 
-export const snagaPrirode = {
-  name: "Snaga Prirode",
-  year: "2023",
-  images: [
-    {
+    images: [
+      {
         src: "/Images/SnagaPrirode/screen0.png",
         alt: "screenshot0",
       },
-    {
-      src: "/Images/SnagaPrirode/screen1.png",
-      alt: "screenshot1",
-    },
-    {
-      src: "/Images/SnagaPrirode/screen2.png",
-      alt: "screenshot2",
-    },
-    {
-      src: "/Images/SnagaPrirode/screen3.png",
-      alt: "screenshot3",
-    },
-    {
-      src: "/Images/SnagaPrirode/screen4.png",
-      alt: "screenshot4",
-    },
-    {
-      src: "/Images/SnagaPrirode/screen5.png",
-      alt: "screenshot5",
-    },
-  ],
-};
+      {
+        src: "/Images/SnagaPrirode/screen1.png",
+        alt: "screenshot1",
+      },
+      {
+        src: "/Images/SnagaPrirode/screen2.png",
+        alt: "screenshot2",
+      },
+      {
+        src: "/Images/SnagaPrirode/screen3.png",
+        alt: "screenshot3",
+      },
+      {
+        src: "/Images/SnagaPrirode/screen4.png",
+        alt: "screenshot4",
+      },
+      {
+        src: "/Images/SnagaPrirode/screen5.png",
+        alt: "screenshot5",
+      },
+    ],
+  },
+  {
+    name: "Tomic Codes Portfolio",
+    id: "4",
+    year: "2023",
+    description: [
+      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+    ],
+    technologies: [
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs />,
+      },
+      {
+        name: "Typescript",
+        icon: <SiTypescript />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss />,
+      },
+      {
+        name: "Firebase",
+        icon: <SiFirebase />,
+      },
+    ],
 
-export const portfolio = {
-  name: "Tomic Codes Portfolio",
-  year: "2023",
-  images: [
-    {
-      src: "/Images/Portfolio/1.png",
-      alt: "screenshot1",
-    },
-    {
+    images: [
+      {
+        src: "/Images/Portfolio/1.png",
+        alt: "screenshot1",
+      },
+      {
         src: "/Images/Portfolio/2.png",
         alt: "screenshot2",
-    },
-    {
+      },
+      {
         src: "/Images/Portfolio/3.png",
         alt: "screenshot3",
-    },
-    {
+      },
+      {
         src: "/Images/Portfolio/4.png",
         alt: "screenshot4",
-    },
-    {
+      },
+      {
         src: "/Images/Portfolio/5.png",
         alt: "screenshot5",
-    },
-  ],
-};
-
-export const NTURise = {
+      },
+    ],
+  } /* {
   name: "NTU Rise",
   year: "2022",
   images: [
@@ -151,9 +253,7 @@ export const NTURise = {
         alt: "screenshot6",
       },
   ],
-};
-
-export const WellbeingApp = {
+}, {
   name: "Wellbeing application",
   year: "2020",
   images: [
@@ -177,6 +277,6 @@ export const WellbeingApp = {
       src: "/Images/WellbeingApp/5.jpg",
       alt: "screenshot5",
     },
-  ],
-  
-};
+  ], 
+}*/,
+];

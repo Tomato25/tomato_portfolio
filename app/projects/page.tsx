@@ -1,43 +1,88 @@
 "use client";
 
-import NtuRise from "./components/ntuRise";
-import Head from 'next/head'
-import Tomic_code_portfolio from "./components/portfolio";
-import Snaga_prirode from "./components/snaga_prirode";
-import PageWrapper from "./page-wrapper";
-import { PortfolioContextProvider } from "./contexts/PortfolioContext";
-import { ChechuContextProvider } from "./contexts/ChechuContext";
-import { NtuRiseContextProvider } from "./contexts/NtuRiseContext";
-import { SnagaPrirodeContextProvider } from "./contexts/SnagaPrirodeContext";
-import { WellbeingAppContextProvider } from "./contexts/WellbeingAppContext";
-import WellbeingApp from "./components/WellbeingApp";
-import WellbeingApplication from "./components/WellbeingApp";
-import Ecommerce from "./components/ecommerce";
-import Instagram from "./components/instagram";
-import { InstagramContextProvider } from "./contexts/InstagramContext";
+import { projects } from "@/public/projectsContent";
+import Particlesbackground from "../components/Particlesbackground";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  leftColItemVariants,
+  leftColVariants,
+  rightColItemVariants,
+  rightColVariants,
+} from "./animations";
+import ProjectTile from "./components/ProjectTile";
+import { modalState } from "@/atoms/projectAtom";
+import { useRecoilState } from "recoil";
+import ProjectModal from "./components/projectModal";
 
 export default function Projects() {
+  const oddElements = projects.filter((_, index) => index % 2 !== 0);
+  const evenElements = projects.filter((_, index) => index % 2 === 0);
+  const [modalOpen, setModalOpen] = useRecoilState(modalState);
+
   return (
-    
-    <WellbeingAppContextProvider>
-      <SnagaPrirodeContextProvider>
-        <NtuRiseContextProvider>
-          <ChechuContextProvider>
-            <PortfolioContextProvider> 
-              <InstagramContextProvider>       
-                <div className="flex flex-col justify-center items-center gap-8  mb-16">
-                  <Instagram />
-                  <Ecommerce />
-                  <Tomic_code_portfolio key="component1" />
-                  <Snaga_prirode key="component2" />
-                  <NtuRise key="component3" />
-                  <WellbeingApplication />
-                </div>
-                </InstagramContextProvider>
-            </PortfolioContextProvider>
-          </ChechuContextProvider>
-        </NtuRiseContextProvider>
-      </SnagaPrirodeContextProvider>
-    </WellbeingAppContextProvider>
+    <>
+      <Particlesbackground />
+      <div className="z-10  w-screen md:max-w-4xl lg:max-w-6xl mx-auto">
+        <AnimatePresence mode="wait">
+          {!modalOpen ? (
+            <motion.div className="w-full mb-14 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center mx-auto" key={"54"} exit={{opacity:0}} transition={{duration: 0.5}}>
+              <motion.div
+                variants={leftColVariants}
+                animate="visible"
+                initial="hidden"
+                className="col-span-1 "
+              >
+                {oddElements.map((project, index) => (
+                  <motion.div
+                    variants={leftColItemVariants}
+                    className="mb-80"
+                    key={index}
+                  >
+                    <ProjectTile
+                      name={project.name}
+                      id={project.id}
+                      technologies={project.technologies}
+                      description={project.description}
+                      images={project.images}
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              <motion.div
+                variants={rightColVariants}
+                animate="visible"
+                initial="hidden"
+                className="col-span-1 mt-80"
+              >
+                {evenElements.map((project, index) => (
+                  <motion.div
+                    variants={rightColItemVariants}
+                    className="mb-80"
+                    key={index}
+                  >
+                    <ProjectTile
+                      name={project.name}
+                      id={project.id}
+                      technologies={project.technologies}
+                      description={project.description}
+                      images={project.images}
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key={"43"}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <ProjectModal />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </>
   );
 }

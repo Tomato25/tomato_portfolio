@@ -13,7 +13,7 @@ import {
 } from "../animations/contactAnimations";
 import { useRef } from "react";
 import AnimatedTextContact from "./AnimatedTextContact";
-import Particlesbackground from "../components/particles/Particlesbackground";
+import Particlesbackground from "../components/Particlesbackground";
 
 function Contact() {
   const h2Refs = useRef<(HTMLHeadingElement | null)[]>([

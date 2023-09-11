@@ -10,7 +10,6 @@ import { Links } from "@/public/aboutContent";
 import { socialVariants } from "../animations/svgAnimations";
 import Image from "next/image";
 import Logo from "public/Images/Logo.svg";
-import MenuParticlesBackground from "../components/MenuParticlesBackground";
 import { parseJsonText } from "typescript";
 
 export default function AboutLayout({
@@ -98,7 +97,6 @@ export default function AboutLayout({
             animate="visible"
             className="menu w-80 bg-green flex flex-col justify-center items-center gap-24"
           >
-            <MenuParticlesBackground />
             <AnimatePresence>
               {Links.map((link, index) => {
                 return (

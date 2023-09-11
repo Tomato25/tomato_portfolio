@@ -2,7 +2,7 @@
 import { FaGithubSquare, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
-import Particlesbackground from "./components/particles/Particlesbackground";
+import Particlesbackground from "./components/Particlesbackground";
 import { LayoutGroup, motion } from "framer-motion";
 import Image from "next/image";
 import {

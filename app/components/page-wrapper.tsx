@@ -5,6 +5,7 @@ import { ReactNode,useEffect } from "react";
 import { pageVariants } from "../animations/pageAnimations";
 import {usePathname} from "next/navigation"
 import { duration } from "@mui/material";
+import { RecoilRoot } from "recoil";
 
 interface MyProps {
     children?: ReactNode;
@@ -26,9 +27,11 @@ export default function  PageWrapper({children} : MyProps) {
 
   return (
     <motion.div>
+      <RecoilRoot>
       <AnimatePresence onExitComplete={() => window.scrollTo(0, 0)}>
         {children}
       </AnimatePresence>
+      </RecoilRoot>
 
     </motion.div>
   )
