@@ -21,11 +21,10 @@ export default function Projects() {
 
   return (
     <>
-      <Particlesbackground />
-      <div className="z-10  w-screen md:max-w-4xl lg:max-w-6xl mx-auto">
+      <div className="z-10 relative min-h-screen">
         <AnimatePresence mode="wait">
           {!modalOpen ? (
-            <motion.div className="w-full mb-14 grid grid-cols-1 md:grid-cols-2 gap-4 justify-center mx-auto" key={"54"} exit={{opacity:0}} transition={{duration: 0.5}}>
+            <motion.div className="w-full mb-14 grid grid-cols-1 lg:grid-cols-2 lg:gap-4  justify-center mx-auto" key={"54"} exit={{opacity:0}} transition={{duration: 0.5}}>
               <motion.div
                 variants={leftColVariants}
                 animate="visible"
@@ -35,7 +34,7 @@ export default function Projects() {
                 {oddElements.map((project, index) => (
                   <motion.div
                     variants={leftColItemVariants}
-                    className="mb-80"
+                    className="lg:mb-80 mb-28"
                     key={index}
                   >
                     <ProjectTile
@@ -53,12 +52,12 @@ export default function Projects() {
                 variants={rightColVariants}
                 animate="visible"
                 initial="hidden"
-                className="col-span-1 mt-80"
+                className="col-span-1 "
               >
                 {evenElements.map((project, index) => (
                   <motion.div
                     variants={rightColItemVariants}
-                    className="mb-80"
+                    className="lg:mt-80 mb-28"
                     key={index}
                   >
                     <ProjectTile

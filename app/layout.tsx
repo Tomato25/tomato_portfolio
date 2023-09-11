@@ -21,7 +21,7 @@ export default function RootLayout({
       */}
       <head />
       <body className={`${poppins.variable} font-sans`}>
-        <div className="flex flex-col flex-grow min-h-screen text-lightGreen bg-bg1">
+        <div className="flex flex-col flex-grow text-lightGreen bg-bg1 w-screen sm:max-w-6xl xl:max-w-screen-2xl lg:px-16 mx-auto">
           <PageWrapper>
             {children}
           </PageWrapper>

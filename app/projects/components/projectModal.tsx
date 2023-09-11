@@ -25,7 +25,7 @@ function ProjectModal() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeInOut" }}
       exit={{ opacity: 0 }}
-      className="fixed w-full h-screen left-0 top-0 text-pink flex font-poppins flex-col items-center xl:px-48 justify-start "
+      className="absolute w-full h-screen left-0 top-0 text-pink flex font-poppins flex-col items-center  justify-start "
     >
       <div className="flex flex-row items-center p-6 w-full justify-between">
         <h1 className="md:text-4xl text-2xl  font-bold italic">
