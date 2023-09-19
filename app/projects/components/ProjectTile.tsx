@@ -18,6 +18,8 @@ interface TechnologyType {
 interface PropType {
   name: string;
   id: string;
+  link: string,
+  github: string,
   description: string[];
   images: ImageType[];
   technologies: TechnologyType[];
@@ -26,6 +28,8 @@ interface PropType {
 function ProjectTile({
   name,
   id,
+  link,
+  github,
   description,
   images,
   technologies,
@@ -45,12 +49,12 @@ function ProjectTile({
               alt={images[0].alt}
               width={600}
               height={600}
-              className="rounded-md cursor-pointer"
+              className="rounded-md custom"
               onClick={() => openModal()}
             />
           </motion.div>
           <h1
-            className="text-md text-pink md:text-2xl mt-3 font-bold font-poppins self-start pl-12 cursor-pointer"
+            className="text-md text-pink md:text-2xl mt-3 font-bold font-poppins self-start pl-12 custom"
             onClick={() => openModal()}
           >
             {name}

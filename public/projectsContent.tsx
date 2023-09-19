@@ -5,23 +5,33 @@ import {
   SiTailwindcss,
   SiPrisma,
   SiFirebase,
+  SiNodedotjs,
+  SiPostgresql,
+  SiCss3
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
+import {FaCcStripe, FaReact} from "react-icons/fa"
 
 export const projects = [
   {
     name: "Instagram clone",
-    id: "1",
+    id: "4",
     year: "2023",
+    github: "https://github.com/Tomato25/instagram-project",
+    link: "https://instagram-project-liart.vercel.app/",
     description: [
-      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
-      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
-      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+      "Instagram clone fullstack web application developed with NextJS, NodeJS, Typescript, NextAuth, TailwindCSS and Google Firebase.",
+      "Sign in functionality. Users can add posts, comment and like. Users can also check out their saved and liked posts. ",
+      "Application is fully responsive and can be accessed in light or dark mode."
     ],
-    technologies: [
+      technologies: [
       {
         name: "Next.js",
         icon: <SiNextdotjs />,
+      },
+      {
+        name: "Node.js",
+        icon: <SiNodedotjs />,
       },
       {
         name: "Typescript",
@@ -69,16 +79,24 @@ export const projects = [
   },
   {
     name: "E-commerce",
-    id: "2",
+    id: "3",
+    github: "https://github.com/Tomato25/next-ecommerce",
+    link: "https://next-ecommerce-roan-kappa.vercel.app/",
     year: "2023",
     description: [
-      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
-      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+      "Fullstack e-commerce web application with integrated Stripe payment developed using NextJS, NodeJS, TailwindCSS, PostgreSQL, Zustand etc.",
+      "After signing in users can browse different categories and add items to the cart. Cart item quantity can be changed and items can be removed.",
+      "Stripe checkout is integrated in the website and with the database. Users can see their purchase history at the dashboard.",
+      "Application is fully responsive and can be accessed in light and dark mode."
     ],
     technologies: [
       {
         name: "Next.js",
         icon: <SiNextdotjs />,
+      },
+      {
+        name: "Node.js",
+        icon: <SiNodedotjs />,
       },
       {
         name: "Typescript",
@@ -89,8 +107,16 @@ export const projects = [
         icon: <SiTailwindcss />,
       },
       {
-        name: "Firebase",
-        icon: <SiFirebase />,
+        name: "Prisma",
+        icon: <SiPrisma />,
+      },
+      {
+        name: "PostgreSQL",
+        icon: <SiPostgresql />,
+      },
+      {
+        name: "Stripe",
+        icon: <FaCcStripe />,
       },
     ],
 
@@ -123,27 +149,25 @@ export const projects = [
   },
   {
     name: "Snaga Prirode",
-    id: "3",
+    id: "2",
     year: "2023",
+    github: "https://github.com/Tomato25/SnagaPrirode",
+    link: "https://snagaprirode.com.hr/",
     description: [
-      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+      "Freelance project for small farm business in Croatia. Website is fully responsive and developed using ReactJS, CSS3 and Framer Motion",
     ],
     technologies: [
       {
-        name: "Next.js",
-        icon: <SiNextdotjs />,
+        name: "react.js",
+        icon: <FaReact />,
       },
       {
-        name: "Typescript",
-        icon: <SiTypescript />,
+        name: "css",
+        icon: <SiCss3 />,
       },
       {
-        name: "Tailwind CSS",
-        icon: <SiTailwindcss />,
-      },
-      {
-        name: "Firebase",
-        icon: <SiFirebase />,
+        name: "FramerMotion",
+        icon: <TbBrandFramerMotion />,
       },
     ],
 
@@ -176,12 +200,12 @@ export const projects = [
   },
   {
     name: "Tomic Codes Portfolio",
-    id: "4",
+    id: "1",
+    github: "https://github.com/Tomato25/tomato_portfolio",
+    link: "https://h-tomic.codes/",
     year: "2023",
     description: [
-      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
-      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
-      "mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi",
+      "Personal portfolio website developed using NextJS, Typescript, TailwindCSS and FramerMotion library",
     ],
     technologies: [
       {
@@ -197,8 +221,8 @@ export const projects = [
         icon: <SiTailwindcss />,
       },
       {
-        name: "Firebase",
-        icon: <SiFirebase />,
+        name: "FramerMotion",
+        icon: <TbBrandFramerMotion />,
       },
     ],
 

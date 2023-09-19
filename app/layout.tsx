@@ -2,6 +2,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import PageWrapper from "./components/page-wrapper";
 
+
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
@@ -20,11 +21,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={`${poppins.variable} font-sans`}>
-        <div className="flex flex-col flex-grow text-lightGreen bg-bg1 w-screen sm:max-w-6xl xl:max-w-screen-2xl lg:px-16 mx-auto">
+      <body className={`${poppins.variable} font-sans scrollbar-hide `}>
+        <div className="flex flex-col flex-grow text-lightGreen bg-bg1 ">
           <PageWrapper>
             {children}
-          </PageWrapper>
+          </PageWrapper>  
         </div>
       </body>
     </html>

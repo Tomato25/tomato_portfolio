@@ -1,45 +1,41 @@
-"use client";
-import { FaGithubSquare, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import ProfileImg from "@/public/Images/profileImg.jpg";
-import { iconContainerVariants } from "../animations/Animations";
+import { useEffect} from 'react'
+import { FaLinkedin, FaTelegramPlane } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
+import { BsFillTelephoneFill } from "react-icons/bs";
+import {useInView} from "react-intersection-observer"
+import { iconContainerVariants } from '../animations/Animations'
+import { motion, useAnimation } from 'framer-motion'
 
-function Home() {
+function Contact() {
+
+  const textVariant = {
+   hidden: {
+    opacity:0, y:100
+   },
+   visible: {
+    opacity:1,
+    y:0
+   }
+
+  }
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView({threshold: 0.2});
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <div className="min-h-screen z-10 flex flex-col mb-16 w-screen sm:max-w-6xl xl:max-w-screen-2xl px-8 mx-auto">
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-16 flex-1 ">
-        <motion.div initial={{x:-200, opacity:0}} animate={{x:1, opacity:1}} transition={{delay:0.5, duration:0.3}}  className="flex flex-col gap-6 items-center justify-center lg:w-1/2">
-          <p className="text-pink font-poppins md:text-2xl xl:text-3xl  text-2xl lg:text-left text-center leading-8">
-            Software developer and Computing graduate with freelance and
-            internship experience.
-          </p>
-          <p className="text-pink leading-7 font-poppins md:text-2xl xl:text-3xl  text-2xl lg:text-left text-center">
-            Passionate about producing clean and reusable code by utilizing
-            modern technologies.
-          </p>
-          <p className="text-pink leading-7 font-poppins md:text-2xl xl:text-3xl  text-2xl lg:text-left text-center">
-            Looking for the opportunity to further develop my skills and
-            offering web development services.
-          </p>
-        </motion.div>
-        <motion.div initial={{x:200, opacity:0}} animate={{x:1, opacity:1}} transition={{delay:0.5, duration:0.3}}  className="flex items-center lg:justify-end justify-center w-1/2 lg:h-auto">
-          <Image
-            className="rounded-full"
-            src={ProfileImg}
-            alt="avatar"
-            height={400}
-            width={400}
-          />
-        </motion.div>
-      </div>
-
-      <div className=" flex gap-6 flex-row justify-center items-center mb-16 text-4xl z-10">
+    <div className='flex flex-col justify-center items-center w-screen sm:max-w-6xl xl:max-w-screen-2xl lg:px-16 mx-auto z-10 my-20 gap-16 overflow-hidden'>
+        <motion.h1 variants={textVariant} initial="hidden" animate={controls} ref={ref} className='lg:text-4xl text-2xl text-pink w-1/2 font-poppins text-center'>If you have more questions or you wish to collaborate feel free to contact me!</motion.h1>
+        <div className=" flex gap-6 flex-row justify-center items-center mb-16 text-4xl z-10">
         <motion.div
+          ref={ref}
           variants={iconContainerVariants}
           initial="hidden"
-          animate="visible"
+          animate={controls}
           className="flex flex-row h-100 justify-center items-center gap-8 md:gap-16 "
         >
           <motion.a
@@ -48,14 +44,15 @@ function Home() {
               rotate: 360,
               scale: 1.1,
               backgroundColor: "#DDACE6",
+
               transition: { duration: 0.8, type: "spring" },
             }}
             whileTap={{ rotate: -20, scale: 0.8 }}
             className="md:h-16 md:w-16 h-12 w-12 md:text-4xl text-3xl  flex items-center justify-center rounded-full bg-lightGreen text-green cursor-pointer"
-            href="https://github.com/Tomato25/"
+            href="tel:+447598236657"
             target="_blank"
           >
-            <FaGithubSquare />
+            <BsFillTelephoneFill />
           </motion.a>
           <motion.a
             variants={iconContainerVariants}
@@ -73,7 +70,7 @@ function Home() {
           >
             <FaLinkedin />
           </motion.a>
-
+          
           <motion.a
             variants={iconContainerVariants}
             whileHover={{
@@ -100,16 +97,17 @@ function Home() {
               transition: { duration: 0.8, type: "spring" },
             }}
             whileTap={{ rotate: -20, scale: 0.8 }}
-            className="md:h-16 md:w-16 h-12 w-12 md:text-4xl  text-3xl flex items-center justify-center rounded-full bg-lightGreen text-green  cursor-pointer"
+            className="md:h-16 md:w-16 h-12 w-12 md:text-4xl text-3xl flex items-center justify-center rounded-full bg-lightGreen text-green  cursor-pointer"
             href="https://t.me/H_Tomic"
             target="_blank"
           >
             <FaTelegramPlane />
           </motion.a>
         </motion.div>
+
       </div>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Contact
