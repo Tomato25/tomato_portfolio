@@ -67,16 +67,12 @@ function ProjectModal() {
             return (
               <SplideSlide
                 data-splide-interval="3000"
-                className="flex justify-center items-center mb-4 overflow-hidden lg:h-[600px] h-[400]"
+                className="flex justify-center items-center mb-4  lg:h-[600px] h-[400]"
               >
-                <Image
-                  src={image.src}
-                  height={800}
-                  width={1000}
-                  	
+                <img
+                  src={image.src}           	
                   alt={image.alt}
-                  className="max-h-max object-fill	"
-
+                  className="object-scale-down w-full h-auto"
                 />
               </SplideSlide>
             );

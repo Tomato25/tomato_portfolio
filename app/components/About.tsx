@@ -88,7 +88,7 @@ function About() {
           }}
           whileTap={{ rotate: -20, scale: 0.8 }}
           className="lg:h-32 lg:w-32 h-24 w-24 lg:text-6xl text-4xl flex items-center justify-center rounded-full bg-lightGreen text-green cursor-pointer"
-          href="https://drive.google.com/file/d/1Z_5I9gsbeUu3OvC_ePoxyddcGzPl-yqN/view?usp=sharing"
+          href="https://docs.google.com/document/d/1OxSPZbpfKXHea0-dJIh_exQDJVz9ts10Uvasae0d2W8/edit?usp=sharing"
           target="_blank"
         >
           <HiDocument />
