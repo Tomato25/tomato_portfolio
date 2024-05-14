@@ -61,18 +61,18 @@ function ProjectModal() {
             autoplay: true,
             pauseOnHover: true,
           }}
-          className="flex justify-start items-start  xl:w-2/3  w-full custom"
+          className="flex justify-start items-start  xl:w-2/3  w-11/12 custom rounded-md"
         >
           {project?.images.map((image, index) => {
             return (
               <SplideSlide
                 data-splide-interval="3000"
-                className="flex justify-center items-center mb-4  lg:h-[600px] h-[400]"
+                className="flex justify-center items-center mb-4  lg:h-[600px] h-[400] "
               >
                 <img
                   src={image.src}           	
                   alt={image.alt}
-                  className="object-scale-down w-full h-auto"
+                  className="object-scale-down w-full h-auto rounded-md"
                 />
               </SplideSlide>
             );
