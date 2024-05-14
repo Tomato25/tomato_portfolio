@@ -8,8 +8,8 @@ import { iconContainerVariants } from "../animations/Animations";
 
 function Home() {
   return (
-    <div className="min-h-screen z-10 flex flex-col mb-16 w-screen sm:max-w-6xl xl:max-w-screen-2xl px-8 mx-auto">
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-16 flex-1 ">
+    <div className="min-h-screen z-10 flex flex-col md:mb-16 w-screen sm:max-w-6xl xl:max-w-screen-2xl px-8 mx-auto">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-16 flex-1 md:mb-12">
         <motion.div initial={{x:-200, opacity:0}} animate={{x:1, opacity:1}} transition={{delay:0.5, duration:0.3}}  className="flex flex-col gap-6 items-center justify-center lg:w-1/2">
           <p className="text-pink font-poppins md:text-2xl xl:text-3xl  text-2xl lg:text-left text-center leading-8">
             Software developer and Computing graduate with freelance and
