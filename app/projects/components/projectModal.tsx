@@ -81,7 +81,7 @@ function ProjectModal() {
 
       
 
-        <div className="flex flex-row justify-center text-3xl gap-8 mt-4 w-1/3">
+        <div className="flex flex-row flex-wrap justify-center text-3xl gap-8 mt-4 md:w-1/3 m-4">
           {project?.technologies.map((technology, index) => {
             return (
             <div>{technology.icon}</div>

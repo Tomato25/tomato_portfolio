@@ -59,14 +59,7 @@ export const projects = [
         src: "/Images/Instagram/3.png",
         alt: "screenshot3",
       },
-      {
-        src: "/Images/Instagram/4.png",
-        alt: "screenshot4",
-      },
-      {
-        src: "/Images/Instagram/5.png",
-        alt: "screenshot5",
-      },
+
       {
         src: "/Images/Instagram/6.png",
         alt: "screenshot6",
