@@ -36,7 +36,7 @@ function Cursor() {
   }
 
   return (
-    <motion.div variants={variants} animate={cursorVariant}  className="bg-lightGreen h-6 w-6 rounded-full fixed top-0 left-0 "></motion.div>
+    <motion.div variants={variants} animate={cursorVariant}  className="bg-lightGreen h-6 w-6 rounded-full fixed top-0 left-0 z-20"></motion.div>
   );
 }
 
